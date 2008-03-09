@@ -1,0 +1,13 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin>
+  <name>Easyb Run Configuration</name>
+  <description>Enables the running of easyb specifications</description>
+  <version>0.1</version>
+  <vendor>org.easyb</vendor>
+  <idea-version since-build="7744"/>
+  <application-components>
+    <component>
+      <implementation-class>org.disco.easyb.EasybConfigurationTypeComponent</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>
