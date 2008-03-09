@@ -249,5 +249,16 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="easyb">
+      <CLASSES>
+        <root url="jar:///Users/rcoffin/.m2/repository/org/easyb/easyb/0.7/easyb-0.7.jar!/" />
+        <root url="jar:///Users/rcoffin/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar!/" />
+        <root url="jar:///Users/rcoffin/.m2/repository/org/codehaus/groovy/groovy-all-minimal/1.5.0/groovy-all-minimal-1.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
 </project>
 

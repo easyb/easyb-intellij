@@ -1,13 +1,12 @@
 package org.disco.easyb;
 
-import javax.swing.*;
-
-import com.intellij.execution.configurations.RunConfigurationBase;
-import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.openapi.util.IconLoader;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.*;
 
 public class EasybConfigurationTypeComponent implements ConfigurationType {
     public String getDisplayName() {
