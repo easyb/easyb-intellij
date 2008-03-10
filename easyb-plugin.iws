@@ -76,75 +76,7 @@
     <favorites_list name="easyb-plugin" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="EasybRunConfiguration.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybRunConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="90" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.667276">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathsList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/PathsList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="0" selection-start="2575" selection-end="2575" vertical-scroll-proportion="0.2943327">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JavaParameters.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/configurations/JavaParameters.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="0" selection-start="5367" selection-end="5367" vertical-scroll-proportion="0.80451125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plugin.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="27" selection-start="487" selection-end="487" vertical-scroll-proportion="0.3555133">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EasybConfigurationTypeComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybConfigurationTypeComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="12" selection-start="815" selection-end="815" vertical-scroll-proportion="0.8702011">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiElement.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/psi/PsiElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="17" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.24862888">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PsiUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/psi/util/PsiUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="19" selection-start="2096" selection-end="2096" vertical-scroll-proportion="0.15977444">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -190,6 +122,10 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="easyb-plugin" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -268,6 +204,36 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java/org/disco/easyb" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java/org/disco/easyb/runner" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/META-INF" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -300,7 +266,20 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.disco.easyb.runner" />
+    </key>
+  </component>
   <component name="RunManager" selected="Plugin.easyb">
+    <configuration default="true" type="GroovyScriptRunConfigurationType" factoryName="Groovy Script">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/." />
+      <setting name="debug" value="false" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -320,10 +299,17 @@
       </option>
       <envs />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="easyb-plugin" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
@@ -338,13 +324,10 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration default="true" type="GroovyScriptRunConfigurationType" factoryName="Groovy Script">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="." />
-      <setting name="debug" value="false" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="easyb-plugin" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -352,18 +335,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="false" name="easyb" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="easyb-plugin" />
@@ -435,14 +406,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="22" width="1680" height="1024" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21949723" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24954017" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25505826" order="0" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -525,54 +496,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/bootstrap.jar!/com/intellij/ide/plugins/PluginManager.class">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/configurations/JavaParameters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="85" selection-start="9181" selection-end="9181" vertical-scroll-proportion="0.33270678">
+        <state line="160" column="0" selection-start="5367" selection-end="5367" vertical-scroll-proportion="0.80451125">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_extensions.zip!/com/intellij/openapi/extensions/PluginDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="17" selection-start="697" selection-end="697" vertical-scroll-proportion="0.18647167">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/components/ComponentConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="988" selection-end="988" vertical-scroll-proportion="0.21755028">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/application/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="17" selection-start="1902" selection-end="1902" vertical-scroll-proportion="0.33272395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/application/ApplicationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="20" selection-start="891" selection-end="891" vertical-scroll-proportion="0.43510056">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="27" selection-start="487" selection-end="487" vertical-scroll-proportion="0.3555133">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybConfigurationTypeComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="12" selection-start="815" selection-end="815" vertical-scroll-proportion="0.8702011">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -590,54 +517,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/psi/search/GlobalSearchScope.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/fileTypes/LanguageFileType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="488" column="21" selection-start="17289" selection-end="17289" vertical-scroll-proportion="0.33272395">
+        <state line="34" column="22" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.2556391">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/lang/Language.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="12" selection-start="5501" selection-end="5501" vertical-scroll-proportion="0.25119618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Users/rcoffin/Library/Application Support/IntelliJIDEA70/Groovy/lib/Groovy.jar!/org/jetbrains/plugins/groovy/GroovyLanguage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="56" selection-start="209" selection-end="209" vertical-scroll-proportion="0.08133971">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/module/Module.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="17" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.33272395">
+        <state line="34" column="17" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.3418647">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/roots/ModuleRootManager.java">
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="4" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.34734917">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/configurations/JavaParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="0" selection-start="5367" selection-end="5367" vertical-scroll-proportion="0.80451125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/PathsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2575" selection-end="2575" vertical-scroll-proportion="0.2943327">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/roots/OrderEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="941" selection-end="941" vertical-scroll-proportion="0.33272395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybRunConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="90" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.667276">
+        <state line="16" column="0" selection-start="539" selection-end="539" vertical-scroll-proportion="0.25411335">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfigurationType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="24" selection-start="788" selection-end="788" vertical-scroll-proportion="0.34734917">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecConfigurationFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="28" selection-start="543" selection-end="543" vertical-scroll-proportion="0.37294334">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="32" selection-start="2963" selection-end="2963" vertical-scroll-proportion="0.71240604">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="19" selection-start="539" selection-end="539" vertical-scroll-proportion="0.3878327">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybFileType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="206" selection-end="206" vertical-scroll-proportion="0.24862888">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="13" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.12431444">
+          <folding />
         </state>
       </provider>
     </entry>

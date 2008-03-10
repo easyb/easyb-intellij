@@ -259,6 +259,14 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="jetgroovy">
+      <CLASSES>
+        <root url="file:///Users/rcoffin/Library/Application Support/IntelliJIDEA70/Groovy/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file:///Users/rcoffin/Library/Application Support/IntelliJIDEA70/Groovy/lib" recursive="false" />
+    </library>
   </component>
 </project>
 

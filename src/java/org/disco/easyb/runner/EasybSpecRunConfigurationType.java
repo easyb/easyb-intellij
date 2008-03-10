@@ -1,4 +1,4 @@
-package org.disco.easyb;
+package org.disco.easyb.runner;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
@@ -8,7 +8,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class EasybConfigurationTypeComponent implements ConfigurationType {
+/**
+ * Adds an easyb run configuration to IntelliJ
+ */
+public class EasybSpecRunConfigurationType implements ConfigurationType {
     public String getDisplayName() {
         return "Easyb";
     }
@@ -22,13 +25,13 @@ public class EasybConfigurationTypeComponent implements ConfigurationType {
     }
 
     public ConfigurationFactory[] getConfigurationFactories() {
-        return new ConfigurationFactory[]{new EasybConfigurationFactory(this)};
+        return new ConfigurationFactory[]{new EasybSpecConfigurationFactory(this)};
     }
 
     @NonNls
     @NotNull
     public String getComponentName() {
-        return "EasybConfigurationTypeComponent";
+        return "EasybSpecRunConfigurationType";
     }
 
     public void initComponent() {
