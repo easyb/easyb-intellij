@@ -6,10 +6,15 @@
     <version>0.1</version>
     <vendor>org.easyb</vendor>
     <idea-version since-build="7744"/>
+
     <application-components>
         <component>
             <implementation-class>org.disco.easyb.runner.EasybSpecRunConfigurationType</implementation-class>
         </component>
+        <component>
+            <implementation-class>org.disco.easyb.EasybFileTypeLoader</implementation-class>
+        </component>
     </application-components>
     <depends>org.intellij.groovy</depends>
+
 </idea-plugin>
