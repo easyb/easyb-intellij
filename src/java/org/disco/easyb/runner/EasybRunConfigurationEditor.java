@@ -6,6 +6,7 @@ import com.intellij.openapi.options.SettingsEditor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class EasybRunConfigurationEditor extends SettingsEditor<EasybSpecRunConfiguration> {
     private JPanel rootComponent;
@@ -34,6 +35,18 @@ public class EasybRunConfigurationEditor extends SettingsEditor<EasybSpecRunConf
     protected JComponent createEditor() {
         moduleComboModel = new DefaultComboBoxModel();
         moduleCombo.setModel(moduleComboModel);
+
+        moduleCombo.setRenderer(new DefaultListCellRenderer() {
+            public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                final Module module = (Module) value;
+                if (module != null) {
+                    setIcon(module.getModuleType().getNodeIcon(false));
+                    setText(module.getName());
+                }
+                return this;
+            }
+        });
 
         return rootComponent;
     }

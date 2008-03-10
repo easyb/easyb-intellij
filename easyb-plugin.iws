@@ -77,10 +77,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EasybRunConfigurationEditor.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="EasybRunConfigurationEditor.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.2797075">
+            <state line="38" column="4" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.38909775">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EasybSpecRunConfiguration.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EasybSpecRunConfiguration.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="63" column="80" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.42481202">
@@ -653,18 +653,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.2797075">
+        <state line="63" column="80" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.42481202">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="80" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.42481202">
+        <state line="38" column="4" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.38909775">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
