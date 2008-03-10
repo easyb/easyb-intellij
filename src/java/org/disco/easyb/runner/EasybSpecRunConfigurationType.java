@@ -66,7 +66,8 @@ public class EasybSpecRunConfigurationType implements LocatableConfigurationType
 
     private RunnerAndConfigurationSettings createConfiguration(final PsiFile easybSpecFile) {
         final Project project = easybSpecFile.getProject();
-        RunnerAndConfigurationSettings settings = RunManager.getInstance(project).createRunConfiguration("", factory);
+        RunnerAndConfigurationSettings settings = RunManager.getInstance(project).
+                createRunConfiguration(easybSpecFile.getName(), factory);
         final EasybSpecRunConfiguration configuration = (EasybSpecRunConfiguration) settings.getConfiguration();
         final PsiDirectory dir = easybSpecFile.getContainingDirectory();
         assert dir != null;
