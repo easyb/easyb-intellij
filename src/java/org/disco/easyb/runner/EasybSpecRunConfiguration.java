@@ -12,7 +12,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.util.JDOMExternalizer;
+import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jdom.Element;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,7 +24,6 @@ import java.util.Collection;
 public class EasybSpecRunConfiguration extends ModuleBasedConfiguration {
     private EasybSpecConfigurationFactory factory;
     private String specificationPath;
-    private Module classpathModule;
 
     public EasybSpecRunConfiguration(EasybSpecConfigurationFactory factory, Project project, String name) {
         super(name, new RunConfigurationModule(project, true), factory);
@@ -29,6 +32,18 @@ public class EasybSpecRunConfiguration extends ModuleBasedConfiguration {
 
     public Collection<Module> getValidModules() {
         return Arrays.asList(ModuleManager.getInstance(getProject()).getModules());
+    }
+
+    public void readExternal(Element element) throws InvalidDataException {
+        super.readExternal(element);
+        readModule(element);
+        specificationPath = JDOMExternalizer.readString(element, "specificationPath");
+    }
+
+    public void writeExternal(Element element) throws WriteExternalException {
+        super.writeExternal(element);
+        writeModule(element);
+        JDOMExternalizer.write(element, "specificationPath", specificationPath);
     }
 
     protected ModuleBasedConfiguration createInstance() {
@@ -42,11 +57,11 @@ public class EasybSpecRunConfiguration extends ModuleBasedConfiguration {
     public RunProfileState getState(DataContext context, RunnerInfo runnerInfo, RunnerSettings runnerSettings, ConfigurationPerRunnerSettings configurationSettings) throws ExecutionException {
         JavaCommandLineState commandLineState = new JavaCommandLineState(runnerSettings, configurationSettings) {
             protected JavaParameters createJavaParameters() throws ExecutionException {
-                ModuleRootManager rootManager = ModuleRootManager.getInstance(classpathModule);
+                ModuleRootManager rootManager = ModuleRootManager.getInstance(getModule());
 
                 JavaParameters javaParameters = new JavaParameters();
                 javaParameters.setJdk(rootManager.getJdk());
-                OrderEntry[] entries = ModuleRootManager.getInstance(classpathModule).getOrderEntries();
+                OrderEntry[] entries = ModuleRootManager.getInstance(getModule()).getOrderEntries();
                 for (OrderEntry each : entries) {
                     for (VirtualFile file : each.getFiles(OrderRootType.CLASSES_AND_OUTPUT)) {
                         javaParameters.getClassPath().add(file);
@@ -71,11 +86,7 @@ public class EasybSpecRunConfiguration extends ModuleBasedConfiguration {
         this.specificationPath = specificationPath;
     }
 
-    public Module getClasspathModule() {
-        return classpathModule;
-    }
-
-    public void setClasspathModule(Module classpathModule) {
-        this.classpathModule = classpathModule;
+    public Module getModule() {
+        return getConfigurationModule().getModule();
     }
 }

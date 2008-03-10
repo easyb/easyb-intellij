@@ -76,7 +76,30 @@
     <favorites_list name="easyb-plugin" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="EasybRunConfigurationEditor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.2797075">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasybSpecRunConfiguration.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="80" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.42481202">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -184,6 +207,40 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java/org/disco/easyb" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java/org/disco/easyb" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/java/org/disco/easyb/runner" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="EasybRunConfigurationEditor" />
+          <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -527,24 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/module/Module.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="17" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.3418647">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="539" selection-end="539" vertical-scroll-proportion="0.25411335">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -587,15 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="752" selection-end="752" vertical-scroll-proportion="0.36466166">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybFileType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="206" selection-end="206" vertical-scroll-proportion="0.19195612">
@@ -607,7 +641,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/EasybFileTypeLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="4" selection-start="842" selection-end="842" vertical-scroll-proportion="0.6837294">
+        <state line="18" column="17" selection-start="782" selection-end="782" vertical-scroll-proportion="0.559415">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybRunConfigurationEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.2797075">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/org/disco/easyb/runner/EasybSpecRunConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="80" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.42481202">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
