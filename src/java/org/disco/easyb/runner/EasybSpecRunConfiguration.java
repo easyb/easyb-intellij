@@ -67,7 +67,7 @@ public class EasybSpecRunConfiguration extends ModuleBasedConfiguration {
                         javaParameters.getClassPath().add(file);
                     }
                 }
-                javaParameters.setMainClass("org.disco.easyb.SpecificationRunner");
+                javaParameters.setMainClass("org.disco.easyb.BehaviorRunner");
                 javaParameters.getProgramParametersList().add(specificationPath);
                 return javaParameters;
             }

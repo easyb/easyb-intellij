@@ -3,9 +3,9 @@
     <id>org.disco.easyb</id>
     <name>Easyb Run Configuration</name>
     <description>Enables the running of easyb specifications</description>
-    <version>0.1</version>
+    <version>0.7.4</version>
     <vendor>org.easyb</vendor>
-    <idea-version since-build="7744"/>
+    <idea-version since-build="7757"/>
 
     <application-components>
         <component>
@@ -15,6 +15,5 @@
             <implementation-class>org.disco.easyb.EasybFileTypeLoader</implementation-class>
         </component>
     </application-components>
-    <depends>org.intellij.groovy</depends>
 
-</idea-plugin>
+  </idea-plugin>
