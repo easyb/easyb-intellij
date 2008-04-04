@@ -7,6 +7,7 @@ import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.IconLoader;
@@ -74,8 +75,7 @@ public class EasybSpecRunConfigurationType implements LocatableConfigurationType
         final VirtualFile vFile = easybSpecFile.getVirtualFile();
         assert vFile != null;
         configuration.setSpecificationPath(vFile.getPath());
-        // TODO: This won't work on a multi-module project
-        configuration.setModule(ModuleManager.getInstance(project).getModules()[0]);
+        configuration.setModule(ModuleUtil.findModuleForPsiElement(easybSpecFile));
         return settings;
     }
 
