@@ -3,7 +3,7 @@
     <id>org.disco.easyb</id>
     <name>Easyb Run Configuration</name>
     <description>Enables the running of easyb specifications</description>
-    <version>0.7.4</version>
+    <version>0.8.1</version>
     <vendor>org.easyb</vendor>
     <idea-version since-build="7757"/>
 
