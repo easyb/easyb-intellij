@@ -1,4 +1,4 @@
-package org.disco.easyb.runner;
+package org.easyb.easyb.components.runner;
 
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.ConfigurationException;

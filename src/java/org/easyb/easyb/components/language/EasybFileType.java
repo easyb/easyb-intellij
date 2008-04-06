@@ -1,4 +1,4 @@
-package org.disco.easyb;
+package org.easyb.easyb.components.language;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.util.IconLoader;

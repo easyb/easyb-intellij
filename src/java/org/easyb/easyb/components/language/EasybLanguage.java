@@ -1,4 +1,4 @@
-package org.disco.easyb;
+package org.easyb.easyb.components.language;
 
 import com.intellij.formatting.FormattingModelBuilder;
 import com.intellij.ide.structureView.StructureViewBuilder;

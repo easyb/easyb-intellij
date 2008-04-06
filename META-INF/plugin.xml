@@ -1,6 +1,6 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-    <id>org.disco.easyb</id>
+    <id>org.easyb.easyb</id>
     <name>Easyb Run Configuration</name>
     <description>Enables the running of easyb specifications</description>
     <version>0.8.1</version>
@@ -9,10 +9,10 @@
 
     <application-components>
         <component>
-            <implementation-class>org.disco.easyb.runner.EasybSpecRunConfigurationType</implementation-class>
+            <implementation-class>org.easyb.easyb.components.runner.EasybSpecRunConfigurationType</implementation-class>
         </component>
         <component>
-            <implementation-class>org.disco.easyb.EasybFileTypeLoader</implementation-class>
+            <implementation-class>org.easyb.easyb.components.language.EasybFileTypeLoader</implementation-class>
         </component>
     </application-components>
 

@@ -1,4 +1,4 @@
-package org.disco.easyb.runner;
+package org.easyb.easyb.components.runner;
 
 import java.util.Arrays;
 import java.util.Collection;
