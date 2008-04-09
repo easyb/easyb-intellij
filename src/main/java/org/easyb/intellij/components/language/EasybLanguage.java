@@ -1,4 +1,4 @@
-package org.easyb.easyb.components.language;
+package org.easyb.intellij.components.language;
 
 import com.intellij.formatting.FormattingModelBuilder;
 import com.intellij.ide.structureView.StructureViewBuilder;

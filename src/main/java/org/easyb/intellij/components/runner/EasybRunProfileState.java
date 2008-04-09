@@ -1,4 +1,4 @@
-package org.easyb.easyb.components.runner;
+package org.easyb.intellij.components.runner;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;

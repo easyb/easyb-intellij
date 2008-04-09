@@ -1,4 +1,4 @@
-package org.easyb.easyb.components.runner;
+package org.easyb.intellij.components.runner;
 
 import java.util.Arrays;
 import java.util.Collection;

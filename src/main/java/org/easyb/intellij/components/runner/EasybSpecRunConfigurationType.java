@@ -1,4 +1,4 @@
-package org.easyb.easyb.components.runner;
+package org.easyb.intellij.components.runner;
 
 import com.intellij.execution.LocatableConfigurationType;
 import com.intellij.execution.Location;

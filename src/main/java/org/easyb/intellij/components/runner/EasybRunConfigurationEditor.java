@@ -1,4 +1,4 @@
-package org.easyb.easyb.components.runner;
+package org.easyb.intellij.components.runner;
 
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.ConfigurationException;
