@@ -1,11 +1,11 @@
 package org.easyb.plugin;
 
-import org.easyb.plugin.ui.EasybController;
+import org.easyb.plugin.ui.EasybPresenter;
 import org.easyb.plugin.ui.SwingEasybView;
 
 public class FakeEasybBuilder {
     private static SwingEasybView view = new SwingEasybView();
-    private static EasybController controller = new EasybController(view);
+    private static EasybPresenter presenter = new EasybPresenter(view);
     private static EasybPluginRunner pluginRunner;
 
     static {
@@ -19,15 +19,15 @@ public class FakeEasybBuilder {
             }
         };
 
-        pluginRunner = new EasybPluginRunner(fakeEasybRunner, controller);
+        pluginRunner = new EasybPluginRunner(fakeEasybRunner, presenter);
     }
 
     public static SwingEasybView getView() {
         return view;
     }
 
-    public static EasybController getController() {
-        return controller;
+    public static EasybPresenter getPresenter() {
+        return presenter;
     }
 
     public static EasybPluginRunner getPluginRunner() {

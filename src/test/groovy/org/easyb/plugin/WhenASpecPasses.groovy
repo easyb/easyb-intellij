@@ -10,21 +10,16 @@ public class WhenASpecPasses {
 
     @Test
     public void shouldFireNewSpecResultEvent() {
-        EasybEvent expectedEvent = new SpecResultEvent(new SpecResult("Push onto empty stack"))
+        EasybRunner easybRunner = runnerFor('EmptyStack.story', withResults {passingSpec('Push onto empty stack')})
+        SpecEventListener listener = listenerFor(new SpecResultEvent(new SpecResult('Push onto empty stack')))
 
-        EasybRunner easybRunner = mockRunner('EmptyStack.story',
-                resultsBuilder.specificationResults {passingSpec('Push onto empty stack')}
-        )
-        SpecEventListener listener = mockListener(expectedEvent)
-
-        EasybPluginRunner pluginRunner = new EasybPluginRunner(easybRunner, listener)
-        pluginRunner.executeSpecs(["EmptyStack.story"])
+        new EasybPluginRunner(easybRunner, listener).executeSpecs(["EmptyStack.story"])
 
         verify(easybRunner)
         verify(listener)
     }
 
-    private EasybRunner mockRunner(String spec, SpecificationResults results) {
+    private EasybRunner runnerFor(String spec, SpecificationResults results) {
         EasybRunner easybRunner = createMock(EasybRunner.class)
 
         easybRunner.executeSpec(spec)
@@ -34,7 +29,11 @@ public class WhenASpecPasses {
         return easybRunner
     }
 
-    private SpecEventListener mockListener(EasybEvent event) {
+    private SpecificationResults withResults(Closure results) {
+        resultsBuilder.specificationResults results
+    }
+
+    private SpecEventListener listenerFor(EasybEvent event) {
         SpecEventListener listener = createMock(SpecEventListener.class)
 
         listener.eventFired(event)
