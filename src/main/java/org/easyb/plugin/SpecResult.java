@@ -7,10 +7,6 @@ public class SpecResult {
         this.specName = specName;
     }
 
-    public static SpecResult passingSpec(String specName) {
-        return new SpecResult(specName);
-    }
-
     public String getSpecName() {
         return specName;
     }

@@ -1,6 +1,5 @@
 package org.easyb.plugin
 
-import static org.easyb.plugin.SpecResult.passingSpec
 import org.junit.Test
 
 public class WhenProcessingSpecificationResults {
@@ -8,11 +7,14 @@ public class WhenProcessingSpecificationResults {
     public void specificationResultsShouldBeIterable() {
         def scenarios = ['Scenario A', 'Scenario B']
 
-        SpecificationResults results = new SpecificationResults();
-        scenarios.each {results.addResult(passingSpec(it))}
+        def builder = new SpecificationResultsBuilder()
+        def specResults = builder.specificationResults
+        {
+            scenarios.each {passingSpec(it)}
+        }
 
         def specNames = []
-        for (SpecResult spec: results)
+        for (SpecResult spec: specResults)
             specNames.add(spec.specName)
 
         assert scenarios == specNames
