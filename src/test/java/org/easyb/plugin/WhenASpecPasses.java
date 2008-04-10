@@ -6,21 +6,33 @@ import org.junit.Test;
 public class WhenASpecPasses {
     @Test
     public void shouldFireSuccessEvent() {
-        EasybRunner easybRunner = createMock(EasybRunner.class);
-        SpecEventListener listener = createMock(SpecEventListener.class);
-
-        easybRunner.executeSpec("EmptyStack.story");
-        expectLastCall().andReturn("Spec Foo Passed");
-        replay(easybRunner);
-
-        listener.specPassed("Spec Foo Passed");
-        expectLastCall();
-        replay(listener);
+        EasybRunner easybRunner = runnerForStory("EmptyStack.story");
+        SpecEventListener listener = listenerForEvent("EmptyStack Passed");
 
         EasybPluginRunner pluginRunner = new EasybPluginRunner(easybRunner, listener);
         pluginRunner.executeSpecs(new String[]{"EmptyStack.story"});
 
         verify(easybRunner);
         verify(listener);
+    }
+
+    private EasybRunner runnerForStory(String story) {
+        EasybRunner easybRunner = createMock(EasybRunner.class);
+
+        easybRunner.executeSpec(story);
+        expectLastCall().andReturn(story.replace(".story", " Passed"));
+        replay(easybRunner);
+
+        return easybRunner;
+    }
+
+    private SpecEventListener listenerForEvent(String event) {
+        SpecEventListener listener = createMock(SpecEventListener.class);
+
+        listener.specPassed(event);
+        expectLastCall();
+        replay(listener);
+
+        return listener;
     }
 }
