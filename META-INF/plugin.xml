@@ -9,10 +9,10 @@
 
     <application-components>
         <component>
-            <implementation-class>org.easyb.intellij.components.runner.EasybSpecRunConfigurationType</implementation-class>
+            <implementation-class>org.easyb.components.runner.EasybSpecRunConfigurationType</implementation-class>
         </component>
         <component>
-            <implementation-class>org.easyb.intellij.components.language.EasybFileTypeLoader</implementation-class>
+            <implementation-class>org.easyb.components.language.EasybFileTypeLoader</implementation-class>
         </component>
     </application-components>
 
