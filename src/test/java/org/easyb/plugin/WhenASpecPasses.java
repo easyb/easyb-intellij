@@ -10,10 +10,10 @@ public class WhenASpecPasses {
         SpecEventListener listener = createMock(SpecEventListener.class);
 
         easybRunner.executeSpec("EmptyStack.story");
-        expectLastCall().andReturn(true);
+        expectLastCall().andReturn("Spec Foo Passed");
         replay(easybRunner);
 
-        listener.specPassed();
+        listener.specPassed("Spec Foo Passed");
         expectLastCall();
         replay(listener);
 

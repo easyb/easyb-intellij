@@ -7,7 +7,7 @@ public class EasybController implements SpecEventListener {
         this.view = view;
     }
 
-    public void specPassed() {
-        view.addSpecResult();
+    public void specPassed(String message) {
+        view.addSpecResult(message);
     }
 }

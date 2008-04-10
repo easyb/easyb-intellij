@@ -8,12 +8,12 @@ import javax.swing.tree.TreePath;
 
 import org.easyb.plugin.EasybView;
 
-public class DefaultEasybView extends JPanel implements EasybView {
+public class SwingEasybView extends JPanel implements EasybView {
     private DefaultMutableTreeNode root;
     private DefaultTreeModel model;
     private JTree tree;
 
-    public DefaultEasybView() {
+    public SwingEasybView() {
         setLayout(new BorderLayout());
 
         root = new DefaultMutableTreeNode();
@@ -25,8 +25,8 @@ public class DefaultEasybView extends JPanel implements EasybView {
         add(tree, BorderLayout.CENTER);
     }
 
-    public void addSpecResult() {
-        DefaultMutableTreeNode node = new DefaultMutableTreeNode("Spec passed!");
+    public void addSpecResult(String message) {
+        DefaultMutableTreeNode node = new DefaultMutableTreeNode(message);
         model.insertNodeInto(node, root, root.getChildCount());
         tree.scrollPathToVisible(new TreePath(node.getPath()));
     }

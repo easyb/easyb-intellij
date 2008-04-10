@@ -10,7 +10,6 @@ public class EasybPluginRunner {
     }
 
     public void executeSpecs(String[] specs) {
-        easybRunner.executeSpec(specs[0]);
-        listener.specPassed();
+        listener.specPassed(easybRunner.executeSpec(specs[0]));
     }
 }

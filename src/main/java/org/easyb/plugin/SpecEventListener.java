@@ -1,5 +1,5 @@
 package org.easyb.plugin;
 
 public interface SpecEventListener {
-    void specPassed();
+    void specPassed(String message);
 }

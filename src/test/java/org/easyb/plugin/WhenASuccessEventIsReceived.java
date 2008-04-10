@@ -7,12 +7,12 @@ public class WhenASuccessEventIsReceived {
     @Test
     public void shouldAddResultToView() {
         EasybView view = createMock(EasybView.class);
-        view.addSpecResult();
+        view.addSpecResult("Spec Foo Passed");
         expectLastCall();
         replay(view);
 
         SpecEventListener controller = new EasybController(view);
-        controller.specPassed();
+        controller.specPassed("Spec Foo Passed");
 
         verify(view);
     }
