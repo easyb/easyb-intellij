@@ -5,8 +5,8 @@ import groovy.ui.Console
 
 class SwingEasybViewHarness {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
         SwingEasybView view = new SwingEasybView()
+        JFrame frame = new JFrame();
         frame.add(view);
         frame.show();
         frame.setSize(300, 200);

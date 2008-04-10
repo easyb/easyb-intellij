@@ -1,15 +1,14 @@
 package org.easyb.components.runner;
 
-import java.util.Collections;
-import static java.util.Collections.singletonList;
 import javax.swing.*;
 
-import org.easyb.plugin.ui.SwingEasybView;
-import org.easyb.plugin.FakeEasybBuilder;
+import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessListener;
-import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
+import org.easyb.plugin.EasybBuilder;
+import org.easyb.plugin.SpecResult;
+import org.easyb.plugin.event.SpecResultEvent;
 
 public class EasybConsoleView extends ConsoleViewAdapter implements ProcessListener {
     public void attachToProcess(ProcessHandler processHandler) {
@@ -17,14 +16,15 @@ public class EasybConsoleView extends ConsoleViewAdapter implements ProcessListe
     }
 
     public JComponent getComponent() {
-        return FakeEasybBuilder.getView();
+        return EasybBuilder.getView();
     }
 
     public void startNotified(ProcessEvent event) {
     }
 
     public void processTerminated(ProcessEvent event) {
-        FakeEasybBuilder.getPluginRunner().executeSpecs(singletonList("Fake spec"));
+        EasybBuilder.getPresenter().eventFired(new SpecResultEvent(new SpecResult("pushing null onto stack")));
+        EasybBuilder.getPresenter().eventFired(new SpecResultEvent(new SpecResult("pushing item onto empty stack")));
     }
 
     public void processWillTerminate(ProcessEvent event, boolean willBeDestroyed) {

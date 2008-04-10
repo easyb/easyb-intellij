@@ -14,8 +14,8 @@ public class WhenASuccessEventIsReceived {
         expectLastCall();
         replay(view);
 
-        SpecEventListener controller = new EasybPresenter(view);
-        controller.eventFired(new SpecResultEvent(new SpecResult("Push onto empty stack")));
+        SpecEventListener presenter = new EasybPresenter(view);
+        presenter.eventFired(new SpecResultEvent(new SpecResult("Push onto empty stack")));
 
         verify(view);
     }
