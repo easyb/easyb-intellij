@@ -3,6 +3,8 @@ package org.easyb.plugin;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
 import org.easyb.plugin.event.SpecResultEvent;
+import org.easyb.plugin.ui.EasybController;
+import org.easyb.plugin.ui.EasybView;
 
 public class WhenASuccessEventIsReceived {
     @Test

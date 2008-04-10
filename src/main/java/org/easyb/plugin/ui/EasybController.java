@@ -1,5 +1,6 @@
-package org.easyb.plugin;
+package org.easyb.plugin.ui;
 
+import org.easyb.plugin.SpecEventListener;
 import org.easyb.plugin.event.EasybEvent;
 
 public class EasybController implements SpecEventListener {

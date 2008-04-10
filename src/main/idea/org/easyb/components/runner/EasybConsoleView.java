@@ -1,32 +1,30 @@
 package org.easyb.components.runner;
 
+import java.util.Collections;
+import static java.util.Collections.singletonList;
 import javax.swing.*;
 
 import org.easyb.plugin.ui.SwingEasybView;
+import org.easyb.plugin.FakeEasybBuilder;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 
 public class EasybConsoleView extends ConsoleViewAdapter implements ProcessListener {
-    private SwingEasybView view;
-
     public void attachToProcess(ProcessHandler processHandler) {
         processHandler.addProcessListener(this);
     }
 
     public JComponent getComponent() {
-        view = new SwingEasybView();
-        return view;
+        return FakeEasybBuilder.getView();
     }
 
     public void startNotified(ProcessEvent event) {
     }
 
     public void processTerminated(ProcessEvent event) {
-        view.addSpecResult("Bar");
-        view.addSpecResult("Foo");
-        view.addSpecResult("Baz");
+        FakeEasybBuilder.getPluginRunner().executeSpecs(singletonList("Fake spec"));
     }
 
     public void processWillTerminate(ProcessEvent event, boolean willBeDestroyed) {

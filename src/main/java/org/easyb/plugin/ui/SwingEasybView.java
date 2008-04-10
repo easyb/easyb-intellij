@@ -6,7 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
-import org.easyb.plugin.EasybView;
+import org.easyb.plugin.ui.EasybView;
 
 public class SwingEasybView extends JPanel implements EasybView {
     private DefaultMutableTreeNode root;
