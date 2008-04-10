@@ -1,4 +1,4 @@
-package org.easyb.plugin.swing;
+package org.easyb.plugin.ui;
 
 import java.awt.*;
 import javax.swing.*;

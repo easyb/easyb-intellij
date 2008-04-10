@@ -1,5 +1,7 @@
 package org.easyb.plugin;
 
+import org.easyb.plugin.event.EasybEvent;
+
 public interface SpecEventListener {
-    void specPassed(String message);
+    void eventFired(EasybEvent event);
 }

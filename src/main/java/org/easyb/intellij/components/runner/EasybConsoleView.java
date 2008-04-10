@@ -2,7 +2,7 @@ package org.easyb.intellij.components.runner;
 
 import javax.swing.*;
 
-import org.easyb.plugin.swing.SwingEasybView;
+import org.easyb.plugin.ui.SwingEasybView;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.process.ProcessEvent;

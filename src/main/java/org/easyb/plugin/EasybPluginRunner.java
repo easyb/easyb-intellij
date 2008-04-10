@@ -1,5 +1,7 @@
 package org.easyb.plugin;
 
+import org.easyb.plugin.event.SpecResultEvent;
+
 public class EasybPluginRunner {
     private EasybRunner easybRunner;
     private SpecEventListener listener;
@@ -10,6 +12,8 @@ public class EasybPluginRunner {
     }
 
     public void executeSpecs(String[] specs) {
-        listener.specPassed(easybRunner.executeSpec(specs[0]));
+        String spec = specs[0];
+        easybRunner.executeSpec(spec);
+        listener.eventFired(new SpecResultEvent(spec.replace(".story", " story passed")));
     }
 }

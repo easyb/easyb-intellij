@@ -2,12 +2,16 @@ package org.easyb.plugin;
 
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
+import org.easyb.plugin.event.EasybEvent;
+import org.easyb.plugin.event.SpecResultEvent;
 
 public class WhenASpecPasses {
     @Test
-    public void shouldFireSuccessEvent() {
+    public void shouldFireNewSpecResultEvent() {
+        EasybEvent expectedEvent = new SpecResultEvent("EmptyStack story passed");
+
         EasybRunner easybRunner = runnerForStory("EmptyStack.story");
-        SpecEventListener listener = listenerForEvent("EmptyStack Passed");
+        SpecEventListener listener = listenerForEvent(expectedEvent);
 
         EasybPluginRunner pluginRunner = new EasybPluginRunner(easybRunner, listener);
         pluginRunner.executeSpecs(new String[]{"EmptyStack.story"});
@@ -20,16 +24,16 @@ public class WhenASpecPasses {
         EasybRunner easybRunner = createMock(EasybRunner.class);
 
         easybRunner.executeSpec(story);
-        expectLastCall().andReturn(story.replace(".story", " Passed"));
+        expectLastCall();
         replay(easybRunner);
 
         return easybRunner;
     }
 
-    private SpecEventListener listenerForEvent(String event) {
+    private SpecEventListener listenerForEvent(EasybEvent event) {
         SpecEventListener listener = createMock(SpecEventListener.class);
 
-        listener.specPassed(event);
+        listener.eventFired(event);
         expectLastCall();
         replay(listener);
 
