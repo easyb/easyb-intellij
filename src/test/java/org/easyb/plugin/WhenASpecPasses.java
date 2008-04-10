@@ -3,7 +3,7 @@ package org.easyb.plugin;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
 
-public class WhenATestPasses {
+public class WhenASpecPasses {
     @Test
     public void shouldFireSuccessEvent() {
         EasybRunner easybRunner = createMock(EasybRunner.class);

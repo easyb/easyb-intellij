@@ -16,18 +16,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyb-plugin.iml" afterPath="$PROJECT_DIR$/easyb-plugin.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybRunner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenATestPasses.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyb-plugin.iws" afterPath="$PROJECT_DIR$/easyb-plugin.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybPluginRunner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/SpecEventListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybRunProfileState.java" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybRunProfileState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/ConsoleViewAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenASuccessEventIsReceived.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybConsoleView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/swing" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenATestPasses.java" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenASpecPasses.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/swing/DefaultEasybView.java" />
     </list>
     <ignored path="easyb-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,11 +93,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WhenATestPasses.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenATestPasses.java">
+      <file leaf-file-name="EasybRunProfileState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybRunProfileState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="0.32249323">
+            <state line="26" column="30" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.06398538">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasybConsoleView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybConsoleView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="19" selection-start="236" selection-end="236" vertical-scroll-proportion="0.24862888">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultEasybView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/swing/DefaultEasybView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="33" selection-start="632" selection-end="632" vertical-scroll-proportion="0.6837294">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,6 +170,140 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="easyb-plugin" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="&lt; idea &gt;" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="&lt; idea &gt;" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="&lt; idea &gt;" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="&lt; idea &gt;" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax/swing" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="&lt; idea &gt;" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax/swing" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax/swing/tree" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -285,6 +439,86 @@
           <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb/plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb/plugin/swing" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb/intellij/components" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb/intellij/components/runner" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/rcoffin/Development/src/easyb/intellij-plugins/easyb-plugin/src/main/java/org/easyb/intellij/components" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -343,22 +577,56 @@
     </key>
   </component>
   <component name="RunManager" selected="Plugin.easyb">
-    <configuration default="true" type="EasybSpecRunConfigurationType" factoryName="Easyb Specification">
+    <tempConfiguration default="false" name="DefaultEasybView.java" type="EasybSpecRunConfigurationType" factoryName="Easyb Specification">
+      <module name="easyb-plugin" />
+      <setting name="specificationPath" value="$PROJECT_DIR$/src/main/java/org/easyb/plugin/swing/DefaultEasybView.java" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </tempConfiguration>
+    <configuration default="true" type="GroovyScriptRunConfigurationType" factoryName="Groovy Script">
       <module name="" />
-      <setting name="specificationPath" value="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/." />
+      <setting name="debug" value="false" />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="easyb-plugin" />
+      <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
       <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -378,6 +646,33 @@
         <value defaultName="wholeProject" />
       </option>
       <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="EasybSpecRunConfigurationType" factoryName="Easyb Specification">
+      <module name="" />
+      <setting name="specificationPath" value="" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -391,25 +686,30 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="GroovyScriptRunConfigurationType" factoryName="Groovy Script">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/." />
-      <setting name="debug" value="false" />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="false" name="WhenASuccessEventIsReceived.shouldAddResultToView" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <pattern value="org.easyb.plugin.*" />
       <module name="easyb-plugin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="org.easyb.plugin" />
+      <option name="MAIN_CLASS_NAME" value="org.easyb.plugin.WhenASuccessEventIsReceived" />
+      <option name="METHOD_NAME" value="shouldAddResultToView" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="false" name="easyb" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="easyb-plugin" />
@@ -428,8 +728,10 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Plugin.easyb" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.WhenASuccessEventIsReceived.shouldAddResultToView" />
+      <item index="1" class="java.lang.String" itemvalue="Plugin.easyb" />
+      <item index="2" class="java.lang.String" itemvalue="Easyb Specification.DefaultEasybView.java" />
     </list>
   </component>
   <component name="StarteamConfiguration">
@@ -479,9 +781,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Infintest" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11764706" order="8" />
+      <window_info id="Infintest" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11653718" order="8" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21936275" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
@@ -495,12 +797,12 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" order="8" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32963374" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" order="2" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24954017" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29966703" order="4" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" order="8" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
@@ -571,113 +873,123 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/language/EasybFileType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="206" selection-end="206" vertical-scroll-proportion="0.12431444">
+        <state line="3" column="32" selection-start="88" selection-end="88" vertical-scroll-proportion="0.059929494">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/language/EasybFileTypeLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="355" selection-end="355" vertical-scroll-proportion="0.12431444">
+        <state line="10" column="29" selection-start="254" selection-end="254" vertical-scroll-proportion="0.3107861">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybSpecConfigurationFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenASuccessEventIsReceived.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="233" selection-end="233" vertical-scroll-proportion="0.12431444">
+        <state line="5" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.15539305">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybPluginRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="8" selection-start="358" selection-end="423" vertical-scroll-proportion="0.37294334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybSpecRunConfigurationType.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenASpecPasses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="24" selection-start="2799" selection-end="2799" vertical-scroll-proportion="1.1334552">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybRunConfigurationEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="54" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.462406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/process/DefaultJavaProcessHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="13" selection-start="913" selection-end="913" vertical-scroll-proportion="0.15539305">
+        <state line="9" column="26" selection-start="265" selection-end="265" vertical-scroll-proportion="0.24862888">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/configurations/CommandLineState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="24" selection-start="2955" selection-end="2955" vertical-scroll-proportion="0.36380255">
+        <state line="83" column="18" selection-start="3498" selection-end="3498" vertical-scroll-proportion="0.33272395">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/configurations/JavaCommandLineState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="34" selection-start="869" selection-end="869" vertical-scroll-proportion="0.2797075">
+        <state line="20" column="22" selection-start="723" selection-end="723" vertical-scroll-proportion="0.18647167">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybSpecRunConfiguration.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/ui/ConsoleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="43" selection-start="2514" selection-end="2514" vertical-scroll-proportion="0.5179426">
+        <state line="23" column="17" selection-start="901" selection-end="901" vertical-scroll-proportion="0.06215722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/filters/TextConsoleBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/ui/ConsoleViewContentType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="13" selection-start="971" selection-end="971" vertical-scroll-proportion="0.24862888">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/ConsoleViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="69" selection-start="546" selection-end="546" vertical-scroll-proportion="0.40402195">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax/swing/tree/DefaultTreeModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="401" selection-end="401" vertical-scroll-proportion="0.287594">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybRunProfileState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="31" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.29964748">
+        <state line="26" column="30" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.06398538">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/javax/swing/tree/TreePath.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="0.19391635">
+        <state line="5" column="13" selection-start="154" selection-end="154" vertical-scroll-proportion="0.12781955">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybRunConfigurationEditor.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/SpecEventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/intellij/components/runner/EasybConsoleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="68" selection-end="72" vertical-scroll-proportion="0.08471761">
-          <folding />
+        <state line="8" column="19" selection-start="236" selection-end="236" vertical-scroll-proportion="0.24862888">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybPluginRunner.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/swing/DefaultEasybView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="142" selection-end="142" vertical-scroll-proportion="0.12702367">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/EasybRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="11" selection-start="69" selection-end="69" vertical-scroll-proportion="0.06351183">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenATestPasses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="0.32249323">
-          <folding />
+        <state line="22" column="33" selection-start="632" selection-end="632" vertical-scroll-proportion="0.6837294">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

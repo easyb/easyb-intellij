@@ -1,6 +1,16 @@
 package org.easyb.intellij.components.runner;
 
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.ExecutionResult;
+import com.intellij.execution.DefaultExecutionResult;
+import com.intellij.execution.ui.ConsoleView;
+import com.intellij.execution.ui.ExecutionConsole;
+import com.intellij.execution.filters.TextConsoleBuilder;
+import com.intellij.execution.filters.Filter;
+import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.configurations.JavaCommandLineState;
 import com.intellij.execution.configurations.JavaParameters;
@@ -10,8 +20,11 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class EasybRunProfileState extends JavaCommandLineState {
+    // Setting this flag to true displays easyb results graphically and is in development
+    private boolean dev = true;
     private Module module;
     private String specificationPath;
 
@@ -20,6 +33,21 @@ public class EasybRunProfileState extends JavaCommandLineState {
         super(runnerSettings, configurationSettings);
         this.module = module;
         this.specificationPath = specificationPath;
+    }
+
+    protected TextConsoleBuilder getConsoleBuilder() {
+        if (!dev) {
+            return super.getConsoleBuilder();
+        } else {
+            return new TextConsoleBuilder() {
+                public ConsoleView getConsole() {
+                    return new EasybConsoleView();
+                }
+
+                public void addFilter(Filter filter) {
+                }
+            };
+        }
     }
 
     protected JavaParameters createJavaParameters() throws ExecutionException {
