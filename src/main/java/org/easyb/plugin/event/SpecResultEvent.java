@@ -1,14 +1,16 @@
 package org.easyb.plugin.event;
 
-public class SpecResultEvent implements EasybEvent {
-    private String message;
+import org.easyb.plugin.SpecResult;
 
-    public SpecResultEvent(String message) {
-        this.message = message;
+public class SpecResultEvent implements EasybEvent {
+    private SpecResult result;
+
+    public SpecResultEvent(SpecResult result) {
+        this.result = result;
     }
 
     public String toString() {
-        return message;
+        return result.getSpecName();
     }
 
     public boolean equals(Object o) {
@@ -21,10 +23,10 @@ public class SpecResultEvent implements EasybEvent {
 
         SpecResultEvent event = (SpecResultEvent) o;
 
-        return !(message != null ? !message.equals(event.message) : event.message != null);
+        return !(result != null ? !result.equals(event.result) : event.result != null);
     }
 
     public int hashCode() {
-        return (message != null ? message.hashCode() : 0);
+        return (result != null ? result.hashCode() : 0);
     }
 }

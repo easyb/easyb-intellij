@@ -8,7 +8,7 @@ public class WhenProcessingSpecificationResults {
         def scenarios = ['Scenario A', 'Scenario B']
 
         def builder = new SpecificationResultsBuilder()
-        def specResults = builder.specificationResults
+        SpecificationResults specResults = builder.specificationResults
         {
             scenarios.each {passingSpec(it)}
         }

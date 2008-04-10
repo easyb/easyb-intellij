@@ -10,4 +10,21 @@ public class SpecResult {
     public String getSpecName() {
         return specName;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        SpecResult that = (SpecResult) o;
+
+        return !(specName != null ? !specName.equals(that.specName) : that.specName != null);
+    }
+
+    public int hashCode() {
+        return (specName != null ? specName.hashCode() : 0);
+    }
 }

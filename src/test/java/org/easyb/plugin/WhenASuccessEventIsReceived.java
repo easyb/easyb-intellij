@@ -8,12 +8,12 @@ public class WhenASuccessEventIsReceived {
     @Test
     public void shouldAddResultToView() {
         EasybView view = createMock(EasybView.class);
-        view.addSpecResult("Spec Foo Passed");
+        view.addSpecResult("Push onto empty stack");
         expectLastCall();
         replay(view);
 
         SpecEventListener controller = new EasybController(view);
-        controller.eventFired(new SpecResultEvent("Spec Foo Passed"));
+        controller.eventFired(new SpecResultEvent(new SpecResult("Push onto empty stack")));
 
         verify(view);
     }
