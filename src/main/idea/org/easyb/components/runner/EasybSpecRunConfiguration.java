@@ -56,12 +56,9 @@ public class EasybSpecRunConfiguration extends ModuleBasedConfiguration {
         return new EasybRunConfigurationEditor();
     }
 
-    public RunProfileState getState(DataContext context, RunnerInfo runnerInfo, RunnerSettings runnerSettings, ConfigurationPerRunnerSettings configurationSettings) throws ExecutionException {
-        JavaCommandLineState commandLineState = new EasybRunProfileState(runnerSettings, configurationSettings, getModule(), specificationPath);
-
-        commandLineState.setConsoleBuilder(TextConsoleBuilderFactory.getInstance().createBuilder(getProject()));
-
-        return commandLineState;
+    public RunProfileState getState(DataContext context, RunnerInfo runnerInfo, RunnerSettings runnerSettings,
+            ConfigurationPerRunnerSettings configurationSettings) throws ExecutionException {
+        return new EasybRunProfileState(runnerSettings, configurationSettings, getModule(), specificationPath);
     }
 
     public String getSpecificationPath() {

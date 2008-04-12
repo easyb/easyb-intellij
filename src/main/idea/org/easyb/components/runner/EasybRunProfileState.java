@@ -1,60 +1,56 @@
 package org.easyb.components.runner;
 
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
-import com.intellij.execution.configurations.JavaCommandLineState;
-import com.intellij.execution.configurations.JavaParameters;
+import com.intellij.execution.configurations.RunnableState;
 import com.intellij.execution.configurations.RunnerSettings;
-import com.intellij.execution.filters.Filter;
-import com.intellij.execution.filters.TextConsoleBuilder;
-import com.intellij.execution.ui.ConsoleView;
+import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.ui.ExecutionConsole;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.OrderEntry;
-import com.intellij.openapi.roots.OrderRootType;
-import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.Nullable;
 
-public class EasybRunProfileState extends JavaCommandLineState {
-    // Setting this flag to true displays easyb results graphically and is in development
-    private boolean dev = true;
+public class EasybRunProfileState implements RunnableState {
+    private RunnerSettings runnerSettings;
+    private ConfigurationPerRunnerSettings configurationSettings;
     private Module module;
     private String specificationPath;
 
     protected EasybRunProfileState(RunnerSettings runnerSettings, ConfigurationPerRunnerSettings configurationSettings,
             Module module, String specificationPath) {
-        super(runnerSettings, configurationSettings);
+        this.runnerSettings = runnerSettings;
+        this.configurationSettings = configurationSettings;
         this.module = module;
         this.specificationPath = specificationPath;
     }
 
-    protected TextConsoleBuilder getConsoleBuilder() {
-        if (!dev) {
-            return super.getConsoleBuilder();
-        } else {
-            return new TextConsoleBuilder() {
-                public ConsoleView getConsole() {
-                    return new EasybConsoleView();
-                }
+    @Nullable
+    public ExecutionResult execute() throws ExecutionException {
+        return new ExecutionResult() {
+            public ExecutionConsole getExecutionConsole() {
+                return new EasybConsoleView();
+            }
 
-                public void addFilter(Filter filter) {
-                }
-            };
-        }
+            public AnAction[] getActions() {
+                return new AnAction[0];
+            }
+
+            public ProcessHandler getProcessHandler() {
+                return new EasybProcessHandler();
+            }
+        };
     }
 
-    protected JavaParameters createJavaParameters() throws ExecutionException {
-        ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
+    public RunnerSettings getRunnerSettings() {
+        return runnerSettings;
+    }
 
-        JavaParameters javaParameters = new JavaParameters();
-        javaParameters.setJdk(rootManager.getJdk());
-        OrderEntry[] entries = ModuleRootManager.getInstance(module).getOrderEntries();
-        for (OrderEntry each : entries) {
-            for (VirtualFile file : each.getFiles(OrderRootType.CLASSES_AND_OUTPUT)) {
-                javaParameters.getClassPath().add(file);
-            }
-        }
-        javaParameters.setMainClass("org.disco.easyb.BehaviorRunner");
-        javaParameters.getProgramParametersList().add(specificationPath);
-        return javaParameters;
+    public ConfigurationPerRunnerSettings getConfigurationSettings() {
+        return configurationSettings;
+    }
+
+    public Module[] getModulesToCompile() {
+        return new Module[]{module};
     }
 }
