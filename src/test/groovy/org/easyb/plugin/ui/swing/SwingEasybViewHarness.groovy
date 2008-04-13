@@ -6,8 +6,8 @@ import static org.disco.easyb.util.BehaviorStepType.*
 import org.disco.easyb.util.BehaviorStepType
 import org.easyb.plugin.RunResult
 import org.easyb.plugin.StepResult
-import org.easyb.plugin.ui.EasybTreeNode
-import org.easyb.plugin.ui.SwingEasybView
+import org.easyb.plugin.ui.swing.EasybTreeNode
+import org.easyb.plugin.ui.swing.SwingEasybView
 
 class SwingEasybViewHarness {
     public static void main(String[] args) {

@@ -7,6 +7,8 @@ import org.disco.easyb.result.Result;
 import static org.disco.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.RunResult;
 import org.easyb.plugin.StepResult;
+import org.easyb.plugin.ui.swing.EasybTreeNode;
+import org.easyb.plugin.ui.swing.EasybTreeNodeStack;
 
 public class EasybPresenter implements ExecutionListener {
     private EasybView view;

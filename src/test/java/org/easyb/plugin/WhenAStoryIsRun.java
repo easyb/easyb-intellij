@@ -5,8 +5,8 @@ import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.util.BehaviorStepType;
 import static org.disco.easyb.util.BehaviorStepType.*;
 import org.easyb.plugin.ui.EasybPresenter;
-import org.easyb.plugin.ui.EasybTreeNode;
 import org.easyb.plugin.ui.EasybView;
+import org.easyb.plugin.ui.swing.EasybTreeNode;
 import org.junit.Before;
 import org.junit.Test;
 

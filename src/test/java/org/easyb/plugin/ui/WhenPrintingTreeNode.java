@@ -1,6 +1,7 @@
 package org.easyb.plugin.ui;
 
 import org.junit.Test;
+import org.easyb.plugin.ui.swing.EasybTreeNode;
 import static junit.framework.Assert.assertEquals;
 
 public class WhenPrintingTreeNode {

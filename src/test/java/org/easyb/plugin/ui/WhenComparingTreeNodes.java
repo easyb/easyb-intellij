@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
+import org.easyb.plugin.ui.swing.EasybTreeNode;
 
 public class WhenComparingTreeNodes {
     @Test

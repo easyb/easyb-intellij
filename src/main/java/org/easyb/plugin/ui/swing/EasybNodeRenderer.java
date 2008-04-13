@@ -1,4 +1,4 @@
-package org.easyb.plugin.ui;
+package org.easyb.plugin.ui.swing;
 
 import java.awt.*;
 import javax.swing.*;
@@ -6,7 +6,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 
 import org.easyb.plugin.StepResult;
 
-public class EasybTreeNodeRenderer extends DefaultTreeCellRenderer {
+public class EasybNodeRenderer extends DefaultTreeCellRenderer {
     @Override
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
@@ -35,6 +35,6 @@ public class EasybTreeNodeRenderer extends DefaultTreeCellRenderer {
     }
 
     private static Icon loadIcon() {
-        return new ImageIcon(EasybTreeNodeRenderer.class.getResource("/success.png"));
+        return new ImageIcon(EasybNodeRenderer.class.getResource("/success.png"));
     }
 }

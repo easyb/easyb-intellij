@@ -1,4 +1,4 @@
-package org.easyb.plugin.ui;
+package org.easyb.plugin.ui.swing;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 

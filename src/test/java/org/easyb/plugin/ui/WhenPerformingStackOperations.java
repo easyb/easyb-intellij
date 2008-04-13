@@ -3,6 +3,8 @@ package org.easyb.plugin.ui;
 import static junit.framework.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import org.easyb.plugin.ui.swing.EasybTreeNode;
+import org.easyb.plugin.ui.swing.EasybTreeNodeStack;
 
 public class WhenPerformingStackOperations {
     private EasybTreeNodeStack stack;

@@ -3,7 +3,7 @@ package org.easyb.components.runner;
 import javax.swing.*;
 
 import com.intellij.execution.ui.ExecutionConsole;
-import org.easyb.plugin.ui.SwingEasybView;
+import org.easyb.plugin.ui.swing.SwingEasybView;
 
 public class EasybConsoleView implements ExecutionConsole {
     private SwingEasybView view;

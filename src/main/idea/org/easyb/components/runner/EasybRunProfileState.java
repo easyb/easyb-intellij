@@ -10,7 +10,7 @@ import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.module.Module;
 import org.jetbrains.annotations.Nullable;
-import org.easyb.plugin.EasybBuilder;
+import org.easyb.plugin.ui.swing.SwingEasybBuilder;
 
 public class EasybRunProfileState implements RunnableState {
     private RunnerSettings runnerSettings;
@@ -28,7 +28,7 @@ public class EasybRunProfileState implements RunnableState {
 
     @Nullable
     public ExecutionResult execute() throws ExecutionException {
-        final EasybBuilder builder = new EasybBuilder();
+        final SwingEasybBuilder builder = new SwingEasybBuilder();
         return new ExecutionResult() {
             public ExecutionConsole getExecutionConsole() {
                 return new EasybConsoleView(builder.getView());
