@@ -1,50 +1,56 @@
 package org.easyb.plugin;
 
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import static junit.framework.Assert.assertEquals;
 import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Story;
-import org.disco.easyb.listener.ExecutionListener;
-import static org.disco.easyb.util.BehaviorStepType.SCENARIO;
+import static org.disco.easyb.util.BehaviorStepType.*;
 import org.easyb.plugin.ui.EasybPresenter;
+import org.easyb.plugin.ui.EasybTreeNode;
 import org.easyb.plugin.ui.EasybView;
+import org.junit.Before;
 import org.junit.Test;
 
 public class WhenAStoryIsRun {
+    private StubView view;
+    private EasybPresenter presenter;
+
+    @Before
+    public void setUp() {
+        view = new StubView();
+        presenter = new EasybPresenter(view);
+    }
+
     @Test
     public void shouldAddNodesToTree() {
-        DefaultMutableTreeNode storyNode = nodeFor("Transferring funds", RunResult.SUCCESS);
-        DefaultMutableTreeNode scenarioNode = nodeFor("Amount exceeds available funds", RunResult.SUCCESS);
+        EasybTreeNode scenarioNode = nodeFor("Amount exceeds available funds");
+        scenarioNode.add(nodeFor("An account balance of $100"));
+        scenarioNode.add(nodeFor("A transfer of $150 is requested"));
+        scenarioNode.add(nodeFor("The request should be rejected"));
+
+        EasybTreeNode storyNode = nodeFor("Transferring funds");
         storyNode.add(scenarioNode);
 
-        StubView view = new StubView();
-
-        ExecutionListener presenter = new EasybPresenter(view);
         presenter.startBehavior(new Story("Transferring funds", null));
         presenter.startStep(new BehaviorStep(SCENARIO, "Amount exceeds available funds"));
+        presenter.startStep(new BehaviorStep(GIVEN, "An account balance of $100"));
+        presenter.startStep(new BehaviorStep(WHEN, "A transfer of $150 is requested"));
+        presenter.startStep(new BehaviorStep(THEN, "The request should be rejected"));
 
-        DefaultMutableTreeNode rootNode = view.getResultNode();
-        assertEquals(storyNode.getUserObject(), rootNode.getUserObject());
-        assertEquals(scenarioNode.getUserObject(), childAt(rootNode, 0).getUserObject());
+        assertEquals(storyNode, view.getResultNode());
     }
 
-    private DefaultMutableTreeNode childAt(DefaultMutableTreeNode rootNode, int index) {
-        return ((DefaultMutableTreeNode) rootNode.getChildAt(index));
-    }
-
-    private DefaultMutableTreeNode nodeFor(String phrase, RunResult result) {
-        return new DefaultMutableTreeNode(new StepResult(phrase, result));
+    private EasybTreeNode nodeFor(String phrase) {
+        return new EasybTreeNode(new StepResult(phrase, RunResult.SUCCESS));
     }
 
     private static class StubView implements EasybView {
-        private DefaultMutableTreeNode resultNode;
+        private EasybTreeNode resultNode;
 
-        public void addBehaviorResult(DefaultMutableTreeNode resultNode) {
+        public void addBehaviorResult(EasybTreeNode resultNode) {
             this.resultNode = resultNode;
         }
 
-        public DefaultMutableTreeNode getResultNode() {
+        public EasybTreeNode getResultNode() {
             return resultNode;
         }
     }

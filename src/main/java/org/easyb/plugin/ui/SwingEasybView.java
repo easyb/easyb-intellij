@@ -19,7 +19,7 @@ public class SwingEasybView extends JPanel implements EasybView {
         add(new JScrollPane(tree), BorderLayout.CENTER);
     }
 
-    public void addBehaviorResult(DefaultMutableTreeNode resultNode) {
+    public void addBehaviorResult(EasybTreeNode resultNode) {
         ((DefaultTreeModel) tree.getModel()).insertNodeInto(resultNode, root, root.getChildCount());
         TreeUtil.expandAll(tree, true);
     }

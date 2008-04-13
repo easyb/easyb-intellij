@@ -1,7 +1,8 @@
-package org.easyb.plugin.ui
+package org.easyb.plugin.ui.swing
 
 import javax.swing.JFrame
 import groovy.ui.Console
+import org.easyb.plugin.ui.SwingEasybView
 
 class SwingEasybViewHarness {
     public static void main(String[] args) {
