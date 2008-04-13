@@ -11,9 +11,9 @@ class SwingEasybViewHarness {
         frame.show();
         frame.setSize(300, 200);
         
-        view.addSpecResult("Scenario A");
-        view.addSpecResult("Scenario B");
-        view.addSpecResult("Scenario C");
+        view.addBehaviorResult("Scenario A");
+        view.addBehaviorResult("Scenario B");
+        view.addBehaviorResult("Scenario C");
 
         Console console = new Console()
         console.setVariable('frame', frame)

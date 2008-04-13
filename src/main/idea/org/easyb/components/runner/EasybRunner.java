@@ -1,25 +1,30 @@
 package org.easyb.components.runner;
 
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
+import org.disco.easyb.domain.Specification;
 import org.easyb.plugin.EasybBuilder;
-import org.easyb.plugin.SpecResult;
-import org.easyb.plugin.event.SpecResultEvent;
 
-public class EasybRunner implements Runnable {
-    private EasybProcessHandler handler;
+public class EasybRunner extends ProcessAdapter implements Runnable {
+    private EasybProcessHandler processHandler;
 
-    public EasybRunner(EasybProcessHandler handler) {
-        this.handler = handler;
+    public EasybRunner(EasybProcessHandler processHandler) {
+        this.processHandler = processHandler;
     }
 
     public void run() {
         try {
-            Thread.sleep(2000);
-            EasybBuilder.getPresenter().eventFired(new SpecResultEvent(new SpecResult("pushing null onto stack")));
-            Thread.sleep(2000);
-            EasybBuilder.getPresenter().eventFired(new SpecResultEvent(new SpecResult("pushing item onto empty stack")));
+            for (int i = 0; i < 4; i++) {
+                EasybBuilder.getPresenter().startBehavior(new Specification("scenario", null));
+                Thread.sleep(1000);
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        handler.testingComplete();
+        processHandler.testingComplete();
+    }
+
+    public void startNotified(ProcessEvent event) {
+        new Thread(this).start();
     }
 }

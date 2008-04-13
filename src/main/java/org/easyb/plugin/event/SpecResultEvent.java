@@ -1,16 +1,16 @@
 package org.easyb.plugin.event;
 
-import org.easyb.plugin.SpecResult;
+import org.easyb.plugin.StepResult;
 
 public class SpecResultEvent implements EasybEvent {
-    private SpecResult result;
+    private StepResult result;
 
-    public SpecResultEvent(SpecResult result) {
+    public SpecResultEvent(StepResult result) {
         this.result = result;
     }
 
     public String toString() {
-        return result.getSpecName();
+        return result.getStepName();
     }
 
     public boolean equals(Object o) {
