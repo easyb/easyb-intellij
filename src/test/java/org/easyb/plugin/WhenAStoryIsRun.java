@@ -2,7 +2,7 @@ package org.easyb.plugin;
 
 import static junit.framework.Assert.assertEquals;
 import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.domain.Story;
+import org.disco.easyb.util.BehaviorStepType;
 import static org.disco.easyb.util.BehaviorStepType.*;
 import org.easyb.plugin.ui.EasybPresenter;
 import org.easyb.plugin.ui.EasybTreeNode;
@@ -22,25 +22,30 @@ public class WhenAStoryIsRun {
 
     @Test
     public void shouldAddNodesToTree() {
-        EasybTreeNode scenarioNode = nodeFor("Amount exceeds available funds");
-        scenarioNode.add(nodeFor("An account balance of $100"));
-        scenarioNode.add(nodeFor("A transfer of $150 is requested"));
-        scenarioNode.add(nodeFor("The request should be rejected"));
+        EasybTreeNode scenarioNode = nodeFor(SCENARIO, "Amount exceeds available funds");
+        scenarioNode.add(nodeFor(GIVEN, "An account balance of $100"));
+        scenarioNode.add(nodeFor(WHEN, "A transfer of $150 is requested"));
+        scenarioNode.add(nodeFor(THEN, "The request should be rejected"));
 
-        EasybTreeNode storyNode = nodeFor("Transferring funds");
+        EasybTreeNode storyNode = nodeFor(STORY, "Transferring funds");
         storyNode.add(scenarioNode);
 
-        presenter.startBehavior(new Story("Transferring funds", null));
+        presenter.startStep(new BehaviorStep(STORY, "Transferring funds"));
         presenter.startStep(new BehaviorStep(SCENARIO, "Amount exceeds available funds"));
         presenter.startStep(new BehaviorStep(GIVEN, "An account balance of $100"));
+        presenter.stopStep();
         presenter.startStep(new BehaviorStep(WHEN, "A transfer of $150 is requested"));
+        presenter.stopStep();
         presenter.startStep(new BehaviorStep(THEN, "The request should be rejected"));
+        presenter.stopStep();
+        presenter.stopStep();
+        presenter.stopStep();
 
         assertEquals(storyNode, view.getResultNode());
     }
 
-    private EasybTreeNode nodeFor(String phrase) {
-        return new EasybTreeNode(new StepResult(phrase, RunResult.SUCCESS));
+    private EasybTreeNode nodeFor(BehaviorStepType type, String phrase) {
+        return new EasybTreeNode(new StepResult(phrase, type, RunResult.SUCCESS));
     }
 
     private static class StubView implements EasybView {

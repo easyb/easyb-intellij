@@ -10,6 +10,7 @@ import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.module.Module;
 import org.jetbrains.annotations.Nullable;
+import org.easyb.plugin.EasybBuilder;
 
 public class EasybRunProfileState implements RunnableState {
     private RunnerSettings runnerSettings;
@@ -27,9 +28,10 @@ public class EasybRunProfileState implements RunnableState {
 
     @Nullable
     public ExecutionResult execute() throws ExecutionException {
+        final EasybBuilder builder = new EasybBuilder();
         return new ExecutionResult() {
             public ExecutionConsole getExecutionConsole() {
-                return new EasybConsoleView();
+                return new EasybConsoleView(builder.getView());
             }
 
             public AnAction[] getActions() {
@@ -37,7 +39,7 @@ public class EasybRunProfileState implements RunnableState {
             }
 
             public ProcessHandler getProcessHandler() {
-                return new EasybProcessHandler();
+                return new EasybProcessHandler(builder.getPresenter(), specificationPath);
             }
         };
     }

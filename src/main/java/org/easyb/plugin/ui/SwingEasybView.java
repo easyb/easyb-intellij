@@ -5,6 +5,10 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
+import static org.disco.easyb.util.BehaviorStepType.GENESIS;
+import static org.easyb.plugin.RunResult.INFORMATIONAL;
+import org.easyb.plugin.StepResult;
+
 public class SwingEasybView extends JPanel implements EasybView {
     private DefaultMutableTreeNode root;
     JTree tree;
@@ -12,8 +16,9 @@ public class SwingEasybView extends JPanel implements EasybView {
     public SwingEasybView() {
         setLayout(new BorderLayout());
 
-        root = new DefaultMutableTreeNode();
+        root = new EasybTreeNode(new StepResult("Root", GENESIS, INFORMATIONAL));
         tree = new JTree(root);
+        tree.setCellRenderer(new EasybTreeNodeRenderer());
         tree.setRootVisible(false);
 
         add(new JScrollPane(tree), BorderLayout.CENTER);

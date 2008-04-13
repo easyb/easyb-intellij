@@ -4,13 +4,12 @@ import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Behavior;
 import org.disco.easyb.listener.ExecutionListener;
 import org.disco.easyb.result.Result;
-import org.disco.easyb.util.BehaviorStepType;
+import static org.disco.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.RunResult;
 import org.easyb.plugin.StepResult;
 
 public class EasybPresenter implements ExecutionListener {
     private EasybView view;
-    private EasybTreeNode root;
     private EasybTreeNodeStack nodeStack;
 
     public EasybPresenter(EasybView view) {
@@ -19,18 +18,16 @@ public class EasybPresenter implements ExecutionListener {
     }
 
     public void startBehavior(Behavior behavior) {
-        root = new EasybTreeNode(new StepResult(behavior.getPhrase(), RunResult.SUCCESS));
-        view.addBehaviorResult(root);
     }
 
     public void startStep(BehaviorStep behaviorStep) {
-        EasybTreeNode node = new EasybTreeNode(new StepResult(behaviorStep.name, RunResult.SUCCESS));
-        if (behaviorStep.stepType == BehaviorStepType.SCENARIO) {
-            nodeStack.push(node);
-            root.add(node);
+        EasybTreeNode node = new EasybTreeNode(new StepResult(behaviorStep.name, behaviorStep.stepType, RunResult.SUCCESS));
+        if (behaviorStep.stepType == STORY) {
+            view.addBehaviorResult(node);
         } else {
             nodeStack.peek().add(node);
         }
+        nodeStack.push(node);
     }
 
     public void describeStep(String s) {
