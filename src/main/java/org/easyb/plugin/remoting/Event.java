@@ -2,13 +2,20 @@ package org.easyb.plugin.remoting;
 
 import java.io.Serializable;
 
+import org.disco.easyb.listener.ExecutionListener;
+
 public class Event implements Serializable {
     private EventType type;
+
     private Object data;
 
     public Event(EventType type, Object data) {
         this.type = type;
         this.data = data;
+    }
+
+    public void fire(ExecutionListener receiver) {
+        type.fire(receiver, data);
     }
 
     public String toString() {

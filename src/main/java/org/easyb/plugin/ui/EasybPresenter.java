@@ -42,7 +42,7 @@ public class EasybPresenter implements ExecutionListener {
         nodeStack.pop();
     }
 
-    public void stopBehavior(BehaviorStep behaviorStep, Behavior behavior) {
+    public void stopBehavior(Behavior behavior) {
     }
 
     public void completeTesting() {

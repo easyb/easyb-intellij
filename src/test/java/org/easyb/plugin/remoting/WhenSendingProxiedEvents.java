@@ -13,6 +13,7 @@ import org.disco.easyb.result.Result;
 import org.disco.easyb.util.BehaviorStepType;
 import org.junit.Test;
 import org.junit.Before;
+import org.junit.Ignore;
 import static org.easyb.plugin.remoting.EventType.START_BEHAVIOR;
 import static org.easyb.plugin.remoting.EventType.START_STEP;
 import static org.easyb.plugin.remoting.EventType.DESCRIBE_STEP;
@@ -21,14 +22,14 @@ import static org.easyb.plugin.remoting.EventType.STOP_STEP;
 import static org.easyb.plugin.remoting.EventType.STOP_BEHAVIOR;
 import static junit.framework.Assert.assertEquals;
 
-public class WhenRemotingEvents {
+public class WhenSendingProxiedEvents {
     private MockReceiver mockReceiver;
     private ExecutionListener remoteListener;
 
     @Before
     public void setUp() throws IOException {
         mockReceiver = new MockReceiver();
-        remoteListener = new RemotingExecutionListener(mockReceiver.getPort());
+        remoteListener = new ExecutionListenerProxy(mockReceiver.getPort());
     }
 
     @Test
@@ -69,6 +70,11 @@ public class WhenRemotingEvents {
         Specification spec = new Specification("should do something", null);
         remoteListener.stopBehavior(spec);
         assertEquals(new Event(STOP_BEHAVIOR, spec), mockReceiver.getEvent());
+    }
+
+    @Test
+    @Ignore
+    public void shouldSendMultipleSubsequentEventes() {
     }
 }
 
