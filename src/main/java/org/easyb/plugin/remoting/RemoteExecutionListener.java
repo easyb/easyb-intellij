@@ -26,11 +26,14 @@ public class RemoteExecutionListener implements Runnable {
             serverSocket = new ServerSocket(0);
             socket = serverSocket.accept();
 
+            Event event;
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
-            Event event = (Event) inputStream.readObject();
-            if (receiver != null) {
-                event.fire(receiver);
-            }
+            do {
+                event = (Event) inputStream.readObject();
+                if (receiver != null) {
+                    event.fire(receiver);
+                }
+            } while (event.getType() != EventType.COMPLETE_TESTING);
             inputStream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

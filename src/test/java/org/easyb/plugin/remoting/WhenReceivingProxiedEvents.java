@@ -8,29 +8,42 @@ import java.net.Socket;
 import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Story;
 import org.disco.easyb.listener.ExecutionListener;
+import org.disco.easyb.result.Result;
 import org.disco.easyb.util.BehaviorStepType;
 import static org.easymock.EasyMock.*;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class WhenReceivingProxiedEvents {
     private RemoteExecutionListener listener;
+    private ObjectOutputStream outputStream;
 
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
         listener = new RemoteExecutionListener();
         listener.start();
+
+        Socket socket = new Socket(InetAddress.getLocalHost(), listener.getPort());
+        outputStream = new ObjectOutputStream(socket.getOutputStream());
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() throws IOException {
         listener.stop();
+
+        ExecutionListener receiver = createMock(ExecutionListener.class);
+        receiver.completeTesting();
+        expectLastCall();
+        replay(receiver);
+
+        sendEventAndVerifyReceipt(new Event(EventType.COMPLETE_TESTING, null), receiver);
+
+        outputStream.close();
     }
 
     @Test
-    public void shouldSendStartBehaviorEvent() throws IOException {
+    public void shouldReceiveStartBehaviorEvent() throws IOException {
         Story story = new Story("Transferring funds", null);
 
         ExecutionListener receiver = createMock(ExecutionListener.class);
@@ -42,7 +55,7 @@ public class WhenReceivingProxiedEvents {
     }
 
     @Test
-    public void shouldSendStartStepEvent() throws IOException {
+    public void shouldReceiveStartStepEvent() throws IOException {
         BehaviorStep step = new BehaviorStep(BehaviorStepType.STORY, "Transferring funds");
 
         ExecutionListener receiver = createMock(ExecutionListener.class);
@@ -54,28 +67,53 @@ public class WhenReceivingProxiedEvents {
     }
 
     @Test
-    @Ignore
-    public void shouldSendDescribeStepEvent() throws IOException {
+    public void shouldReceiveDescribeStepEvent() throws IOException {
+        ExecutionListener receiver = createMock(ExecutionListener.class);
+        receiver.describeStep("Description");
+        expectLastCall();
+        replay(receiver);
+
+        sendEventAndVerifyReceipt(new Event(EventType.DESCRIBE_STEP, "Description"), receiver);
     }
 
     @Test
-    @Ignore
-    public void shouldSendGotResultEvent() throws IOException {
+    public void shouldReceiveGotResultEvent() throws IOException {
+        Result result = new Result(Result.SUCCEEDED);
+
+        ExecutionListener receiver = createMock(ExecutionListener.class);
+        receiver.gotResult(result);
+        expectLastCall();
+        replay(receiver);
+
+        sendEventAndVerifyReceipt(new Event(EventType.GOT_RESULT, result), receiver);
     }
 
     @Test
-    @Ignore
-    public void shouldSendStopStepEvent() throws IOException {
+    public void shouldReceiveStopStepEvent() throws IOException {
+        ExecutionListener receiver = createMock(ExecutionListener.class);
+        receiver.stopStep();
+        expectLastCall();
+        replay(receiver);
+
+        sendEventAndVerifyReceipt(new Event(EventType.STOP_STEP, null), receiver);
     }
 
     @Test
-    @Ignore
-    public void shouldSendStopBehaviorEvent() throws IOException {
+    public void shouldReceiveStopBehaviorEvent() throws IOException {
+        Story story = new Story("Transferring funds", null);
+
+        ExecutionListener receiver = createMock(ExecutionListener.class);
+        receiver.stopBehavior(story);
+        expectLastCall();
+        replay(receiver);
+
+        sendEventAndVerifyReceipt(new Event(EventType.STOP_BEHAVIOR, story), receiver);
     }
 
     @Test
-    @Ignore
-    public void shouldSendMultipleSubsequentEvents() throws IOException {
+    public void shouldReceiveMultipleSubsequentEvents() throws IOException {
+        shouldReceiveStartBehaviorEvent();
+        shouldReceiveStopBehaviorEvent();
     }
 
     private void sendEventAndVerifyReceipt(Event event, ExecutionListener receiver) throws IOException {
@@ -85,9 +123,13 @@ public class WhenReceivingProxiedEvents {
     }
 
     private void writeEventToSocket(Event event) throws IOException {
-        Socket socket = new Socket(InetAddress.getLocalHost(), listener.getPort());
-        ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
         outputStream.writeObject(event);
-        outputStream.close();
+
+        // TODO Find a better way to wait for the listener to do its work
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -1,58 +1,61 @@
 package org.easyb.components.runner;
 
+import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
-import com.intellij.execution.configurations.RunnableState;
+import com.intellij.execution.configurations.JavaCommandLineState;
+import com.intellij.execution.configurations.JavaParameters;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.ui.ExecutionConsole;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.module.Module;
-import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.PathUtil;
 import org.easyb.plugin.ui.swing.SwingEasybBuilder;
+import org.easyb.plugin.remoting.RemoteExecutionListener;
+import org.disco.easyb.BehaviorRunner;
 
-public class EasybRunProfileState implements RunnableState {
-    private RunnerSettings runnerSettings;
-    private ConfigurationPerRunnerSettings configurationSettings;
+public class EasybRunProfileState extends JavaCommandLineState {
     private Module module;
     private String specificationPath;
+    private SwingEasybBuilder builder;
 
     protected EasybRunProfileState(RunnerSettings runnerSettings, ConfigurationPerRunnerSettings configurationSettings,
             Module module, String specificationPath) {
-        this.runnerSettings = runnerSettings;
-        this.configurationSettings = configurationSettings;
+        super(runnerSettings, configurationSettings);
         this.module = module;
         this.specificationPath = specificationPath;
+        this.builder = new SwingEasybBuilder();
     }
 
-    @Nullable
     public ExecutionResult execute() throws ExecutionException {
-        final SwingEasybBuilder builder = new SwingEasybBuilder();
-        return new ExecutionResult() {
-            public ExecutionConsole getExecutionConsole() {
-                return new EasybConsoleView(builder.getView());
-            }
-
-            public AnAction[] getActions() {
-                return new AnAction[0];
-            }
-
-            public ProcessHandler getProcessHandler() {
-                return new EasybProcessHandler(builder.getPresenter(), specificationPath);
-            }
-        };
+        ProcessHandler processHandler = startProcess();
+        EasybConsoleView console = new EasybConsoleView(builder.getView());
+        return new DefaultExecutionResult(console, processHandler, createActions(console, processHandler));
     }
 
-    public RunnerSettings getRunnerSettings() {
-        return runnerSettings;
+    protected JavaParameters createJavaParameters() throws ExecutionException {
+        RemoteExecutionListener listener = new RemoteExecutionListener();
+        listener.setReceiver(builder.getPresenter());
+        listener.start();
+
+        JavaParameters javaParameters = new JavaParameters();
+        javaParameters.setJdk(ModuleRootManager.getInstance(module).getJdk());
+        for (VirtualFile file : getProjectClasspath()) {
+            javaParameters.getClassPath().add(file);
+        }
+        javaParameters.getClassPath().add(PathUtil.getJarPathForClass(getClass()));
+        javaParameters.getClassPath().add(PathUtil.getJarPathForClass(BehaviorRunner.class));
+        javaParameters.setMainClass("org.easyb.plugin.remoting.RemoteRunner");
+        javaParameters.getProgramParametersList().add(Integer.toString(listener.getPort()));
+        javaParameters.getProgramParametersList().add(specificationPath);
+        return javaParameters;
     }
 
-    public ConfigurationPerRunnerSettings getConfigurationSettings() {
-        return configurationSettings;
-    }
-
-    public Module[] getModulesToCompile() {
-        return new Module[]{module};
+    @SuppressWarnings("deprecation")
+    private VirtualFile[] getProjectClasspath() {
+        return ProjectRootManager.getInstance(module.getProject()).getFullClassPath();
     }
 }

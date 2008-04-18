@@ -5,22 +5,17 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import org.disco.easyb.domain.Story;
-import org.disco.easyb.domain.Specification;
-import org.disco.easyb.listener.ExecutionListener;
+import static junit.framework.Assert.assertEquals;
 import org.disco.easyb.BehaviorStep;
+import org.disco.easyb.domain.Specification;
+import org.disco.easyb.domain.Story;
+import org.disco.easyb.listener.ExecutionListener;
 import org.disco.easyb.result.Result;
 import org.disco.easyb.util.BehaviorStepType;
-import org.junit.Test;
+import static org.easyb.plugin.remoting.EventType.*;
 import org.junit.Before;
-import org.junit.Ignore;
-import static org.easyb.plugin.remoting.EventType.START_BEHAVIOR;
-import static org.easyb.plugin.remoting.EventType.START_STEP;
-import static org.easyb.plugin.remoting.EventType.DESCRIBE_STEP;
-import static org.easyb.plugin.remoting.EventType.GOT_RESULT;
-import static org.easyb.plugin.remoting.EventType.STOP_STEP;
-import static org.easyb.plugin.remoting.EventType.STOP_BEHAVIOR;
-import static junit.framework.Assert.assertEquals;
+import org.junit.Test;
+import org.junit.After;
 
 public class WhenSendingProxiedEvents {
     private MockReceiver mockReceiver;
@@ -30,6 +25,11 @@ public class WhenSendingProxiedEvents {
     public void setUp() throws IOException {
         mockReceiver = new MockReceiver();
         remoteListener = new ExecutionListenerProxy(mockReceiver.getPort());
+    }
+
+    @After
+    public void tearDown() {
+        remoteListener.completeTesting();
     }
 
     @Test
@@ -73,8 +73,9 @@ public class WhenSendingProxiedEvents {
     }
 
     @Test
-    @Ignore
-    public void shouldSendMultipleSubsequentEventes() {
+    public void shouldSendMultipleSubsequentEventes() throws IOException {
+        shouldSendStartBehaviorEvent();
+        shouldSendStopBehaviorEvent();
     }
 }
 
@@ -95,7 +96,9 @@ class MockReceiver implements Runnable {
     public Event getEvent() {
         for (int i = 0; i < 10; i++) {
             if (event != null) {
-                return event;
+                Event eventToReturn = event;
+                event = null;
+                return eventToReturn;
             }
             try {
                 Thread.sleep(100);
@@ -106,14 +109,17 @@ class MockReceiver implements Runnable {
         return null;
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     public void run() {
         Socket socket = null;
         try {
             socket = server.accept();
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
-            event = (Event) inputStream.readObject();
+            do {
+                event = (Event) inputStream.readObject();
+            } while (event.getType() != EventType.COMPLETE_TESTING);
         } catch (IOException e) {
-            e.printStackTrace();
+            // Expect IOException to be thrown when remote port closes
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } finally {

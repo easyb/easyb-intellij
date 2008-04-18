@@ -18,6 +18,10 @@ public class Event implements Serializable {
         type.fire(receiver, data);
     }
 
+    public EventType getType() {
+        return type;
+    }
+
     public String toString() {
         return "Event (type: " + type + ", data: " + data + ")";
     }

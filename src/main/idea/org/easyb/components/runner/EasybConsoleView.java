@@ -2,10 +2,9 @@ package org.easyb.components.runner;
 
 import javax.swing.*;
 
-import com.intellij.execution.ui.ExecutionConsole;
 import org.easyb.plugin.ui.swing.SwingEasybView;
 
-public class EasybConsoleView implements ExecutionConsole {
+public class EasybConsoleView extends ConsoleViewAdapter{
     private SwingEasybView view;
 
     public EasybConsoleView(SwingEasybView view) {
@@ -14,12 +13,5 @@ public class EasybConsoleView implements ExecutionConsole {
 
     public JComponent getComponent() {
         return view;
-    }
-
-    public JComponent getPreferredFocusableComponent() {
-        return null;
-    }
-
-    public void dispose() {
     }
 }

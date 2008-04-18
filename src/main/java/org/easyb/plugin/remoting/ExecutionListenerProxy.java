@@ -10,18 +10,16 @@ import org.disco.easyb.domain.Behavior;
 import org.disco.easyb.listener.ExecutionListener;
 import org.disco.easyb.result.Result;
 import static org.easyb.plugin.remoting.EventType.*;
-import static org.easyb.plugin.remoting.RemoteUtils.safeClose;
 import static org.easyb.plugin.remoting.RemoteUtils.safeWriteObject;
 
 /**
  * Serialize execution events and send them over a socket to a listener on the other end
  */
 public class ExecutionListenerProxy implements ExecutionListener {
-    private Socket socket;
     private ObjectOutputStream outputStream;
 
     public ExecutionListenerProxy(int port) throws IOException {
-        socket = new Socket(InetAddress.getLocalHost(), port);
+        Socket socket = new Socket(InetAddress.getLocalHost(), port);
         outputStream = new ObjectOutputStream(socket.getOutputStream());
     }
 
@@ -50,6 +48,7 @@ public class ExecutionListenerProxy implements ExecutionListener {
     }
 
     public void completeTesting() {
-        safeClose(socket);
+        safeWriteObject(new Event(COMPLETE_TESTING, null), outputStream);
+//        safeClose(socket);
     }
 }
