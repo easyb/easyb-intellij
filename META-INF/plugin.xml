@@ -1,19 +1,21 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-    <id>org.easyb.easyb</id>
-    <name>Easyb Run Configuration</name>
-    <description>Enables the running of easyb specifications</description>
-    <version>0.8.1</version>
-    <vendor>org.easyb</vendor>
-    <idea-version since-build="7757"/>
+  <id>org.easyb.easyb</id>
+  <name>Easyb Run Configuration</name>
+  <description>Enables the running of easyb specifications</description>
+  <version>0.8.2</version>
+  <vendor>org.easyb</vendor>
+  <idea-version since-build="7757"/>
 
-    <application-components>
-        <component>
-            <implementation-class>org.easyb.components.runner.EasybSpecRunConfigurationType</implementation-class>
-        </component>
-        <component>
-            <implementation-class>org.easyb.components.language.EasybFileTypeLoader</implementation-class>
-        </component>
-    </application-components>
+  <depends>org.intellij.groovy</depends>
 
-  </idea-plugin>
+  <application-components>
+    <component>
+      <implementation-class>org.easyb.components.runner.EasybSpecRunConfigurationType</implementation-class>
+    </component>
+    <component>
+      <implementation-class>org.easyb.components.language.EasybFileTypeLoader</implementation-class>
+    </component>
+  </application-components>
+
+</idea-plugin>
