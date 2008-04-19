@@ -13,6 +13,14 @@
   <name>easyb IntelliJ plugin</name>
   <description>A plugin that enables easyb spec execution in IntelliJ</description>
 
+  <repositories>
+    <repository>
+      <id>mevenide</id>
+      <name>Mevenide Maven Repository</name>
+      <url>http://mevenide.codehaus.org/m2-repository</url>
+    </repository>
+  </repositories>
+
   <pluginRepositories>
     <pluginRepository>
       <id>atlassian-m2-repository</id>
@@ -68,6 +76,36 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>annotations</artifactId>
+      <version>7.0.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>extensions</artifactId>
+      <version>7.0.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>openapi</artifactId>
+      <version>7.0.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>jetgroovy</artifactId>
+      <version>1.5.15683</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all-minimal</artifactId>
       <version>1.5.4</version>
@@ -77,6 +115,7 @@
       <artifactId>easyb</artifactId>
       <version>0.8.1</version>
     </dependency>
+
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>

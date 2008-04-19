@@ -1,4 +1,4 @@
-package org.easyb.components.runner;
+package org.easyb.idea.runner;
 
 import javax.swing.*;
 

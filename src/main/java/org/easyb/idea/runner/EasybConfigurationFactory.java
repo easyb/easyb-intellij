@@ -1,4 +1,4 @@
-package org.easyb.components.runner;
+package org.easyb.idea.runner;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;

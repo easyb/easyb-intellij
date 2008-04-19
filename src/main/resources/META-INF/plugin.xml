@@ -11,10 +11,10 @@
 
   <application-components>
     <component>
-      <implementation-class>org.easyb.components.runner.EasybRunConfigurationType</implementation-class>
+      <implementation-class>org.easyb.idea.runner.EasybRunConfigurationType</implementation-class>
     </component>
     <component>
-      <implementation-class>org.easyb.components.language.EasybFileTypeLoader</implementation-class>
+      <implementation-class>org.easyb.idea.language.EasybFileTypeLoader</implementation-class>
     </component>
   </application-components>
 

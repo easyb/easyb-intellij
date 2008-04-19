@@ -1,4 +1,4 @@
-package org.easyb.components.runner;
+package org.easyb.idea.runner;
 
 import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;

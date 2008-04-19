@@ -1,4 +1,4 @@
-package org.easyb.components.runner;
+package org.easyb.idea.runner;
 
 import com.intellij.execution.LocatableConfigurationType;
 import com.intellij.execution.Location;
@@ -22,11 +22,11 @@ import javax.swing.*;
 /**
  * Adds an easyb run configuration to IntelliJ
  */
-public class EasybSpecRunConfigurationType implements LocatableConfigurationType {
-    private EasybSpecConfigurationFactory factory;
+public class EasybRunConfigurationType implements LocatableConfigurationType {
+    private EasybConfigurationFactory factory;
 
-    public EasybSpecRunConfigurationType() {
-        factory = new EasybSpecConfigurationFactory(this);
+    public EasybRunConfigurationType() {
+        factory = new EasybConfigurationFactory(this);
     }
 
     public String getDisplayName() {
@@ -48,7 +48,7 @@ public class EasybSpecRunConfigurationType implements LocatableConfigurationType
     @NonNls
     @NotNull
     public String getComponentName() {
-        return "EasybSpecRunConfigurationType";
+        return "EasybRunConfigurationType";
     }
 
     public void initComponent() {
@@ -68,7 +68,7 @@ public class EasybSpecRunConfigurationType implements LocatableConfigurationType
         final Project project = easybSpecFile.getProject();
         RunnerAndConfigurationSettings settings = RunManager.getInstance(project).
                 createRunConfiguration(easybSpecFile.getName(), factory);
-        final EasybSpecRunConfiguration configuration = (EasybSpecRunConfiguration) settings.getConfiguration();
+        final EasybRunConfiguration configuration = (EasybRunConfiguration) settings.getConfiguration();
         final PsiDirectory dir = easybSpecFile.getContainingDirectory();
         assert dir != null;
         final VirtualFile vFile = easybSpecFile.getVirtualFile();
@@ -78,9 +78,10 @@ public class EasybSpecRunConfigurationType implements LocatableConfigurationType
         return settings;
     }
 
+    @SuppressWarnings("SimplifiableIfStatement")
     public boolean isConfigurationByElement(RunConfiguration configuration, Project project, PsiElement element) {
         final VirtualFile vFile = element.getContainingFile().getVirtualFile();
         if (vFile == null) return false;
-        return Comparing.equal(((EasybSpecRunConfiguration) configuration).getSpecificationPath(), vFile.getPath());
+        return Comparing.equal(((EasybRunConfiguration) configuration).getSpecificationPath(), vFile.getPath());
     }
 }

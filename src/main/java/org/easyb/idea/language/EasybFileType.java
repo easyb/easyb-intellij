@@ -1,4 +1,4 @@
-package org.easyb.components.language;
+package org.easyb.idea.language;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.util.IconLoader;
