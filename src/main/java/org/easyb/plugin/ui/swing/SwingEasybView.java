@@ -21,6 +21,7 @@ public class SwingEasybView extends JPanel implements EasybView {
         tree = new JTree(root);
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);
+        tree.setShowsRootHandles(true);
 
         add(new JScrollPane(tree), BorderLayout.CENTER);
     }

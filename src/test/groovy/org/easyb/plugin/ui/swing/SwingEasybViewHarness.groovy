@@ -8,7 +8,6 @@ import org.easyb.plugin.Outcome
 import org.easyb.plugin.StepResult
 import org.easyb.plugin.ui.swing.EasybTreeNode
 import org.easyb.plugin.ui.swing.SwingEasybView
-import org.easyb.plugin.Outcome
 
 class SwingEasybViewHarness {
     public static void main(String[] args) {
