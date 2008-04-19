@@ -9,7 +9,6 @@ import org.disco.easyb.util.BehaviorStepType;
 import static org.disco.easyb.util.BehaviorStepType.*;
 import static org.easyb.plugin.Outcome.FAILURE;
 import static org.easyb.plugin.Outcome.SUCCESS;
-import static org.easyb.plugin.Outcome.INFORMATIONAL;
 import org.easyb.plugin.ui.EasybPresenter;
 import org.easyb.plugin.ui.EasybView;
 import org.easyb.plugin.ui.swing.EasybTreeNode;
@@ -29,8 +28,8 @@ public class WhenAStoryIsRun {
     @Test
     public void shouldAddNodesToTree() {
         EasybTreeNode scenarioNode = nodeFor(SCENARIO, "Amount exceeds available funds", FAILURE);
-        scenarioNode.add(nodeFor(GIVEN, "An account balance of $100", INFORMATIONAL));
-        scenarioNode.add(nodeFor(WHEN, "A transfer of $150 is requested", INFORMATIONAL));
+        scenarioNode.add(nodeFor(GIVEN, "An account balance of $100", SUCCESS));
+        scenarioNode.add(nodeFor(WHEN, "A transfer of $150 is requested", SUCCESS));
         scenarioNode.add(nodeFor(THEN, "The request should be rejected", SUCCESS));
         scenarioNode.add(nodeFor(THEN, "No funds should be transferred", FAILURE));
 
@@ -64,6 +63,9 @@ public class WhenAStoryIsRun {
 
         public void addBehaviorResult(EasybTreeNode resultNode) {
             this.resultNode = resultNode;
+        }
+
+        public void refresh() {
         }
 
         public EasybTreeNode getResultNode() {

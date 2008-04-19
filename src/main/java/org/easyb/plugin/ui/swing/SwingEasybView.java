@@ -6,7 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
 import static org.disco.easyb.util.BehaviorStepType.GENESIS;
-import static org.easyb.plugin.Outcome.INFORMATIONAL;
+import static org.easyb.plugin.Outcome.RUNNING;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.EasybView;
 
@@ -17,17 +17,25 @@ public class SwingEasybView extends JPanel implements EasybView {
     public SwingEasybView() {
         setLayout(new BorderLayout());
 
-        root = new EasybTreeNode(new StepResult("Root", GENESIS, INFORMATIONAL));
+        root = new EasybTreeNode(new StepResult("Root", GENESIS, RUNNING));
         tree = new JTree(root);
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);
-        tree.setShowsRootHandles(true);
 
         add(new JScrollPane(tree), BorderLayout.CENTER);
     }
 
     public void addBehaviorResult(EasybTreeNode resultNode) {
-        ((DefaultTreeModel) tree.getModel()).insertNodeInto(resultNode, root, root.getChildCount());
+        getModel().insertNodeInto(resultNode, root, root.getChildCount());
+        refresh();
+    }
+
+    public void refresh() {
+        getModel().nodeStructureChanged(root);
         TreeUtil.expandAll(tree, true);
+    }
+
+    private DefaultTreeModel getModel() {
+        return ((DefaultTreeModel) tree.getModel());
     }
 }

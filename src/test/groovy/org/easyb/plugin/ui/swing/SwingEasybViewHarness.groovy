@@ -8,16 +8,25 @@ import org.easyb.plugin.Outcome
 import org.easyb.plugin.StepResult
 import org.easyb.plugin.ui.swing.EasybTreeNode
 import org.easyb.plugin.ui.swing.SwingEasybView
+import javax.swing.tree.DefaultMutableTreeNode
 
 class SwingEasybViewHarness {
-    public static void main(String[] args) {
-        SwingEasybView view = new SwingEasybView()
+    SwingEasybView view
+    DefaultMutableTreeNode storyNode;
+
+    public SwingEasybViewHarness() {
+        storyNode = nodeFor(STORY, "transferring funds", Outcome.RUNNING)
+    }
+
+    public void run() {
+        view = new SwingEasybView()
         JFrame frame = new JFrame();
         frame.add(view);
         frame.show();
         frame.setSize(300, 200);
 
-        view.addBehaviorResult(buildStory())
+        view.addBehaviorResult(storyNode)
+        playStory()
 
         Console console = new Console()
         console.setVariable('frame', frame)
@@ -25,21 +34,27 @@ class SwingEasybViewHarness {
         console.run()
     }
 
-    private static EasybTreeNode buildStory() {
-        EasybTreeNode scenarioNode = nodeFor(SCENARIO, 'amount exceeds available funds')
-        scenarioNode.add(nodeFor(GIVEN, 'an account balance of $100'))
-        scenarioNode.add(nodeFor(WHEN, 'a transfer of $150 is requested'))
-        scenarioNode.add(nodeFor(THEN, 'the request should be rejected', Outcome.FAILURE))
-        scenarioNode.add(nodeFor(THEN, 'and not funds should be transfered', Outcome.PENDING))
-
-        EasybTreeNode storyNode = nodeFor(STORY, "transferring funds")
-        storyNode.add(scenarioNode)
-
-        return storyNode
+    public static void main(String[] args) {
+        new SwingEasybViewHarness().run();
     }
 
-    private static EasybTreeNode nodeFor(BehaviorStepType type, String phrase) {
-        return new EasybTreeNode(new StepResult(phrase, type, Outcome.SUCCESS));
+    private void playStory() {
+        EasybTreeNode scenarioNode = nodeFor(SCENARIO, 'amount exceeds available funds', Outcome.RUNNING)
+        storyNode.add(scenarioNode)
+        view.refresh()
+
+        Thread.sleep(1000)
+        scenarioNode.add(nodeFor(GIVEN, 'an account balance of $100', Outcome.SUCCESS))
+        view.refresh()
+        Thread.sleep(1000)
+        scenarioNode.add(nodeFor(WHEN, 'a transfer of $150 is requested', Outcome.SUCCESS))
+        view.refresh()
+        Thread.sleep(1000)
+        scenarioNode.add(nodeFor(THEN, 'the request should be rejected', Outcome.FAILURE))
+        view.refresh()
+        Thread.sleep(1000)
+        scenarioNode.add(nodeFor(THEN, 'and not funds should be transfered', Outcome.PENDING))
+        view.refresh()
     }
 
     private static EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome result) {

@@ -3,7 +3,7 @@ package org.easyb.plugin;
 import org.disco.easyb.result.Result;
 
 public enum Outcome {
-    RUNNING, SUCCESS, FAILURE, PENDING, INFORMATIONAL;
+    RUNNING, SUCCESS, FAILURE, PENDING;
 
     public static Outcome outcomeForResult(Result result) {
         if (result.succeeded()) {

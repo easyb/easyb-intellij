@@ -40,8 +40,12 @@ public class EasybNodeRenderer extends DefaultTreeCellRenderer {
                 return new ImageIcon(EasybNodeRenderer.class.getResource("/failure.png"));
             case PENDING:
                 return new ImageIcon(EasybNodeRenderer.class.getResource("/pending.png"));
-            default:
+            case SUCCESS:
                 return new ImageIcon(EasybNodeRenderer.class.getResource("/success.png"));
+            case RUNNING:
+                return new ImageIcon(EasybNodeRenderer.class.getResource("/running.png"));
+            default:
+                throw new RuntimeException("Unrecognized outcome type: " + node.getResult().getOutcome());
         }
     }
 }

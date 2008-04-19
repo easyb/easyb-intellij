@@ -30,6 +30,7 @@ public class EasybPresenter implements ExecutionListener {
             view.addBehaviorResult(node);
         } else {
             nodeStack.peek().add(node);
+            view.refresh();
         }
         nodeStack.push(node);
     }
@@ -47,6 +48,7 @@ public class EasybPresenter implements ExecutionListener {
         if (result.failed()) {
             descendantFailed = true;
         }
+        view.refresh();
     }
 
     public void stopStep() {
@@ -55,10 +57,11 @@ public class EasybPresenter implements ExecutionListener {
             if (descendantFailed) {
                 stepResult.setOutcome(FAILURE);
             } else {
-                stepResult.setOutcome(INFORMATIONAL);
+                stepResult.setOutcome(SUCCESS);
             }
         }
         nodeStack.pop();
+        view.refresh();
     }
 
     public void stopBehavior(Behavior behavior) {
