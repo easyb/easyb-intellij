@@ -5,9 +5,9 @@ import org.disco.easyb.util.BehaviorStepType;
 public class StepResult {
     private String stepName;
     private BehaviorStepType stepType;
-    private RunResult outcome;
+    private Outcome outcome;
 
-    public StepResult(String stepName, BehaviorStepType stepType, RunResult outcome) {
+    public StepResult(String stepName, BehaviorStepType stepType, Outcome outcome) {
         this.stepName = stepName;
         this.stepType = stepType;
         this.outcome = outcome;
@@ -21,8 +21,12 @@ public class StepResult {
         return stepType;
     }
 
-    public RunResult getOutcome() {
+    public Outcome getOutcome() {
         return outcome;
+    }
+
+    public void setOutcome(Outcome outcome) {
+        this.outcome = outcome;
     }
 
     public String toString() {

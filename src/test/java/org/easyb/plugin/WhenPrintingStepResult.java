@@ -8,7 +8,7 @@ import static org.junit.matchers.JUnitMatchers.containsString;
 public class WhenPrintingStepResult {
     @Test
     public void shouldIncludeStepNameAndOutcomeInOutput() {
-        StepResult result = new StepResult("foo", SPECIFICATION, RunResult.SUCCESS);
+        StepResult result = new StepResult("foo", SPECIFICATION, Outcome.SUCCESS);
         assertThat(result.toString(), containsString("foo"));
         assertThat(result.toString(), containsString("SUCCESS"));
     }

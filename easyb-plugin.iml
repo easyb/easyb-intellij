@@ -27,6 +27,28 @@
           <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.8.1/easyb-0.8.1.jar!/" />
         </CLASSES>
         <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../easyb/src/java" />
+          <root url="file://$MODULE_DIR$/../../easyb/target/javadoc-sources" />
+          <root url="file://$MODULE_DIR$/../../easyb/behavior/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../../Library/Application Support/IntelliJIDEA70/Groovy/lib/Groovy.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/codehaus/groovy/groovy-all/1.5.4/groovy-all-1.5.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>

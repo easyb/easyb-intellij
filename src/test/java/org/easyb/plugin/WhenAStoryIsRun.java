@@ -2,8 +2,14 @@ package org.easyb.plugin;
 
 import static junit.framework.Assert.assertEquals;
 import org.disco.easyb.BehaviorStep;
+import org.disco.easyb.result.Result;
+import static org.disco.easyb.result.Result.FAILED;
+import static org.disco.easyb.result.Result.SUCCEEDED;
 import org.disco.easyb.util.BehaviorStepType;
 import static org.disco.easyb.util.BehaviorStepType.*;
+import static org.easyb.plugin.Outcome.FAILURE;
+import static org.easyb.plugin.Outcome.SUCCESS;
+import static org.easyb.plugin.Outcome.INFORMATIONAL;
 import org.easyb.plugin.ui.EasybPresenter;
 import org.easyb.plugin.ui.EasybView;
 import org.easyb.plugin.ui.swing.EasybTreeNode;
@@ -22,12 +28,13 @@ public class WhenAStoryIsRun {
 
     @Test
     public void shouldAddNodesToTree() {
-        EasybTreeNode scenarioNode = nodeFor(SCENARIO, "Amount exceeds available funds");
-        scenarioNode.add(nodeFor(GIVEN, "An account balance of $100"));
-        scenarioNode.add(nodeFor(WHEN, "A transfer of $150 is requested"));
-        scenarioNode.add(nodeFor(THEN, "The request should be rejected"));
+        EasybTreeNode scenarioNode = nodeFor(SCENARIO, "Amount exceeds available funds", FAILURE);
+        scenarioNode.add(nodeFor(GIVEN, "An account balance of $100", INFORMATIONAL));
+        scenarioNode.add(nodeFor(WHEN, "A transfer of $150 is requested", INFORMATIONAL));
+        scenarioNode.add(nodeFor(THEN, "The request should be rejected", SUCCESS));
+        scenarioNode.add(nodeFor(THEN, "No funds should be transferred", FAILURE));
 
-        EasybTreeNode storyNode = nodeFor(STORY, "Transferring funds");
+        EasybTreeNode storyNode = nodeFor(STORY, "Transferring funds", FAILURE);
         storyNode.add(scenarioNode);
 
         presenter.startStep(new BehaviorStep(STORY, "Transferring funds"));
@@ -37,6 +44,10 @@ public class WhenAStoryIsRun {
         presenter.startStep(new BehaviorStep(WHEN, "A transfer of $150 is requested"));
         presenter.stopStep();
         presenter.startStep(new BehaviorStep(THEN, "The request should be rejected"));
+        presenter.gotResult(new Result(SUCCEEDED));
+        presenter.stopStep();
+        presenter.startStep(new BehaviorStep(THEN, "No funds should be transferred"));
+        presenter.gotResult(new Result(FAILED));
         presenter.stopStep();
         presenter.stopStep();
         presenter.stopStep();
@@ -44,8 +55,8 @@ public class WhenAStoryIsRun {
         assertEquals(storyNode, view.getResultNode());
     }
 
-    private EasybTreeNode nodeFor(BehaviorStepType type, String phrase) {
-        return new EasybTreeNode(new StepResult(phrase, type, RunResult.SUCCESS));
+    private EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome outcome) {
+        return new EasybTreeNode(new StepResult(phrase, type, outcome));
     }
 
     private static class StubView implements EasybView {

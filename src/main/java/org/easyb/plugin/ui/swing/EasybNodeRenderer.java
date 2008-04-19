@@ -17,7 +17,7 @@ public class EasybNodeRenderer extends DefaultTreeCellRenderer {
         String stepName = capitalizeName(stepResult.getStepType().toString());
 
         label.setText(stepName + " " + stepResult.getStepName());
-        label.setIcon(loadIcon());
+        label.setIcon(loadIcon(node));
 
         return label;
     }
@@ -34,7 +34,14 @@ public class EasybNodeRenderer extends DefaultTreeCellRenderer {
         return builder.toString();
     }
 
-    private static Icon loadIcon() {
-        return new ImageIcon(EasybNodeRenderer.class.getResource("/success.png"));
+    private static Icon loadIcon(EasybTreeNode node) {
+        switch (node.getResult().getOutcome()) {
+            case FAILURE:
+                return new ImageIcon(EasybNodeRenderer.class.getResource("/failure.png"));
+            case PENDING:
+                return new ImageIcon(EasybNodeRenderer.class.getResource("/pending.png"));
+            default:
+                return new ImageIcon(EasybNodeRenderer.class.getResource("/success.png"));
+        }
     }
 }

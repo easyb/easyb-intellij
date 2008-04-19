@@ -4,10 +4,11 @@ import groovy.ui.Console
 import javax.swing.JFrame
 import static org.disco.easyb.util.BehaviorStepType.*
 import org.disco.easyb.util.BehaviorStepType
-import org.easyb.plugin.RunResult
+import org.easyb.plugin.Outcome
 import org.easyb.plugin.StepResult
 import org.easyb.plugin.ui.swing.EasybTreeNode
 import org.easyb.plugin.ui.swing.SwingEasybView
+import org.easyb.plugin.Outcome
 
 class SwingEasybViewHarness {
     public static void main(String[] args) {
@@ -29,7 +30,8 @@ class SwingEasybViewHarness {
         EasybTreeNode scenarioNode = nodeFor(SCENARIO, 'amount exceeds available funds')
         scenarioNode.add(nodeFor(GIVEN, 'an account balance of $100'))
         scenarioNode.add(nodeFor(WHEN, 'a transfer of $150 is requested'))
-        scenarioNode.add(nodeFor(THEN, 'the request should be rejected'))
+        scenarioNode.add(nodeFor(THEN, 'the request should be rejected', Outcome.FAILURE))
+        scenarioNode.add(nodeFor(THEN, 'and not funds should be transfered', Outcome.PENDING))
 
         EasybTreeNode storyNode = nodeFor(STORY, "transferring funds")
         storyNode.add(scenarioNode)
@@ -38,6 +40,10 @@ class SwingEasybViewHarness {
     }
 
     private static EasybTreeNode nodeFor(BehaviorStepType type, String phrase) {
-        return new EasybTreeNode(new StepResult(phrase, type, RunResult.SUCCESS));
+        return new EasybTreeNode(new StepResult(phrase, type, Outcome.SUCCESS));
+    }
+
+    private static EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome result) {
+        return new EasybTreeNode(new StepResult(phrase, type, result));
     }
 }

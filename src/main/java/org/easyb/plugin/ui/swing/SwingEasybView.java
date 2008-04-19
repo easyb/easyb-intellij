@@ -6,7 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
 import static org.disco.easyb.util.BehaviorStepType.GENESIS;
-import static org.easyb.plugin.RunResult.INFORMATIONAL;
+import static org.easyb.plugin.Outcome.INFORMATIONAL;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.EasybView;
 

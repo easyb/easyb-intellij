@@ -2,9 +2,18 @@ package org.easyb.plugin.ui.swing;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import org.easyb.plugin.StepResult;
+
 public class EasybTreeNode extends DefaultMutableTreeNode {
-    public EasybTreeNode(Object userObject) {
-        super(userObject);
+    private StepResult result;
+
+    public EasybTreeNode(StepResult result) {
+        super(result);
+        this.result = result;
+    }
+
+    public StepResult getResult() {
+        return result;
     }
 
     public boolean equals(Object other) {
