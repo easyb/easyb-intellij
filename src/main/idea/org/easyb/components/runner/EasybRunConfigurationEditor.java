@@ -1,42 +1,37 @@
 package org.easyb.components.runner;
 
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.options.ConfigurationException;
+import java.awt.*;
+import javax.swing.*;
+
 import com.intellij.openapi.options.SettingsEditor;
+import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.module.Module;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.awt.*;
+public class EasybRunConfigurationEditor extends SettingsEditor<EasybRunConfiguration> {
+    private EasybRunConfigurationDialog dialog = new EasybRunConfigurationDialog();
 
-public class EasybRunConfigurationEditor extends SettingsEditor<EasybSpecRunConfiguration> {
-    private JPanel rootComponent;
-    private JComboBox moduleCombo;
-    private DefaultComboBoxModel moduleComboModel;
-    private JLabel moduleLabel;
-    private JTextField specificationPathField;
-    private JLabel specificationPathLabel;
+    protected void resetEditorFrom(EasybRunConfiguration configuration) {
+        dialog.specificationPathField.setText(configuration.getSpecificationPath());
 
-    protected void resetEditorFrom(EasybSpecRunConfiguration configuration) {
-        specificationPathField.setText(configuration.getSpecificationPath());
-
-        moduleComboModel.removeAllElements();
+        dialog.moduleComboModel.removeAllElements();
         for (Module module : configuration.getValidModules()) {
-            moduleComboModel.addElement(module);
+            dialog.moduleComboModel.addElement(module);
         }
-        moduleComboModel.setSelectedItem(configuration.getModule());
+        dialog.moduleComboModel.setSelectedItem(configuration.getModule());
     }
 
-    protected void applyEditorTo(EasybSpecRunConfiguration configuration) throws ConfigurationException {
-        configuration.setSpecificationPath(specificationPathField.getText());
-        configuration.setModule((Module) moduleCombo.getSelectedItem());
+    protected void applyEditorTo(EasybRunConfiguration configuration) throws ConfigurationException {
+        configuration.setSpecificationPath(dialog.specificationPathField.getText());
+        configuration.setModule((Module) dialog.moduleCombo.getSelectedItem());
     }
 
     @NotNull
     protected JComponent createEditor() {
-        moduleComboModel = new DefaultComboBoxModel();
-        moduleCombo.setModel(moduleComboModel);
+        dialog.moduleComboModel = new DefaultComboBoxModel();
+        dialog.moduleCombo.setModel(dialog.moduleComboModel);
 
-        moduleCombo.setRenderer(new DefaultListCellRenderer() {
+        dialog.moduleCombo.setRenderer(new DefaultListCellRenderer() {
             public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                 final Module module = (Module) value;
@@ -48,7 +43,7 @@ public class EasybRunConfigurationEditor extends SettingsEditor<EasybSpecRunConf
             }
         });
 
-        return rootComponent;
+        return dialog;
     }
 
     protected void disposeEditor() {
