@@ -1,8 +1,8 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
   <id>org.easyb.easyb</id>
-  <name>Easyb Run Configuration</name>
-  <description>Enables the running of easyb specifications</description>
+  <name>easyb</name>
+  <description>Easyb support for IntelliJ</description>
   <version>0.8.2</version>
   <vendor>org.easyb</vendor>
   <idea-version since-build="7757"/>
