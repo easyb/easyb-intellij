@@ -3,7 +3,7 @@
   <id>org.easyb.easyb</id>
   <name>easyb</name>
   <description>Easyb support for IntelliJ</description>
-  <version>0.8.2</version>
+  <version>0.8.2-alpha1</version>
   <vendor>org.easyb</vendor>
   <idea-version since-build="7757"/>
 

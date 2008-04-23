@@ -13,9 +13,10 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.PathUtil;
-import org.easyb.plugin.ui.swing.SwingEasybBuilder;
-import org.easyb.plugin.remoting.RemoteExecutionListener;
+import groovy.lang.GroovyObject;
 import org.disco.easyb.BehaviorRunner;
+import org.easyb.plugin.remoting.RemoteExecutionListener;
+import org.easyb.plugin.ui.swing.SwingEasybBuilder;
 
 public class EasybRunProfileState extends JavaCommandLineState {
     private Module module;
@@ -48,6 +49,7 @@ public class EasybRunProfileState extends JavaCommandLineState {
         }
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(getClass()));
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(BehaviorRunner.class));
+        javaParameters.getClassPath().add(PathUtil.getJarPathForClass(GroovyObject.class));
         javaParameters.setMainClass("org.easyb.plugin.remoting.RemoteRunner");
         javaParameters.getProgramParametersList().add(Integer.toString(listener.getPort()));
         javaParameters.getProgramParametersList().add(specificationPath);
