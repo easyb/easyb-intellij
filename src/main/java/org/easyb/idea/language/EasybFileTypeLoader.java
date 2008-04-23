@@ -15,6 +15,7 @@ public class EasybFileTypeLoader implements ApplicationComponent {
                 new Runnable() {
                     public void run() {
                         FileTypeManager.getInstance().registerFileType(EASYBSPEC, "story");
+                        FileTypeManager.getInstance().registerFileType(EASYBSPEC, "specification");
                     }
                 }
         );
