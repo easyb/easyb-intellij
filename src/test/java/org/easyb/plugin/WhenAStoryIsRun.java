@@ -65,6 +65,9 @@ public class WhenAStoryIsRun {
             this.resultNode = resultNode;
         }
 
+        public void writeOutput(String text) {
+        }
+
         public void refresh() {
         }
 

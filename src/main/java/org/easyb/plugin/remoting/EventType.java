@@ -33,7 +33,7 @@ public enum EventType {
     },
     STOP_BEHAVIOR {
         public void fire(ExecutionListener receiver, Object data) {
-            receiver.stopBehavior((Behavior) data);
+            receiver.stopBehavior(null, (Behavior) data);
         }
     },
     COMPLETE_TESTING {

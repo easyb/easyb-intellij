@@ -12,6 +12,7 @@ import org.easyb.plugin.ui.EasybView;
 
 public class SwingEasybView extends JPanel implements EasybView {
     private DefaultMutableTreeNode root;
+    private JTextArea outputTextArea;
     JTree tree;
 
     public SwingEasybView() {
@@ -22,12 +23,21 @@ public class SwingEasybView extends JPanel implements EasybView {
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);
 
-        add(new JScrollPane(tree), BorderLayout.CENTER);
+        JTabbedPane tabbedPane = new JTabbedPane();
+        outputTextArea = new JTextArea("Test");
+        tabbedPane.addTab("Output", new JScrollPane(outputTextArea));
+
+        add(new JScrollPane(tree), BorderLayout.WEST);
+        add(tabbedPane, BorderLayout.CENTER);
     }
 
     public void addBehaviorResult(EasybTreeNode resultNode) {
         getModel().insertNodeInto(resultNode, root, root.getChildCount());
         refresh();
+    }
+
+    public void writeOutput(String text) {
+        outputTextArea.append(text);
     }
 
     public void refresh() {

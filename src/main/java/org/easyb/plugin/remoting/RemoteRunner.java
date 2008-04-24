@@ -1,15 +1,18 @@
 package org.easyb.plugin.remoting;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import static java.util.Arrays.asList;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Collections;
 
 import org.disco.easyb.BehaviorRunner;
+import org.disco.easyb.ConsoleReporter;
+import org.disco.easyb.report.ReportWriter;
 
 public class RemoteRunner extends BehaviorRunner {
     public RemoteRunner(int port) throws IOException {
-        super(new ExecutionListenerProxy(port));
+        super(Collections.<ReportWriter>emptyList(), new ConsoleReporter(), new ExecutionListenerProxy(port));
     }
 
     public static void main(String[] args) {

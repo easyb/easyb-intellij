@@ -103,7 +103,7 @@ public class WhenReceivingProxiedEvents {
         Story story = new Story("Transferring funds", null);
 
         ExecutionListener receiver = createMock(ExecutionListener.class);
-        receiver.stopBehavior(story);
+        receiver.stopBehavior(null, story);
         expectLastCall();
         replay(receiver);
 

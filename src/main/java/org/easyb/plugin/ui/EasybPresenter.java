@@ -64,7 +64,7 @@ public class EasybPresenter implements ExecutionListener {
         view.refresh();
     }
 
-    public void stopBehavior(Behavior behavior) {
+    public void stopBehavior(BehaviorStep behaviorStep, Behavior behavior) {
     }
 
     public void completeTesting() {

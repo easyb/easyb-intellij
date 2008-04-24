@@ -68,7 +68,7 @@ public class WhenSendingProxiedEvents {
     @Test
     public void shouldSendStopBehaviorEvent() throws IOException {
         Specification spec = new Specification("should do something", null);
-        remoteListener.stopBehavior(spec);
+        remoteListener.stopBehavior(null, spec);
         assertEquals(new Event(STOP_BEHAVIOR, spec), mockReceiver.getEvent());
     }
 

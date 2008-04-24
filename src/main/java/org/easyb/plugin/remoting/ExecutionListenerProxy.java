@@ -43,7 +43,7 @@ public class ExecutionListenerProxy implements ExecutionListener {
         safeWriteObject(new Event(STOP_STEP, null), outputStream);
     }
 
-    public void stopBehavior(Behavior behavior) {
+    public void stopBehavior(BehaviorStep behaviorStep, Behavior behavior) {
         safeWriteObject(new Event(STOP_BEHAVIOR, behavior), outputStream);
     }
 
