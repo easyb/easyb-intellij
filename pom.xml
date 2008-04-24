@@ -11,7 +11,7 @@
 
   <artifactId>intellij-plugin</artifactId>
   <name>easyb IntelliJ plugin</name>
-  <version>0.8.2-alpha1</version>
+  <version>0.8.2-alpha-2-SNAPSHOT</version>
   <description>A plugin that enables easyb spec execution in IntelliJ</description>
 
   <repositories>
