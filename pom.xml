@@ -10,7 +10,7 @@
 
   <artifactId>intellij-plugin</artifactId>
   <name>easyb IntelliJ plugin</name>
-  <version>0.8.2-alpha-2</version>
+  <version>0.8.2-alpha-3-SNAPSHOT</version>
   <description>A plugin that enables easyb spec execution in IntelliJ</description>
 
   <repositories>
@@ -147,10 +147,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-
-  <scm>
-    <connection>scm:svn:http://easyb.googlecode.com/svn/tags/intellij-plugin-0.8.2-alpha-2</connection>
-    <developerConnection>scm:svn:https://easyb.googlecode.com/svn/tags/intellij-plugin-0.8.2-alpha-2</developerConnection>
-  </scm>
 </project>
