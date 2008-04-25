@@ -7,10 +7,11 @@ import org.disco.easyb.result.Result;
 import static org.disco.easyb.util.BehaviorStepType.STORY;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
+import org.easyb.plugin.ConsoleOutputListener;
 import org.easyb.plugin.ui.swing.EasybTreeNode;
 import org.easyb.plugin.ui.swing.EasybTreeNodeStack;
 
-public class EasybPresenter implements ExecutionListener {
+public class EasybPresenter implements ExecutionListener, ConsoleOutputListener {
     private EasybView view;
     private EasybTreeNodeStack nodeStack;
     private boolean descendantFailed = false;
@@ -68,5 +69,9 @@ public class EasybPresenter implements ExecutionListener {
     }
 
     public void completeTesting() {
+    }
+
+    public void textAvailable(String text) {
+        view.writeOutput(text);
     }
 }

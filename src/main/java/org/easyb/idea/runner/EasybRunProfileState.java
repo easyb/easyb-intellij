@@ -8,13 +8,10 @@ import com.intellij.execution.configurations.JavaCommandLineState;
 import com.intellij.execution.configurations.JavaParameters;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.util.Key;
 import com.intellij.util.PathUtil;
 import groovy.lang.GroovyObject;
 import org.disco.easyb.BehaviorRunner;
@@ -37,21 +34,7 @@ public class EasybRunProfileState extends JavaCommandLineState {
     public ExecutionResult execute() throws ExecutionException {
         EasybConsoleView console = new EasybConsoleView(builder.getView());
         ProcessHandler processHandler = startProcess();
-        processHandler.addProcessListener(new ProcessAdapter(){
-            public void onTextAvailable(ProcessEvent event, Key outputType) {
-                builder.getView().writeOutput(event.getText());
-            }
-
-            public void startNotified(ProcessEvent event) {
-                // Start remote listener
-                super.startNotified(event);
-            }
-
-            public void processTerminated(ProcessEvent event) {
-                // Stop remote listener
-                super.processTerminated(event);
-            }
-        });
+        processHandler.addProcessListener(new EasybProcessListener(builder.getPresenter()));
         return new DefaultExecutionResult(console, processHandler, createActions(console, processHandler));
     }
 

@@ -2,8 +2,8 @@
 <idea-plugin>
   <id>org.easyb.easyb</id>
   <name>easyb</name>
-  <description>Easyb support for IntelliJ</description>
-  <version>0.8.2-alpha1</version>
+  <description>easyb behavior driven development framework</description>
+  <version>0.9-alpha-3</version>
   <vendor>org.easyb</vendor>
   <idea-version since-build="7757"/>
 
