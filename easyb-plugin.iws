@@ -19,18 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ConsoleOutputListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/ui/WhenPresentingConsoleOutput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybRunProfileState.java" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybRunProfileState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/idea" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyb-plugin.iws" afterPath="$PROJECT_DIR$/easyb-plugin.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/EasybPresenter.java" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/EasybPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/idea/FakeProcessEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/idea/WhenListeningToProcessEvents.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybProcessListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/idea/FakeProcessHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybRunProfileState.java" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybRunProfileState.java" />
     </list>
     <ignored path="easyb-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -159,7 +149,7 @@
       <file leaf-file-name="EasybRunProfileState.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybRunProfileState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="55" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.43889844">
+            <state line="50" column="8" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.7624785">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -952,7 +942,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21936275" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -968,7 +958,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18087064" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2918979" order="2" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2918979" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12262416" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29966703" order="4" />
@@ -1171,7 +1161,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/idea/runner/EasybRunProfileState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="55" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.43889844">
+        <state line="50" column="8" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.7624785">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

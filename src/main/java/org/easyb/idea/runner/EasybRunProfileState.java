@@ -45,16 +45,20 @@ public class EasybRunProfileState extends JavaCommandLineState {
 
         JavaParameters javaParameters = new JavaParameters();
         javaParameters.setJdk(ModuleRootManager.getInstance(module).getJdk());
-        for (VirtualFile file : getProjectClasspath()) {
-            javaParameters.getClassPath().add(file);
-        }
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(getClass()));
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(BehaviorRunner.class));
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(GroovyObject.class));
+        addProjectClasspath(javaParameters);
         javaParameters.setMainClass("org.easyb.plugin.remoting.RemoteRunner");
         javaParameters.getProgramParametersList().add(Integer.toString(listener.getPort()));
         javaParameters.getProgramParametersList().add(specificationPath);
         return javaParameters;
+    }
+
+    private void addProjectClasspath(JavaParameters javaParameters) {
+        for (VirtualFile file : getProjectClasspath()) {
+            javaParameters.getClassPath().add(file);
+        }
     }
 
     @SuppressWarnings("deprecation")
