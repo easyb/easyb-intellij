@@ -26,8 +26,8 @@ public class EasybPresenter implements ExecutionListener, ConsoleOutputListener 
     }
 
     public void startStep(BehaviorStep behaviorStep) {
-        EasybTreeNode node = new EasybTreeNode(new StepResult(behaviorStep.name, behaviorStep.stepType, RUNNING));
-        if (behaviorStep.stepType == STORY) {
+        EasybTreeNode node = new EasybTreeNode(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
+        if (behaviorStep.getStepType() == STORY) {
             view.addBehaviorResult(node);
         } else {
             nodeStack.peek().add(node);
