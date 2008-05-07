@@ -15,9 +15,9 @@
 
   <repositories>
     <repository>
-      <id>mevenide</id>
-      <name>Mevenide Maven Repository</name>
-      <url>http://mevenide.codehaus.org/m2-repository</url>
+      <id>rodcoffin.com</id>
+      <name>Rod Coffin's Maven Repository</name>
+      <url>http://maven.rodcoffin.com/repo</url>
     </repository>
   </repositories>
 
