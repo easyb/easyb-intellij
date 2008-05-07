@@ -2,6 +2,7 @@ package org.easyb.plugin.ui.swing;
 
 import java.awt.*;
 import javax.swing.*;
+import static javax.swing.JSplitPane.HORIZONTAL_SPLIT;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -27,8 +28,9 @@ public class SwingEasybView extends JPanel implements EasybView {
         outputTextArea = new JTextArea("Test");
         tabbedPane.addTab("Output", new JScrollPane(outputTextArea));
 
-        add(new JScrollPane(tree), BorderLayout.WEST);
-        add(tabbedPane, BorderLayout.CENTER);
+        JSplitPane pane = new JSplitPane(HORIZONTAL_SPLIT, new JScrollPane(tree), tabbedPane);
+        pane.setDividerLocation(300);
+        add(pane);
     }
 
     public void addBehaviorResult(EasybTreeNode resultNode) {
