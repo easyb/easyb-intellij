@@ -3,6 +3,8 @@ package org.easyb.plugin.ui.swing;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.easyb.plugin.StepResult;
+import org.easyb.plugin.Outcome;
+import org.disco.easyb.util.BehaviorStepType;
 
 public class EasybTreeNode extends DefaultMutableTreeNode {
     private StepResult result;
@@ -55,5 +57,9 @@ public class EasybTreeNode extends DefaultMutableTreeNode {
         builder.append("]");
 
         return builder.toString();
+    }
+
+    public static EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome outcome) {
+        return new EasybTreeNode(new StepResult(phrase, type, outcome));
     }
 }

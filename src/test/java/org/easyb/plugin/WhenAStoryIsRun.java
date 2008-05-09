@@ -5,13 +5,12 @@ import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.result.Result;
 import static org.disco.easyb.result.Result.FAILED;
 import static org.disco.easyb.result.Result.SUCCEEDED;
-import org.disco.easyb.util.BehaviorStepType;
 import static org.disco.easyb.util.BehaviorStepType.*;
 import static org.easyb.plugin.Outcome.FAILURE;
 import static org.easyb.plugin.Outcome.SUCCESS;
 import org.easyb.plugin.ui.EasybPresenter;
-import org.easyb.plugin.ui.EasybView;
 import org.easyb.plugin.ui.swing.EasybTreeNode;
+import static org.easyb.plugin.ui.swing.EasybTreeNode.nodeFor;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,27 +51,5 @@ public class WhenAStoryIsRun {
         presenter.stopStep();
 
         assertEquals(storyNode, view.getResultNode());
-    }
-
-    private EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome outcome) {
-        return new EasybTreeNode(new StepResult(phrase, type, outcome));
-    }
-
-    private static class StubView implements EasybView {
-        private EasybTreeNode resultNode;
-
-        public void addBehaviorResult(EasybTreeNode resultNode) {
-            this.resultNode = resultNode;
-        }
-
-        public void writeOutput(String text) {
-        }
-
-        public void refresh() {
-        }
-
-        public EasybTreeNode getResultNode() {
-            return resultNode;
-        }
     }
 }

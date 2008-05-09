@@ -72,7 +72,7 @@
         </ADDITIONAL_INDENT_OPTIONS>
       </value>
     </option>
-    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+    <option name="USE_PER_PROJECT_SETTINGS" value="false" />
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
@@ -304,6 +304,29 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
+  </component>
+  <component name="ThePluginSettings">
+    <option name="bambooConfiguration">
+      <BambooProjectConfiguration>
+        <option name="tableConfiguration">
+          <ProjectToolWindowTableConfiguration />
+        </option>
+      </BambooProjectConfiguration>
+    </option>
+    <option name="crucibleConfiguration">
+      <CrucibleProjectConfiguration>
+        <option name="tableConfiguration">
+          <ProjectToolWindowTableConfiguration />
+        </option>
+      </CrucibleProjectConfiguration>
+    </option>
+    <option name="jiraConfiguration">
+      <JiraProjectConfiguration>
+        <option name="tableConfiguration">
+          <ProjectToolWindowTableConfiguration />
+        </option>
+      </JiraProjectConfiguration>
+    </option>
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />

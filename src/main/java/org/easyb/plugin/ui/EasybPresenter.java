@@ -4,10 +4,11 @@ import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Behavior;
 import org.disco.easyb.listener.ExecutionListener;
 import org.disco.easyb.result.Result;
+import static org.disco.easyb.util.BehaviorStepType.SPECIFICATION;
 import static org.disco.easyb.util.BehaviorStepType.STORY;
+import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
-import org.easyb.plugin.ConsoleOutputListener;
 import org.easyb.plugin.ui.swing.EasybTreeNode;
 import org.easyb.plugin.ui.swing.EasybTreeNodeStack;
 
@@ -27,7 +28,7 @@ public class EasybPresenter implements ExecutionListener, ConsoleOutputListener 
 
     public void startStep(BehaviorStep behaviorStep) {
         EasybTreeNode node = new EasybTreeNode(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
-        if (behaviorStep.getStepType() == STORY) {
+        if (behaviorStep.getStepType() == STORY || behaviorStep.getStepType() == SPECIFICATION) {
             view.addBehaviorResult(node);
         } else {
             nodeStack.peek().add(node);
