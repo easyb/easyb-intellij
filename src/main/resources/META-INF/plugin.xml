@@ -3,7 +3,7 @@
   <id>org.easyb.easyb</id>
   <name>easyb</name>
   <description>easyb behavior driven development framework</description>
-  <version>0.9-alpha-3</version>
+  <version>0.9-alpha-4-SNAPSHOT</version>
   <vendor>org.easyb</vendor>
   <idea-version since-build="7757"/>
 
