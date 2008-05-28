@@ -3,7 +3,6 @@ package org.easyb.plugin.ui.swing;
 import java.awt.*;
 import javax.swing.*;
 import static javax.swing.JSplitPane.HORIZONTAL_SPLIT;
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
 import static org.disco.easyb.util.BehaviorStepType.GENESIS;
@@ -12,7 +11,7 @@ import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.EasybView;
 
 public class SwingEasybView extends JPanel implements EasybView {
-    private DefaultMutableTreeNode root;
+    private EasybTreeNode root;
     private JTextArea outputTextArea;
     JTree tree;
 
@@ -33,8 +32,12 @@ public class SwingEasybView extends JPanel implements EasybView {
         add(pane);
     }
 
-    public void addBehaviorResult(EasybTreeNode resultNode) {
-        getModel().insertNodeInto(resultNode, root, root.getChildCount());
+    public void addBehaviorResult(EasybTreeNode result) {
+        addBehaviorResult(root, result);
+    }
+
+    public void addBehaviorResult(EasybTreeNode parent, EasybTreeNode result) {
+        getModel().insertNodeInto(result, parent, parent.getChildCount());
         refresh();
     }
 

@@ -31,8 +31,7 @@ public class EasybPresenter implements ExecutionListener, ConsoleOutputListener 
         if (behaviorStep.getStepType() == STORY || behaviorStep.getStepType() == SPECIFICATION) {
             view.addBehaviorResult(node);
         } else {
-            nodeStack.peek().add(node);
-            view.refresh();
+            view.addBehaviorResult(nodeStack.peek(), node);
         }
         nodeStack.push(node);
     }

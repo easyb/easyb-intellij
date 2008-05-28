@@ -10,6 +10,10 @@ public class StubView implements EasybView {
         this.resultNode = resultNode;
     }
 
+    public void addBehaviorResult(EasybTreeNode parent, EasybTreeNode result) {
+        parent.add(result);
+    }
+
     @SuppressWarnings("UnusedDeclaration")
     public void writeOutput(String text) {
     }

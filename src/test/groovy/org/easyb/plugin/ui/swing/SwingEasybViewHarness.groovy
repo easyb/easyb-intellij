@@ -45,19 +45,19 @@ class SwingEasybViewHarness {
 
         Thread.sleep(1000)
         scenarioNode.add(nodeFor(GIVEN, 'an account balance of $100', Outcome.SUCCESS))
-        view.writeOutput 'an account balance of $100'
+        view.writeOutput 'an account balance of $100\n'
         view.refresh()
         Thread.sleep(1000)
         scenarioNode.add(nodeFor(WHEN, 'a transfer of $150 is requested', Outcome.SUCCESS))
-        view.writeOutput 'a transfer of $150 is requested'
+        view.writeOutput 'a transfer of $150 is requested\n'
         view.refresh()
         Thread.sleep(1000)
         scenarioNode.add(nodeFor(THEN, 'the request should be rejected', Outcome.FAILURE))
-        view.writeOutput 'the request should be rejected'
+        view.writeOutput 'the request should be rejected\n'
         view.refresh()
         Thread.sleep(1000)
         scenarioNode.add(nodeFor(THEN, 'and not funds should be transfered', Outcome.PENDING))
-        view.writeOutput 'and not funds should be transfered'
+        view.writeOutput 'and not funds should be transfered\n'
         view.refresh()
     }
 
