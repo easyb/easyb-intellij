@@ -2,6 +2,7 @@ package org.easyb.simulator
 
 import org.disco.easyb.util.BehaviorStepType
 import org.disco.easyb.BehaviorStep
+import org.disco.easyb.result.Result
 
 class SimulationNodeBuilder extends BuilderSupport {
     protected void setParent(Object parent, Object child) {
@@ -21,6 +22,9 @@ class SimulationNodeBuilder extends BuilderSupport {
     }
 
     protected Object createNode(Object name, Map attributes, Object value) {
-        return new SimulationNode(step: new BehaviorStep(BehaviorStepType.STORY, value.toString()))
+        if ('fail'.equals(name.toString()))
+            return new SimulationNode(result: new Result(Result.FAILED))
+
+        return new SimulationNode(step: new BehaviorStep(BehaviorStepType.valueOf(name.toString().toUpperCase()), value.toString()))
     }
 }
