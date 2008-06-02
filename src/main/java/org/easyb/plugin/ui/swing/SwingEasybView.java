@@ -10,15 +10,15 @@ import static org.easyb.plugin.Outcome.RUNNING;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.EasybView;
 
-public class SwingEasybView extends JPanel implements EasybView {
-    private EasybTreeNode root;
+public class SwingEasybView extends JPanel implements EasybView<SwingResultNode> {
+    private SwingResultNode root;
     private JTextArea outputTextArea;
     JTree tree;
 
     public SwingEasybView() {
         setLayout(new BorderLayout());
 
-        root = new EasybTreeNode(new StepResult("Root", GENESIS, RUNNING));
+        root = new SwingResultNode(new StepResult("Root", GENESIS, RUNNING));
         tree = new JTree(root);
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);
@@ -32,11 +32,11 @@ public class SwingEasybView extends JPanel implements EasybView {
         add(pane);
     }
 
-    public void addBehaviorResult(EasybTreeNode result) {
+    public void addBehaviorResult(SwingResultNode result) {
         addBehaviorResult(root, result);
     }
 
-    public void addBehaviorResult(EasybTreeNode parent, EasybTreeNode result) {
+    public void addBehaviorResult(SwingResultNode parent, SwingResultNode result) {
         getModel().insertNodeInto(result, parent, parent.getChildCount());
         refresh();
     }

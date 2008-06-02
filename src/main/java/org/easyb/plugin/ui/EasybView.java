@@ -1,11 +1,9 @@
 package org.easyb.plugin.ui;
 
-import org.easyb.plugin.ui.swing.EasybTreeNode;
+public interface EasybView<T extends ResultNode> {
+    void addBehaviorResult(T result);
 
-public interface EasybView {
-    void addBehaviorResult(EasybTreeNode result);
-
-    void addBehaviorResult(EasybTreeNode parent, EasybTreeNode result);
+    void addBehaviorResult(T parent, T result);
 
     void writeOutput(String text);
 

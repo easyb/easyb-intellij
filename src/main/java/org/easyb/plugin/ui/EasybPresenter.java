@@ -11,16 +11,17 @@ import static org.disco.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
-import org.easyb.plugin.ui.swing.EasybTreeNode;
 
-public class EasybPresenter implements ExecutionListener, ConsoleOutputListener {
-    private EasybView view;
-    private Stack<EasybTreeNode> nodeStack;
+public class EasybPresenter <T extends ResultNode> implements ExecutionListener, ConsoleOutputListener {
+    private EasybView<T> view;
+    private NodeBuilder<T> nodeBuilder;
+    private Stack<T> nodeStack;
     private boolean descendantFailed = false;
 
-    public EasybPresenter(EasybView view) {
+    public EasybPresenter(EasybView<T> view, NodeBuilder<T> nodeBuilder) {
         this.view = view;
-        nodeStack = new Stack<EasybTreeNode>();
+        this.nodeBuilder = nodeBuilder;
+        nodeStack = new Stack<T>();
     }
 
     public void startBehavior(Behavior behavior) {
@@ -28,7 +29,7 @@ public class EasybPresenter implements ExecutionListener, ConsoleOutputListener 
     }
 
     public void startStep(BehaviorStep behaviorStep) {
-        EasybTreeNode node = new EasybTreeNode(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
+        T node = nodeBuilder.build(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
         if (behaviorStep.getStepType() == STORY || behaviorStep.getStepType() == SPECIFICATION) {
             view.addBehaviorResult(node);
         } else {

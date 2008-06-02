@@ -11,7 +11,7 @@ public class EasybNodeRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
 
-        EasybTreeNode node = (EasybTreeNode) value;
+        SwingResultNode node = (SwingResultNode) value;
         StepResult stepResult = (StepResult) node.getUserObject();
 
         String stepName = capitalizeName(stepResult.getStepType().toString());
@@ -34,7 +34,7 @@ public class EasybNodeRenderer extends DefaultTreeCellRenderer {
         return builder.toString();
     }
 
-    private static Icon loadIcon(EasybTreeNode node) {
+    private static Icon loadIcon(SwingResultNode node) {
         switch (node.getResult().getOutcome()) {
             case FAILURE:
                 return new ImageIcon(EasybNodeRenderer.class.getResource("/failure.png"));

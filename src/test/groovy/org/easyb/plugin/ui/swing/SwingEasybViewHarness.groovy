@@ -6,7 +6,7 @@ import static org.disco.easyb.util.BehaviorStepType.*
 import org.disco.easyb.util.BehaviorStepType
 import org.easyb.plugin.Outcome
 import org.easyb.plugin.StepResult
-import org.easyb.plugin.ui.swing.EasybTreeNode
+import org.easyb.plugin.ui.swing.SwingResultNode
 import org.easyb.plugin.ui.swing.SwingEasybView
 import javax.swing.tree.DefaultMutableTreeNode
 
@@ -39,7 +39,7 @@ class SwingEasybViewHarness {
     }
 
     private void playStory() {
-        EasybTreeNode scenarioNode = nodeFor(SCENARIO, 'amount exceeds available funds', Outcome.RUNNING)
+        SwingResultNode scenarioNode = nodeFor(SCENARIO, 'amount exceeds available funds', Outcome.RUNNING)
         storyNode.add(scenarioNode)
         view.refresh()
 
@@ -61,7 +61,7 @@ class SwingEasybViewHarness {
         view.refresh()
     }
 
-    private static EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome result) {
-        return new EasybTreeNode(new StepResult(phrase, type, result));
+    private static SwingResultNode nodeFor(BehaviorStepType type, String phrase, Outcome result) {
+        return new SwingResultNode(new StepResult(phrase, type, result));
     }
 }

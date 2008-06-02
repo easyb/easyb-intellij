@@ -11,14 +11,15 @@ import org.junit.Test;
 public class WhenPresentingConsoleOutput {
     private static final String TEXT = "expected output";
 
+    @SuppressWarnings({"unchecked"})
     @Test
     public void shouldWriteOutputToView() {
-        EasybView view = createMock(EasybView.class);
+        EasybView<StubResultNode> view = createMock(EasybView.class);
         view.writeOutput(TEXT);
         expectLastCall();
         replay(view);
 
-        ConsoleOutputListener presenter = new EasybPresenter(view);
+        ConsoleOutputListener presenter = new EasybPresenter<StubResultNode>(view, new StubNodeBuilder());
         presenter.textAvailable(TEXT);
 
         verify(view);

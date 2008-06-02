@@ -1,16 +1,16 @@
 package org.easyb.plugin;
 
-import org.easyb.plugin.ui.swing.EasybTreeNode;
 import org.easyb.plugin.ui.EasybView;
+import org.easyb.plugin.ui.StubResultNode;
 
-public class StubView implements EasybView {
-    private EasybTreeNode resultNode;
+public class StubView implements EasybView<StubResultNode> {
+    private StubResultNode resultNode;
 
-    public void addBehaviorResult(EasybTreeNode resultNode) {
+    public void addBehaviorResult(StubResultNode resultNode) {
         this.resultNode = resultNode;
     }
 
-    public void addBehaviorResult(EasybTreeNode parent, EasybTreeNode result) {
+    public void addBehaviorResult(StubResultNode parent, StubResultNode result) {
         parent.add(result);
     }
 
@@ -21,7 +21,7 @@ public class StubView implements EasybView {
     public void refresh() {
     }
 
-    public EasybTreeNode getResultNode() {
+    public StubResultNode getResultNode() {
         return resultNode;
     }
 }

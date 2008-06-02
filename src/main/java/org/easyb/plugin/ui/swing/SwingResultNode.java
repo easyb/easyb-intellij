@@ -1,15 +1,15 @@
 package org.easyb.plugin.ui.swing;
 
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.MutableTreeNode;
 
 import org.easyb.plugin.StepResult;
-import org.easyb.plugin.Outcome;
-import org.disco.easyb.util.BehaviorStepType;
+import org.easyb.plugin.ui.ResultNode;
 
-public class EasybTreeNode extends DefaultMutableTreeNode {
+public class SwingResultNode extends DefaultMutableTreeNode implements ResultNode<MutableTreeNode> {
     private StepResult result;
 
-    public EasybTreeNode(StepResult result) {
+    public SwingResultNode(StepResult result) {
         super(result);
         this.result = result;
     }
@@ -26,7 +26,7 @@ public class EasybTreeNode extends DefaultMutableTreeNode {
             return false;
         }
 
-        EasybTreeNode that = (EasybTreeNode) other;
+        SwingResultNode that = (SwingResultNode) other;
 
         if (getUserObject().equals(that.getUserObject())) {
             if (getChildCount() != that.getChildCount()) {
@@ -57,9 +57,5 @@ public class EasybTreeNode extends DefaultMutableTreeNode {
         builder.append("]");
 
         return builder.toString();
-    }
-
-    public static EasybTreeNode nodeFor(BehaviorStepType type, String phrase, Outcome outcome) {
-        return new EasybTreeNode(new StepResult(phrase, type, outcome));
     }
 }
