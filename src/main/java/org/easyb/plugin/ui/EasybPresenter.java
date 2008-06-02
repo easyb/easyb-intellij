@@ -1,5 +1,7 @@
 package org.easyb.plugin.ui;
 
+import java.util.Stack;
+
 import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Behavior;
 import org.disco.easyb.listener.ExecutionListener;
@@ -10,16 +12,15 @@ import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.swing.EasybTreeNode;
-import org.easyb.plugin.ui.swing.EasybTreeNodeStack;
 
 public class EasybPresenter implements ExecutionListener, ConsoleOutputListener {
     private EasybView view;
-    private EasybTreeNodeStack nodeStack;
+    private Stack<EasybTreeNode> nodeStack;
     private boolean descendantFailed = false;
 
     public EasybPresenter(EasybView view) {
         this.view = view;
-        nodeStack = new EasybTreeNodeStack();
+        nodeStack = new Stack<EasybTreeNode>();
     }
 
     public void startBehavior(Behavior behavior) {
