@@ -96,19 +96,19 @@
     <dependency>
       <groupId>com.intellij.idea</groupId>
       <artifactId>annotations</artifactId>
-      <version>7.0.3</version>
+      <version>${idea.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.intellij.idea</groupId>
       <artifactId>extensions</artifactId>
-      <version>7.0.3</version>
+      <version>${idea.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.intellij.idea</groupId>
       <artifactId>openapi</artifactId>
-      <version>7.0.3</version>
+      <version>${idea.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -153,4 +153,9 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <properties>
+    <idea.version>7.0.3</idea.version>
+  </properties>
+
 </project>

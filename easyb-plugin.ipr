@@ -315,6 +315,9 @@
     </option>
     <option name="crucibleConfiguration">
       <CrucibleProjectConfiguration>
+        <option name="crucibleFilters">
+          <CrucibleFiltersBean />
+        </option>
         <option name="tableConfiguration">
           <ProjectToolWindowTableConfiguration />
         </option>
