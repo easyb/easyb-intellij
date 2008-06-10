@@ -49,6 +49,7 @@ public class EasybPresenter <T extends ResultNode> implements ExecutionListener,
             stepResult.setOutcome(outcomeForResult(result));
         }
         if (result.failed()) {
+            stepResult.setCause(result.cause);
             descendantFailed = true;
         }
         view.refresh();
@@ -74,6 +75,6 @@ public class EasybPresenter <T extends ResultNode> implements ExecutionListener,
     }
 
     public void textAvailable(String text) {
-        view.writeOutput(text);
+        view.writeConsole(text);
     }
 }

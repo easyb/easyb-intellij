@@ -15,7 +15,7 @@ public class WhenPresentingConsoleOutput {
     @Test
     public void shouldWriteOutputToView() {
         EasybView<StubResultNode> view = createMock(EasybView.class);
-        view.writeOutput(TEXT);
+        view.writeConsole(TEXT);
         expectLastCall();
         replay(view);
 

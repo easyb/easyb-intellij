@@ -11,9 +11,10 @@ import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.EasybView;
 
 public class SwingEasybView extends JPanel implements EasybView<SwingResultNode> {
-    private SwingResultNode root;
     private JTextArea outputTextArea;
-    JTree tree;
+    private JTextArea consoleTextArea;
+    private SwingResultNode root;
+    private JTree tree;
 
     public SwingEasybView() {
         setLayout(new BorderLayout());
@@ -23,9 +24,12 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);
 
+        outputTextArea = new JTextArea();
+        consoleTextArea = new JTextArea();
+        
         JTabbedPane tabbedPane = new JTabbedPane();
-        outputTextArea = new JTextArea("Test");
         tabbedPane.addTab("Output", new JScrollPane(outputTextArea));
+        tabbedPane.addTab("Console", new JScrollPane(consoleTextArea));
 
         JSplitPane pane = new JSplitPane(HORIZONTAL_SPLIT, new JScrollPane(tree), tabbedPane);
         pane.setDividerLocation(300);
@@ -41,8 +45,11 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
         refresh();
     }
 
-    public void writeOutput(String text) {
-        outputTextArea.append(text);
+    public void displayFailure(Throwable failure) {
+    }
+
+    public void writeConsole(String text) {
+        consoleTextArea.append(text);
     }
 
     public void refresh() {

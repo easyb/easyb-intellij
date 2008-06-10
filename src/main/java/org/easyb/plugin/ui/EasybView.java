@@ -5,7 +5,9 @@ public interface EasybView<T extends ResultNode> {
 
     void addBehaviorResult(T parent, T result);
 
-    void writeOutput(String text);
+    void displayFailure(Throwable failure);
+
+    void writeConsole(String text);
 
     void refresh();
 }

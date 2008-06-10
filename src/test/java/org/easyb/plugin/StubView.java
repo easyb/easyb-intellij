@@ -5,6 +5,7 @@ import org.easyb.plugin.ui.StubResultNode;
 
 public class StubView implements EasybView<StubResultNode> {
     private StubResultNode resultNode;
+    private Throwable failure;
 
     public void addBehaviorResult(StubResultNode resultNode) {
         this.resultNode = resultNode;
@@ -14,8 +15,12 @@ public class StubView implements EasybView<StubResultNode> {
         parent.add(result);
     }
 
+    public void displayFailure(Throwable failure) {
+        this.failure = failure;
+    }
+
     @SuppressWarnings("UnusedDeclaration")
-    public void writeOutput(String text) {
+    public void writeConsole(String text) {
     }
 
     public void refresh() {
@@ -23,5 +28,9 @@ public class StubView implements EasybView<StubResultNode> {
 
     public StubResultNode getResultNode() {
         return resultNode;
+    }
+
+    public Throwable getFailure() {
+        return failure;
     }
 }

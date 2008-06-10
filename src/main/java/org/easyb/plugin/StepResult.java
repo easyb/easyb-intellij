@@ -6,6 +6,7 @@ public class StepResult {
     private String stepName;
     private BehaviorStepType stepType;
     private Outcome outcome;
+    private Throwable cause;
 
     public StepResult(String stepName, BehaviorStepType stepType, Outcome outcome) {
         this.stepName = stepName;
@@ -27,6 +28,14 @@ public class StepResult {
 
     public void setOutcome(Outcome outcome) {
         this.outcome = outcome;
+    }
+
+    public Throwable getCause() {
+        return cause;
+    }
+
+    public void setCause(Throwable cause) {
+        this.cause = cause;
     }
 
     public String toString() {
