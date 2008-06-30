@@ -98,15 +98,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="org.easyb:easyb:0.8.2">
+      <library name="org.easyb:easyb:0.9">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.8.2/easyb-0.8.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.9/easyb-0.9.jar!/" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.8.2/easyb-0.8.2-javadoc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.9/easyb-0.9-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.8.2/easyb-0.8.2-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.9/easyb-0.9-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.easyb</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>0.8</version>
+    <version>0.9</version>
   </parent>
 
   <artifactId>intellij-plugin</artifactId>
   <name>easyb IntelliJ plugin</name>
-  <version>0.9-alpha-5-SNAPSHOT</version>
+  <version>0.9-SNAPSHOT</version>
   <description>A plugin that enables easyb spec execution in IntelliJ</description>
 
   <repositories>
@@ -131,7 +131,7 @@
     <dependency>
       <groupId>org.easyb</groupId>
       <artifactId>easyb</artifactId>
-      <version>0.8.2</version>
+      <version>0.9</version>
     </dependency>
 
     <dependency>
