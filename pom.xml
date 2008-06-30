@@ -10,7 +10,7 @@
 
   <artifactId>intellij-plugin</artifactId>
   <name>easyb IntelliJ plugin</name>
-  <version>0.9.1-SNAPSHOT</version>
+  <version>0.9-SNAPSHOT</version>
   <description>A plugin that enables easyb spec execution in IntelliJ</description>
 
   <repositories>
@@ -157,4 +157,5 @@
   <properties>
     <idea.version>7.0.3</idea.version>
   </properties>
+
 </project>
