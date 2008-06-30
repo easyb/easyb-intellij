@@ -42,7 +42,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.8.2/easyb-0.8.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../.m2/repository/org/easyb/easyb/0.9/easyb-0.9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
