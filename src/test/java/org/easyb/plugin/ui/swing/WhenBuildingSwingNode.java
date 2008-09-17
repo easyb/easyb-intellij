@@ -13,11 +13,13 @@ public class WhenBuildingSwingNode {
     public void shouldConstructEasybTreeNode() {
         NodeBuilder<? extends ResultNode> builder = new SwingNodeBuilder();
 
-        StepResult result = new StepResult("test", GIVEN, SUCCESS);
+        StepResult result = new StepResult("name", GIVEN, SUCCESS);
+        result.setOutput("output");
         ResultNode expected = new SwingResultNode(result);
         ResultNode actual = builder.build(result);
 
         assertEquals(expected, actual);
         assertEquals(result, actual.getResult());
+        assertEquals("output", actual.getResult().getOutput());
     }
 }

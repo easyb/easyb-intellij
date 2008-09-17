@@ -7,7 +7,7 @@ public class SwingEasybBuilder {
     private EasybPresenter presenter;
 
     public SwingEasybBuilder() {
-        view = new SwingEasybView();
+        view = new SwingEasybView(presenter);
         presenter = new EasybPresenter<SwingResultNode>(view, new SwingNodeBuilder());
     }
 

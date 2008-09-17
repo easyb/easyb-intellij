@@ -12,7 +12,8 @@ import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
 
-public class EasybPresenter <T extends ResultNode> implements ExecutionListener, ConsoleOutputListener {
+public class EasybPresenter<T extends ResultNode>
+        implements ExecutionListener, ConsoleOutputListener, ViewEventListener {
     private EasybView<T> view;
     private NodeBuilder<T> nodeBuilder;
     private Stack<T> nodeStack;
@@ -76,5 +77,8 @@ public class EasybPresenter <T extends ResultNode> implements ExecutionListener,
 
     public void textAvailable(String text) {
         view.writeConsole(text);
+    }
+
+    public void resultSelected(StepResult result) {
     }
 }

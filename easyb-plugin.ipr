@@ -345,5 +345,8 @@
       <jarDirectory url="file:///Users/rcoffin/Library/Application Support/IntelliJIDEA70/Groovy/lib" recursive="false" />
     </library>
   </component>
+  <UsedPathMacros>
+    <macro name="MAVEN_REPOSITORY" />
+  </UsedPathMacros>
 </project>
 
