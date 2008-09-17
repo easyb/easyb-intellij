@@ -17,22 +17,17 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
     private JTextArea consoleTextArea;
     private SwingResultNode root;
     protected JTree tree;
+    private JTextArea outputTextArea;
 
-    public SwingEasybView(final ViewEventListener viewListener) {
+    public SwingEasybView() {
         setLayout(new BorderLayout());
 
         root = new SwingResultNode(new StepResult("Root", GENESIS, RUNNING));
         tree = createTree(root);
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);
-        tree.addTreeSelectionListener(new TreeSelectionListener() {
-            public void valueChanged(TreeSelectionEvent event) {
-                SwingResultNode node = (SwingResultNode) tree.getLastSelectedPathComponent();
-                viewListener.resultSelected(node.getResult());
-            }
-        });
 
-        JTextArea outputTextArea = new JTextArea();
+        outputTextArea = new JTextArea();
         consoleTextArea = new JTextArea();
 
         JTabbedPane tabbedPane = new JTabbedPane();
@@ -60,6 +55,10 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
     public void displayFailure(Throwable failure) {
     }
 
+    public void writeOutput(String text) {
+        outputTextArea.setText(text);
+    }
+
     public void writeConsole(String text) {
         consoleTextArea.append(text);
     }
@@ -67,6 +66,15 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
     public void refresh() {
         getModel().nodeStructureChanged(root);
         TreeUtil.expandAll(tree, true);
+    }
+
+    public void registerEventListener(final ViewEventListener listener) {
+        tree.addTreeSelectionListener(new TreeSelectionListener() {
+            public void valueChanged(TreeSelectionEvent event) {
+                SwingResultNode node = (SwingResultNode) tree.getLastSelectedPathComponent();
+                listener.resultSelected(node.getResult());
+            }
+        });
     }
 
     private DefaultTreeModel getModel() {

@@ -7,7 +7,7 @@ public class StepResult {
     private BehaviorStepType stepType;
     private Outcome outcome;
     private Throwable cause;
-    private String output;
+    private String output = "default output";
 
     public StepResult(String stepName, BehaviorStepType stepType, Outcome outcome) {
         this.stepName = stepName;

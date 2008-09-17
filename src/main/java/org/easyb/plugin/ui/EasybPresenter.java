@@ -80,5 +80,6 @@ public class EasybPresenter<T extends ResultNode>
     }
 
     public void resultSelected(StepResult result) {
+        view.writeOutput(result.getOutput());
     }
 }

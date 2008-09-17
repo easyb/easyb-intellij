@@ -7,7 +7,11 @@ public interface EasybView<T extends ResultNode> {
 
     void displayFailure(Throwable failure);
 
+    void writeOutput(String text);
+
     void writeConsole(String text);
 
     void refresh();
+
+    void registerEventListener(ViewEventListener listener);
 }

@@ -21,7 +21,8 @@ public class WhenSwingNodeSelected {
         listener.resultSelected(result);
         replay(listener);
 
-        TestingSwingEasybView view = new TestingSwingEasybView(listener);
+        TestingSwingEasybView view = new TestingSwingEasybView();
+        view.registerEventListener(listener);
         view.addBehaviorResult(node);
         view.selectNode(node);
 

@@ -2,6 +2,7 @@ package org.easyb.plugin;
 
 import org.easyb.plugin.ui.EasybView;
 import org.easyb.plugin.ui.StubResultNode;
+import org.easyb.plugin.ui.ViewEventListener;
 
 public class StubView implements EasybView<StubResultNode> {
     private StubResultNode resultNode;
@@ -19,11 +20,16 @@ public class StubView implements EasybView<StubResultNode> {
         this.failure = failure;
     }
 
-    @SuppressWarnings("UnusedDeclaration")
+    public void writeOutput(String text) {
+    }
+
     public void writeConsole(String text) {
     }
 
     public void refresh() {
+    }
+
+    public void registerEventListener(ViewEventListener listener) {
     }
 
     public StubResultNode getResultNode() {
