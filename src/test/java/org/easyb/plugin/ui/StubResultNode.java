@@ -4,8 +4,9 @@ import org.disco.easyb.util.BehaviorStepType;
 import org.easyb.plugin.Outcome;
 import org.easyb.plugin.StepResult;
 
-public class StubResultNode implements ResultNode {
+public class StubResultNode implements ResultNode<StubResultNode> {
     private StepResult result;
+    private StubResultNode child;
 
     public StubResultNode(StepResult result) {
         this.result = result;
@@ -15,7 +16,12 @@ public class StubResultNode implements ResultNode {
         return result;
     }
 
-    public void add(Object child) {
+    public void add(StubResultNode child) {
+        this.child = child;
+    }
+
+    public StubResultNode getChild() {
+        return child;
     }
 
     @SuppressWarnings({"RedundantIfStatement"})

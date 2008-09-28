@@ -1,6 +1,10 @@
 package org.easyb.plugin.ui;
 
 import java.util.Stack;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Behavior;
@@ -17,12 +21,17 @@ public class EasybPresenter<T extends ResultNode>
     private EasybView<T> view;
     private NodeBuilder<T> nodeBuilder;
     private Stack<T> nodeStack;
+    private Map<String, T> nodeMap;
     private boolean descendantFailed = false;
+    private String lastSpecRunName;
+
+    private Pattern specPattern = Pattern.compile("Running (.*?) (specification|story).*\n");
 
     public EasybPresenter(EasybView<T> view, NodeBuilder<T> nodeBuilder) {
         this.view = view;
         this.nodeBuilder = nodeBuilder;
         nodeStack = new Stack<T>();
+        nodeMap = new HashMap<String, T>();
     }
 
     public void startBehavior(Behavior behavior) {
@@ -30,20 +39,26 @@ public class EasybPresenter<T extends ResultNode>
     }
 
     public void startStep(BehaviorStep behaviorStep) {
-        T node = nodeBuilder.build(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
+        T node = buildNode(behaviorStep);
         if (behaviorStep.getStepType() == STORY || behaviorStep.getStepType() == SPECIFICATION) {
             view.addBehaviorResult(node);
         } else {
-            view.addBehaviorResult(nodeStack.peek(), node);
+            view.addBehaviorResult(currentNode(), node);
         }
         nodeStack.push(node);
+    }
+
+    private T buildNode(BehaviorStep behaviorStep) {
+        T node = nodeBuilder.build(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
+        nodeMap.put(behaviorStep.getName(), node);
+        return node;
     }
 
     public void describeStep(String s) {
     }
 
     public void gotResult(Result result) {
-        StepResult stepResult = nodeStack.peek().getResult();
+        StepResult stepResult = currentNode().getResult();
         if (descendantFailed) {
             stepResult.setOutcome(FAILURE);
         } else {
@@ -57,7 +72,7 @@ public class EasybPresenter<T extends ResultNode>
     }
 
     public void stopStep() {
-        StepResult stepResult = nodeStack.peek().getResult();
+        StepResult stepResult = currentNode().getResult();
         if (stepResult.getOutcome() == RUNNING) {
             if (descendantFailed) {
                 stepResult.setOutcome(FAILURE);
@@ -77,9 +92,38 @@ public class EasybPresenter<T extends ResultNode>
 
     public void textAvailable(String text) {
         view.writeConsole(text);
+
+        if (isSpecificationRunningMessage(text)) {
+            captureSpecificationRunningMessage(text);
+        } else {
+            if (lastSpecRunName != null) {
+                ResultNode lastSpecRunNode = nodeMap.get(lastSpecRunName);
+                appendOutput(text, lastSpecRunNode);
+            }
+        }
+    }
+
+    private void appendOutput(String text, ResultNode lastSpecRunNode) {
+        StepResult result = lastSpecRunNode.getResult();
+        result.setOutput(result.getOutput() + text);
+    }
+
+    private boolean isSpecificationRunningMessage(String text) {
+        return specPattern.matcher(text).matches();
+    }
+
+    private void captureSpecificationRunningMessage(String text) {
+        Matcher specMatcher = specPattern.matcher(text);
+        if (specMatcher.matches()) {
+            lastSpecRunName = specMatcher.group(1);
+        }
     }
 
     public void resultSelected(StepResult result) {
         view.writeOutput(result.getOutput());
+    }
+
+    private T currentNode() {
+        return nodeStack.peek();
     }
 }
