@@ -40,8 +40,8 @@ public class WhenTextIsWrittenToConsole {
         presenter.textAvailable("Running spec specification (spec.specification)\n");
         presenter.textAvailable(TEXT);
 
-        assertEquals(TEXT, view.getResultNode().getResult().getOutput());
-//        assertEquals(TEXT, view.getResultNode().getChild().getResult().getOutput());
+        assertEquals(TEXT, view.getResultNode().getOutput());
+//        assertEquals(TEXT, view.getResultNode().getChild().getOutput());
     }
 
     @SuppressWarnings({"unchecked"})
@@ -55,7 +55,7 @@ public class WhenTextIsWrittenToConsole {
         presenter.textAvailable("Running testing story (Testing.story)\n");
         presenter.textAvailable(TEXT);
 
-        assertEquals(TEXT, view.getResultNode().getResult().getOutput());
-//        assertEquals(TEXT, view.getResultNode().getChild().getResult().getOutput());
+        assertEquals(TEXT, view.getResultNode().getOutput());
+//        assertEquals(TEXT, view.getResultNode().getChild().getOutput());
     }
 }

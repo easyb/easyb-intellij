@@ -11,6 +11,7 @@ import org.easyb.plugin.ui.EasybView
 import org.easyb.plugin.ui.ViewEventListener
 import org.easyb.plugin.ui.swing.SwingEasybView
 import org.easyb.plugin.ui.swing.SwingResultNode
+import org.easyb.plugin.ui.ResultNode
 
 class SwingEasybViewHarness {
     SwingEasybView view
@@ -77,7 +78,7 @@ class FakeViewEventListener implements ViewEventListener {
         this.view = view
     }
 
-    public void resultSelected(StepResult result) {
+    public void resultSelected(ResultNode result) {
         view.writeOutput "result output"
     }
 }

@@ -21,9 +21,9 @@ public class WhenResultNodeSelected {
         replay(view);
 
         EasybPresenter presenter = new EasybPresenter<SwingResultNode>(view, new SwingNodeBuilder());
-        StepResult result = new StepResult("name", BehaviorStepType.THEN, Outcome.SUCCESS);
-        result.setOutput(TEST_OUTPUT);
-        presenter.resultSelected(result);
+        ResultNode node = new StubResultNode(new StepResult("name", BehaviorStepType.THEN, Outcome.SUCCESS));
+        node.setOutput(TEST_OUTPUT);
+        presenter.resultSelected(node);
 
         verify(view);
     }

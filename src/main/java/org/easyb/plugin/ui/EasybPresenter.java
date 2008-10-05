@@ -1,11 +1,5 @@
 package org.easyb.plugin.ui;
 
-import java.util.Stack;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Behavior;
 import org.disco.easyb.listener.ExecutionListener;
@@ -15,6 +9,12 @@ import static org.disco.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EasybPresenter<T extends ResultNode>
         implements ExecutionListener, ConsoleOutputListener, ViewEventListener {
@@ -104,8 +104,7 @@ public class EasybPresenter<T extends ResultNode>
     }
 
     private void appendOutput(String text, ResultNode lastSpecRunNode) {
-        StepResult result = lastSpecRunNode.getResult();
-        result.setOutput(result.getOutput() + text);
+        lastSpecRunNode.setOutput(lastSpecRunNode.getOutput() + text);
     }
 
     private boolean isSpecificationRunningMessage(String text) {
@@ -119,7 +118,7 @@ public class EasybPresenter<T extends ResultNode>
         }
     }
 
-    public void resultSelected(StepResult result) {
+    public void resultSelected(ResultNode result) {
         view.writeOutput(result.getOutput());
     }
 

@@ -18,7 +18,7 @@ public class WhenSwingNodeSelected {
         SwingResultNode node = builder.build(result);
 
         ViewEventListener listener = createMock(ViewEventListener.class);
-        listener.resultSelected(result);
+        listener.resultSelected(node);
         replay(listener);
 
         TestingSwingEasybView view = new TestingSwingEasybView();

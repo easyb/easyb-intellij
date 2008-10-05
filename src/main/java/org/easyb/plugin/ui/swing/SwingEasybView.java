@@ -72,7 +72,7 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
         tree.addTreeSelectionListener(new TreeSelectionListener() {
             public void valueChanged(TreeSelectionEvent event) {
                 SwingResultNode node = (SwingResultNode) tree.getLastSelectedPathComponent();
-                listener.resultSelected(node.getResult());
+                listener.resultSelected(node);
             }
         });
     }

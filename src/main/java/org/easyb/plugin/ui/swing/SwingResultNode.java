@@ -8,6 +8,7 @@ import org.easyb.plugin.ui.ResultNode;
 
 public class SwingResultNode extends DefaultMutableTreeNode implements ResultNode<MutableTreeNode> {
     private StepResult result;
+    private String output;
 
     public SwingResultNode(StepResult result) {
         super(result);
@@ -16,6 +17,14 @@ public class SwingResultNode extends DefaultMutableTreeNode implements ResultNod
 
     public StepResult getResult() {
         return result;
+    }
+
+    public String getOutput() {
+        return output;
+    }
+
+    public void setOutput(String output) {
+        this.output = output;
     }
 
     public boolean equals(Object other) {

@@ -7,6 +7,7 @@ import org.easyb.plugin.StepResult;
 public class StubResultNode implements ResultNode<StubResultNode> {
     private StepResult result;
     private StubResultNode child;
+    private String output = "";
 
     public StubResultNode(StepResult result) {
         this.result = result;
@@ -22,6 +23,14 @@ public class StubResultNode implements ResultNode<StubResultNode> {
 
     public StubResultNode getChild() {
         return child;
+    }
+
+    public String getOutput() {
+        return output;
+    }
+
+    public void setOutput(String output) {
+        this.output = output;
     }
 
     @SuppressWarnings({"RedundantIfStatement"})
