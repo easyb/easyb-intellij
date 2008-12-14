@@ -3,9 +3,9 @@
   <id>org.easyb.easyb</id>
   <name>easyb</name>
   <description>easyb behavior driven development framework</description>
-  <version>0.9</version>
+  <version>0.9.1</version>
   <vendor>org.easyb</vendor>
-  <idea-version since-build="7757"/>
+  <idea-version since-build="9164"/>
 
   <depends>org.intellij.groovy</depends>
 
@@ -17,5 +17,9 @@
       <implementation-class>org.easyb.idea.language.EasybFileTypeLoader</implementation-class>
     </component>
   </application-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <configurationType implementation="org.easyb.idea.runner.EasybRunConfigurationType"/>
+  </extensions>
 
 </idea-plugin>

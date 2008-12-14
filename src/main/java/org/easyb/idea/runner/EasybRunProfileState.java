@@ -3,11 +3,12 @@ package org.easyb.idea.runner;
 import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
-import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
+import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.JavaCommandLineState;
 import com.intellij.execution.configurations.JavaParameters;
-import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.runners.ExecutionEnvironment;
+import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ProjectRootManager;
@@ -17,21 +18,22 @@ import groovy.lang.GroovyObject;
 import org.disco.easyb.BehaviorRunner;
 import org.easyb.plugin.remoting.RemoteExecutionListener;
 import org.easyb.plugin.ui.swing.SwingEasybBuilder;
+import org.jetbrains.annotations.NotNull;
 
 public class EasybRunProfileState extends JavaCommandLineState {
     private Module module;
     private String specificationPath;
     private SwingEasybBuilder builder;
 
-    protected EasybRunProfileState(RunnerSettings runnerSettings, ConfigurationPerRunnerSettings configurationSettings,
-            Module module, String specificationPath) {
-        super(runnerSettings, configurationSettings);
+    protected EasybRunProfileState(ExecutionEnvironment environment, Module module, String specificationPath) {
+        super(environment);
         this.module = module;
         this.specificationPath = specificationPath;
         this.builder = new SwingEasybBuilder();
     }
 
-    public ExecutionResult execute() throws ExecutionException {
+    @Override
+    public ExecutionResult execute(@NotNull Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         EasybConsoleView console = new EasybConsoleView(builder.getView());
         ProcessHandler processHandler = startProcess();
         processHandler.addProcessListener(new EasybProcessListener(builder.getPresenter()));
@@ -44,7 +46,7 @@ public class EasybRunProfileState extends JavaCommandLineState {
         listener.start();
 
         JavaParameters javaParameters = new JavaParameters();
-        javaParameters.setJdk(ModuleRootManager.getInstance(module).getJdk());
+        javaParameters.setJdk(ModuleRootManager.getInstance(module).getSdk());
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(BehaviorRunner.class));
         addProjectClasspath(javaParameters);
         javaParameters.getClassPath().add(PathUtil.getJarPathForClass(getClass()));

@@ -1,5 +1,9 @@
 package org.easyb.plugin.ui;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 import org.disco.easyb.BehaviorStep;
 import org.disco.easyb.domain.Behavior;
 import org.disco.easyb.listener.ExecutionListener;
@@ -10,14 +14,8 @@ import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class EasybPresenter<T extends ResultNode>
-        implements ExecutionListener, ConsoleOutputListener, ViewEventListener {
+    implements ExecutionListener, ConsoleOutputListener, ViewEventListener {
     private EasybView<T> view;
     private NodeBuilder<T> nodeBuilder;
     private Stack<T> nodeStack;
@@ -25,7 +23,7 @@ public class EasybPresenter<T extends ResultNode>
     private boolean descendantFailed = false;
     private String lastSpecRunName;
 
-    private Pattern specPattern = Pattern.compile("Running (.*?) (specification|story).*\n");
+    private SpecificationRunningParser specRunningParser = new SpecificationRunningParser();
 
     public EasybPresenter(EasybView<T> view, NodeBuilder<T> nodeBuilder) {
         this.view = view;
@@ -93,7 +91,7 @@ public class EasybPresenter<T extends ResultNode>
     public void textAvailable(String text) {
         view.writeConsole(text);
 
-        if (isSpecificationRunningMessage(text)) {
+        if (specRunningParser.isSpecificationRunningMessage(text)) {
             captureSpecificationRunningMessage(text);
         } else {
             if (lastSpecRunName != null) {
@@ -107,14 +105,9 @@ public class EasybPresenter<T extends ResultNode>
         lastSpecRunNode.setOutput(lastSpecRunNode.getOutput() + text);
     }
 
-    private boolean isSpecificationRunningMessage(String text) {
-        return specPattern.matcher(text).matches();
-    }
-
     private void captureSpecificationRunningMessage(String text) {
-        Matcher specMatcher = specPattern.matcher(text);
-        if (specMatcher.matches()) {
-            lastSpecRunName = specMatcher.group(1);
+        if (specRunningParser.isSpecificationRunningMessage(text)) {
+            lastSpecRunName = specRunningParser.parseSpecNameFrom(text);
         }
     }
 
