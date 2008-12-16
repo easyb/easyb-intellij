@@ -41,7 +41,6 @@ public class WhenTextIsWrittenToConsole {
         presenter.textAvailable(TEXT);
 
         assertEquals(TEXT, view.getResultNode().getOutput());
-//        assertEquals(TEXT, view.getResultNode().getChild().getOutput());
     }
 
     @SuppressWarnings({"unchecked"})
@@ -56,6 +55,5 @@ public class WhenTextIsWrittenToConsole {
         presenter.textAvailable(TEXT);
 
         assertEquals(TEXT, view.getResultNode().getOutput());
-//        assertEquals(TEXT, view.getResultNode().getChild().getOutput());
     }
 }

@@ -16,16 +16,16 @@ public class WhenParsingSpecNameFromSpecificationRunningMessage {
 
     @Test
     public void shouldHandleSpaces() {
-        assertThat(parser.parseSpecNameFrom("Running my spec story"), is("my spec"));
+        assertThat(parser.parseSpecNameFrom("Running my spec story (MySpec.story)"), is("my spec"));
     }
 
     @Test
     public void shouldHandleWordStoryInStoryName() {
-        assertThat(parser.parseSpecNameFrom("Running my story story"), is("my story"));
+        assertThat(parser.parseSpecNameFrom("Running my story story (MyStory.story)"), is("my story"));
     }
 
     @Test
     public void shouldIdentifySpecificationRunningMessages() {
-        assertThat(parser.isSpecificationRunningMessage("Running my spec story"), is(true));
+        assertThat(parser.isSpecificationRunningMessage("Running my spec story (MySpec.story)"), is(true));
     }
 }

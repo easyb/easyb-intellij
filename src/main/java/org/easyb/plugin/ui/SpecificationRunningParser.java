@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class SpecificationRunningParser {
-    private Pattern specPattern = Pattern.compile("Running (.*?) (specification|story)\n*$");
+    private Pattern specPattern = Pattern.compile("Running (.*?) (specification|story) \\(.*\\)\n*$");
 
     public String parseSpecNameFrom(String output) {
         Matcher matcher = specPattern.matcher(output);
