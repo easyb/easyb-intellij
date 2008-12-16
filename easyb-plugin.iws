@@ -17,10 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyb-plugin.iws" afterPath="$PROJECT_DIR$/easyb-plugin.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/SpecificationRunningParser.java" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/SpecificationRunningParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/ui/WhenTextIsWrittenToConsole.java" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/ui/WhenTextIsWrittenToConsole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenParsingSpecNameFromSpecificationRunningMessage.java" afterPath="$PROJECT_DIR$/src/test/java/org/easyb/plugin/WhenParsingSpecNameFromSpecificationRunningMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/swing/SwingEasybView.java" afterPath="$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/swing/SwingEasybView.java" />
     </list>
     <ignored path="easyb-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,10 +131,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpecificationRunningParser.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SpecificationRunningParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/SpecificationRunningParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="87" selection-start="224" selection-end="224" vertical-scroll-proportion="0.11707989">
+            <state line="6" column="87" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SwingEasybView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/swing/SwingEasybView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="8" selection-start="1086" selection-end="1086" vertical-scroll-proportion="0.076246336">
               <folding />
             </state>
           </provider>
@@ -569,6 +575,48 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ui" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="swing" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="easyb" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="idea" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -635,25 +683,25 @@
     </navigator>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.proportion" value="0.15" />
     <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
-    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="159" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="193" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="35" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="172" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="154" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="979" />
-    <property name="options.lastSelected" value="preferences.editor" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
@@ -661,9 +709,9 @@
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="project.structure.last.edited" value="JDKs" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="217" />
-    <property name="options.searchVisible" value="true" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.searchVisible" value="true" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="183" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="945" />
@@ -736,6 +784,10 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration default="true" type="EasybRunConfigurationType" factoryName="Easyb Specification">
+      <module name="" />
+      <setting name="specificationPath" value="" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -747,11 +799,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="easyb-plugin" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false" runner="emma">
       <module name="" />
@@ -781,6 +828,11 @@
       <method>
         <option name="Make" value="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="easyb-plugin" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <module name="" />
@@ -975,18 +1027,14 @@
       <ConfigurationWrapper RunnerId="Run" />
     </configuration>
     <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.WhenSendingProxiedEvents.shouldSendGotResultEvent" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.WhenSendingProxiedEvents.shouldSendStartBehaviorEvent" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.WhenAStoryIsRun.shouldAddNodesToTree" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.WhenPrintingTreeNode.shouldIndicateHierarchyInToString" />
-      <item index="4" class="java.lang.String" itemvalue="Plugin.easyb" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.WhenSendingProxiedEvents" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.WhenParsingSpecNameFromSpecificationRunningMessage" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.WhenParsingSpecNameFromSpecificationRunningMessage" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.WhenSendingProxiedEvents.shouldSendGotResultEvent" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.WhenSendingProxiedEvents.shouldSendStartBehaviorEvent" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WhenAStoryIsRun.shouldAddNodesToTree" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.WhenPrintingTreeNode.shouldIndicateHierarchyInToString" />
+      <item index="5" class="java.lang.String" itemvalue="Plugin.easyb" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.WhenSendingProxiedEvents" />
     </list>
-    <configuration default="true" type="EasybRunConfigurationType" factoryName="Easyb Specification">
-      <module name="" />
-      <setting name="specificationPath" value="" />
-    </configuration>
     <configuration default="true" type="GroovyScriptRunConfigurationType" factoryName="Groovy Script">
       <module name="" />
       <setting name="path" value="" />
@@ -1055,14 +1103,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29220086" sideWeight="0.717412" order="0" side_tool="false" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3244529" sideWeight="0.5" order="1" side_tool="false" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32372093" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32350144" sideWeight="0.5" order="8" side_tool="false" />
@@ -1071,7 +1119,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27117032" sideWeight="0.5" order="8" side_tool="false" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2759277" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2759277" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2978116" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="8" side_tool="false" />
@@ -1224,13 +1272,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/configurations/ConfigurationType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="17" selection-start="832" selection-end="832" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/execution/LocatableConfigurationType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="58" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
@@ -1333,7 +1374,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/SpecificationRunningParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="87" selection-start="224" selection-end="224" vertical-scroll-proportion="0.11707989">
+        <state line="6" column="87" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/easyb/plugin/ui/swing/SwingEasybView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="8" selection-start="1086" selection-end="1086" vertical-scroll-proportion="0.076246336">
           <folding />
         </state>
       </provider>

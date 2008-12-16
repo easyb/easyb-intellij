@@ -31,8 +31,8 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
         consoleTextArea = new JTextArea();
 
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Output", new JScrollPane(outputTextArea));
         tabbedPane.addTab("Console", new JScrollPane(consoleTextArea));
+        tabbedPane.addTab("Output", new JScrollPane(outputTextArea));
 
         JSplitPane pane = new JSplitPane(HORIZONTAL_SPLIT, new JScrollPane(tree), tabbedPane);
         pane.setDividerLocation(300);
