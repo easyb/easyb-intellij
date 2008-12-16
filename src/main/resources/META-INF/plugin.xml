@@ -1,7 +1,7 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
   <id>org.easyb.easyb</id>
-  <name>easyb</name>
+  <name>easyb</name>…
   <description>easyb behavior driven development framework</description>
   <version>0.9.1</version>
   <vendor>org.easyb</vendor>
@@ -14,12 +14,13 @@
       <implementation-class>org.easyb.idea.runner.EasybRunConfigurationType</implementation-class>
     </component>
     <component>
-      <implementation-class>org.easyb.idea.language.EasybFileTypeLoader</implementation-class>
+      <implementation-class>org.easyb.idea.filetypes.EasybFileTypeLoader</implementation-class>
     </component>
   </application-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <configurationType implementation="org.easyb.idea.runner.EasybRunConfigurationType"/>
+    <configurationProducer implementation="org.easyb.idea.runner.EasybRunConfigurationProducer"/>
   </extensions>
 
 </idea-plugin>

@@ -109,14 +109,26 @@
     </dependency>
     <dependency>
       <groupId>com.intellij.idea</groupId>
+      <artifactId>idea</artifactId>
+      <version>${idea.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
       <artifactId>openapi</artifactId>
       <version>${idea.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.intellij.idea</groupId>
-      <artifactId>jetgroovy</artifactId>
-      <version>1.5.15683</version>
+      <artifactId>util</artifactId>
+      <version>${idea.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>Groovy</artifactId>
+      <version>${idea.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -124,11 +136,6 @@
       <artifactId>jdom</artifactId>
       <version>1.0</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.groovy</groupId>
-      <artifactId>groovy-all-minimal</artifactId>
-      <version>1.5.4</version>
     </dependency>
     <dependency>
       <groupId>org.easyb</groupId>
@@ -157,6 +164,6 @@
   </dependencies>
 
   <properties>
-    <idea.version>7.0.3</idea.version>
+    <idea.version>8.0.1</idea.version>
   </properties>
 </project>
