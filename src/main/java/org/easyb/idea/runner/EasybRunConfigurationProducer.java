@@ -37,7 +37,7 @@ public class EasybRunConfigurationProducer extends RuntimeConfigurationProducer 
 
     private boolean isSpec(Location location) {
         PsiFile file = location.getPsiElement().getContainingFile();
-        return file.getName().endsWith(".story") || file.getName().endsWith(".specification");
+        return file != null && (file.getName().endsWith(".story") || file.getName().endsWith(".specification"));
     }
 
     @SuppressWarnings({"ConstantConditions"})
