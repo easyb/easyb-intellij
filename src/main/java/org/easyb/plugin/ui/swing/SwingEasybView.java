@@ -55,12 +55,20 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
     public void displayFailure(Throwable failure) {
     }
 
-    public void writeOutput(String text) {
-        outputTextArea.setText(text);
+    public void writeOutput(final String text) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                outputTextArea.setText(text);
+            }
+        });
     }
 
-    public void writeConsole(String text) {
-        consoleTextArea.append(text);
+    public void writeConsole(final String text) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                consoleTextArea.append(text);
+            }
+        });
     }
 
     public void refresh() {
