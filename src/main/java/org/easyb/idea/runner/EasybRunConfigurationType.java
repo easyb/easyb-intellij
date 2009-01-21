@@ -11,11 +11,14 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiClass;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.plugins.groovy.lang.psi.GroovyFile;
 
 /**
  * Adds an easyb run configuration to IntelliJ
@@ -57,14 +60,25 @@ public class EasybRunConfigurationType implements LocatableConfigurationType {
         return createConfiguration(file);
     }
 
+    @SuppressWarnings({"SimplifiableIfStatement"})
     public boolean isConfigurationByLocation(RunConfiguration configuration, Location location) {
-        return true;
+        final PsiClass aClass = getSpecClass(location.getPsiElement());
+        if (aClass == null) return false;
+        final VirtualFile vFile = aClass.getContainingFile().getVirtualFile();
+        if (vFile == null) return false;
+        return Comparing.equal(((EasybRunConfiguration) configuration).getSpecificationPath(), vFile.getPath());
+    }
+
+    private PsiClass getSpecClass(PsiElement element) {
+        final PsiFile file = element.getContainingFile();
+        if (!(file instanceof GroovyFile)) return null;
+        return ((GroovyFile) file).getScriptClass();
     }
 
     private RunnerAndConfigurationSettings createConfiguration(final PsiFile easybSpecFile) {
         final Project project = easybSpecFile.getProject();
         RunnerAndConfigurationSettings settings = RunManager.getInstance(project).
-            createRunConfiguration(easybSpecFile.getName(), factory);
+                createRunConfiguration(easybSpecFile.getName(), factory);
         final EasybRunConfiguration configuration = (EasybRunConfiguration) settings.getConfiguration();
         final PsiDirectory dir = easybSpecFile.getContainingDirectory();
         assert dir != null;
