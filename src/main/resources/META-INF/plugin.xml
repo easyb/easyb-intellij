@@ -3,7 +3,7 @@
   <id>org.easyb.easyb</id>
   <name>easyb</name>…
   <description>easyb behavior driven development framework</description>
-  <version>0.9.3</version>
+  <version>0.9.4</version>
   <vendor>org.easyb</vendor>
   <idea-version since-build="9164"/>
 
@@ -15,6 +15,9 @@
     </component>
     <component>
       <implementation-class>org.easyb.idea.filetypes.EasybFileTypeLoader</implementation-class>
+    </component>
+    <component>
+      <implementation-class>org.easyb.idea.templates.EasybLiveTemplateLoader</implementation-class>
     </component>
   </application-components>
 
