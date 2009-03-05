@@ -1,6 +1,6 @@
 package org.easyb.plugin.ui;
 
-import org.disco.easyb.util.BehaviorStepType;
+import org.easyb.util.BehaviorStepType;
 import org.easyb.plugin.Outcome;
 import org.easyb.plugin.StepResult;
 

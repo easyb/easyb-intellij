@@ -1,7 +1,7 @@
 package org.easyb.simulator
 
-import org.disco.easyb.BehaviorStep
-import org.disco.easyb.result.Result
+import org.easyb.BehaviorStep
+import org.easyb.result.Result
 
 class SimulationNode {
     BehaviorStep step

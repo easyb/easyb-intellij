@@ -2,7 +2,7 @@ package org.easyb.plugin.remoting;
 
 import java.io.Serializable;
 
-import org.disco.easyb.listener.ExecutionListener;
+import org.easyb.listener.ExecutionListener;
 
 public class Event implements Serializable {
     private EventType type;

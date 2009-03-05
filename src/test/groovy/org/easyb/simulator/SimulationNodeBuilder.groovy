@@ -1,8 +1,8 @@
 package org.easyb.simulator
 
-import org.disco.easyb.util.BehaviorStepType
-import org.disco.easyb.BehaviorStep
-import org.disco.easyb.result.Result
+import org.easyb.util.BehaviorStepType
+import org.easyb.BehaviorStep
+import org.easyb.result.Result
 
 class SimulationNodeBuilder extends BuilderSupport {
     protected void setParent(Object parent, Object child) {

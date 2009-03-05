@@ -5,8 +5,8 @@
 package org.easyb.plugin.ui;
 
 import static junit.framework.Assert.assertEquals;
-import org.disco.easyb.BehaviorStep;
-import static org.disco.easyb.util.BehaviorStepType.*;
+import org.easyb.BehaviorStep;
+import static org.easyb.util.BehaviorStepType.*;
 import org.easyb.plugin.ConsoleOutputListener;
 import org.easyb.plugin.StubView;
 import static org.easymock.EasyMock.*;

@@ -1,6 +1,6 @@
 package org.easyb.simulator
 
-import org.disco.easyb.listener.ExecutionListener
+import org.easyb.listener.ExecutionListener
 
 class EasybSimulator {
     ExecutionListener listener

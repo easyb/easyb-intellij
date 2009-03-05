@@ -6,12 +6,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 import static junit.framework.Assert.assertEquals;
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.domain.Specification;
-import org.disco.easyb.domain.Story;
-import org.disco.easyb.listener.ExecutionListener;
-import org.disco.easyb.result.Result;
-import org.disco.easyb.util.BehaviorStepType;
+import org.easyb.BehaviorStep;
+import org.easyb.domain.Specification;
+import org.easyb.domain.Story;
+import org.easyb.domain.GroovyShellConfiguration;
+import org.easyb.listener.ExecutionListener;
+import org.easyb.result.Result;
+import org.easyb.util.BehaviorStepType;
 import static org.easyb.plugin.remoting.EventType.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +35,7 @@ public class WhenSendingProxiedEvents {
 
     @Test
     public void shouldSendStartBehaviorEvent() throws IOException {
-        Story story = new Story("Transferring funds", null);
+        Story story = new Story(new GroovyShellConfiguration(), "Transferring funds", null);
         remoteListener.startBehavior(story);
         assertEquals(new Event(START_BEHAVIOR, story), mockReceiver.getEvent());
     }
@@ -67,7 +68,7 @@ public class WhenSendingProxiedEvents {
 
     @Test
     public void shouldSendStopBehaviorEvent() throws IOException {
-        Specification spec = new Specification("should do something", null);
+        Specification spec = new Specification(new GroovyShellConfiguration(), "should do something", null);
         remoteListener.stopBehavior(null, spec);
         assertEquals(new Event(STOP_BEHAVIOR, spec), mockReceiver.getEvent());
     }

@@ -1,7 +1,7 @@
 package org.easyb.plugin
 
 import static junit.framework.Assert.assertEquals
-import static org.disco.easyb.util.BehaviorStepType.*
+import static org.easyb.util.BehaviorStepType.*
 import static org.easyb.plugin.Outcome.FAILURE
 import static org.easyb.plugin.Outcome.SUCCESS
 import org.easyb.plugin.ui.EasybPresenter

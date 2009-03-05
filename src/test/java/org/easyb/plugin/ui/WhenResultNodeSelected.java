@@ -6,7 +6,7 @@ import org.easyb.plugin.StepResult;
 import org.easyb.plugin.Outcome;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
-import org.disco.easyb.util.BehaviorStepType;
+import org.easyb.util.BehaviorStepType;
 
 public class WhenResultNodeSelected {
     private static final String TEST_OUTPUT = "test output";

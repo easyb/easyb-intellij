@@ -5,11 +5,12 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.domain.Story;
-import org.disco.easyb.listener.ExecutionListener;
-import org.disco.easyb.result.Result;
-import org.disco.easyb.util.BehaviorStepType;
+import org.easyb.BehaviorStep;
+import org.easyb.domain.Story;
+import org.easyb.domain.GroovyShellConfiguration;
+import org.easyb.listener.ExecutionListener;
+import org.easyb.result.Result;
+import org.easyb.util.BehaviorStepType;
 import static org.easymock.EasyMock.*;
 import org.junit.After;
 import org.junit.Before;
@@ -44,7 +45,7 @@ public class WhenReceivingProxiedEvents {
 
     @Test
     public void shouldReceiveStartBehaviorEvent() throws IOException {
-        Story story = new Story("Transferring funds", null);
+        Story story = new Story(new GroovyShellConfiguration(), "Transferring funds", null);
 
         ExecutionListener receiver = createMock(ExecutionListener.class);
         receiver.startBehavior(story);
@@ -100,7 +101,7 @@ public class WhenReceivingProxiedEvents {
 
     @Test
     public void shouldReceiveStopBehaviorEvent() throws IOException {
-        Story story = new Story("Transferring funds", null);
+        Story story = new Story(new GroovyShellConfiguration(), "Transferring funds", null);
 
         ExecutionListener receiver = createMock(ExecutionListener.class);
         receiver.stopBehavior(null, story);

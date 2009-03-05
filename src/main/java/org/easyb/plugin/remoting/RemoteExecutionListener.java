@@ -5,7 +5,7 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import org.disco.easyb.listener.ExecutionListener;
+import org.easyb.listener.ExecutionListener;
 import static org.easyb.plugin.remoting.RemoteUtils.safeClose;
 
 /**

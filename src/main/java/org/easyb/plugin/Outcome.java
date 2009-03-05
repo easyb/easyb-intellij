@@ -1,6 +1,6 @@
 package org.easyb.plugin;
 
-import org.disco.easyb.result.Result;
+import org.easyb.result.Result;
 
 public enum Outcome {
     RUNNING, SUCCESS, FAILURE, PENDING;

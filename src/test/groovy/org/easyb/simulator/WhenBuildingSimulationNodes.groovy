@@ -1,7 +1,7 @@
 package org.easyb.simulator
 
-import org.disco.easyb.BehaviorStep
-import static org.disco.easyb.util.BehaviorStepType.*
+import org.easyb.BehaviorStep
+import static org.easyb.util.BehaviorStepType.*
 import static org.junit.Assert.assertEquals
 import org.junit.Test
 

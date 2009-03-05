@@ -6,9 +6,9 @@ import static java.util.Arrays.asList;
 import java.util.List;
 import java.util.Collections;
 
-import org.disco.easyb.BehaviorRunner;
-import org.disco.easyb.ConsoleReporter;
-import org.disco.easyb.report.ReportWriter;
+import org.easyb.BehaviorRunner;
+import org.easyb.ConsoleReporter;
+import org.easyb.report.ReportWriter;
 
 public class RemoteRunner extends BehaviorRunner {
     public RemoteRunner(int port) throws IOException {

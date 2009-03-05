@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.domain.Behavior;
-import org.disco.easyb.listener.ExecutionListener;
-import org.disco.easyb.result.Result;
-import static org.disco.easyb.util.BehaviorStepType.SPECIFICATION;
-import static org.disco.easyb.util.BehaviorStepType.STORY;
+import org.easyb.BehaviorStep;
+import org.easyb.domain.Behavior;
+import org.easyb.listener.ExecutionListener;
+import org.easyb.result.Result;
+import static org.easyb.util.BehaviorStepType.SPECIFICATION;
+import static org.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.ConsoleOutputListener;
 import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;

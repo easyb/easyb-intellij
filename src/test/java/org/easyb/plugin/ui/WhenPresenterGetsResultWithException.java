@@ -1,9 +1,9 @@
 package org.easyb.plugin.ui;
 
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.exception.VerificationException;
-import org.disco.easyb.result.Result;
-import static org.disco.easyb.util.BehaviorStepType.STORY;
+import org.easyb.BehaviorStep;
+import org.easyb.exception.VerificationException;
+import org.easyb.result.Result;
+import static org.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.StubView;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;

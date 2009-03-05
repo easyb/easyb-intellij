@@ -15,7 +15,7 @@ import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.PathUtil;
 import groovy.lang.GroovyObject;
-import org.disco.easyb.BehaviorRunner;
+import org.easyb.BehaviorRunner;
 import org.easyb.plugin.remoting.RemoteExecutionListener;
 import org.easyb.plugin.ui.swing.SwingEasybBuilder;
 import org.jetbrains.annotations.NotNull;

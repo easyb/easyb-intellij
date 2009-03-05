@@ -1,6 +1,6 @@
 package org.easyb.plugin;
 
-import org.disco.easyb.util.BehaviorStepType;
+import org.easyb.util.BehaviorStepType;
 
 public class StepResult {
     private String stepName;

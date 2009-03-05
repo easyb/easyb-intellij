@@ -1,11 +1,11 @@
 package org.easyb.plugin;
 
 import static junit.framework.Assert.assertEquals;
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.result.Result;
-import static org.disco.easyb.result.Result.FAILED;
-import static org.disco.easyb.util.BehaviorStepType.IT;
-import static org.disco.easyb.util.BehaviorStepType.SPECIFICATION;
+import org.easyb.BehaviorStep;
+import org.easyb.result.Result;
+import static org.easyb.result.Result.FAILED;
+import static org.easyb.util.BehaviorStepType.IT;
+import static org.easyb.util.BehaviorStepType.SPECIFICATION;
 import static org.easyb.plugin.Outcome.FAILURE;
 import org.easyb.plugin.ui.EasybPresenter;
 import org.easyb.plugin.ui.StubNodeBuilder;

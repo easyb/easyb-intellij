@@ -3,8 +3,8 @@ package org.easyb.plugin.ui.swing
 import groovy.ui.Console
 import javax.swing.JFrame
 import javax.swing.tree.DefaultMutableTreeNode
-import static org.disco.easyb.util.BehaviorStepType.*
-import org.disco.easyb.util.BehaviorStepType
+import static org.easyb.util.BehaviorStepType.*
+import org.easyb.util.BehaviorStepType
 import org.easyb.plugin.Outcome
 import org.easyb.plugin.StepResult
 import org.easyb.plugin.ui.EasybView

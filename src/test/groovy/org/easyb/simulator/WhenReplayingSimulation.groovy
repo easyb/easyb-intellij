@@ -1,10 +1,10 @@
 package org.easyb.simulator
 
-import org.disco.easyb.BehaviorStep
-import org.disco.easyb.listener.ExecutionListener
-import org.disco.easyb.result.Result
-import static org.disco.easyb.util.BehaviorStepType.GIVEN
-import static org.disco.easyb.util.BehaviorStepType.STORY
+import org.easyb.BehaviorStep
+import org.easyb.listener.ExecutionListener
+import org.easyb.result.Result
+import static org.easyb.util.BehaviorStepType.GIVEN
+import static org.easyb.util.BehaviorStepType.STORY
 import org.junit.Test
 import static org.mockito.Mockito.*
 

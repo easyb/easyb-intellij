@@ -5,10 +5,10 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.domain.Behavior;
-import org.disco.easyb.listener.ExecutionListener;
-import org.disco.easyb.result.Result;
+import org.easyb.BehaviorStep;
+import org.easyb.domain.Behavior;
+import org.easyb.listener.ExecutionListener;
+import org.easyb.result.Result;
 import static org.easyb.plugin.remoting.EventType.*;
 import static org.easyb.plugin.remoting.RemoteUtils.safeWriteObject;
 

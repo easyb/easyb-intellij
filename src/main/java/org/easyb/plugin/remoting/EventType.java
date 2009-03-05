@@ -1,9 +1,9 @@
 package org.easyb.plugin.remoting;
 
-import org.disco.easyb.listener.ExecutionListener;
-import org.disco.easyb.domain.Behavior;
-import org.disco.easyb.BehaviorStep;
-import org.disco.easyb.result.Result;
+import org.easyb.listener.ExecutionListener;
+import org.easyb.domain.Behavior;
+import org.easyb.BehaviorStep;
+import org.easyb.result.Result;
 
 public enum EventType {
     START_BEHAVIOR {

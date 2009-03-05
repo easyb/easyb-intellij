@@ -1,6 +1,6 @@
 package org.easyb.plugin.ui.swing;
 
-import static org.disco.easyb.util.BehaviorStepType.THEN;
+import static org.easyb.util.BehaviorStepType.THEN;
 import static org.easyb.plugin.Outcome.SUCCESS;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.ViewEventListener;
