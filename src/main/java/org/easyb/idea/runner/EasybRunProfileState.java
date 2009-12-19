@@ -11,6 +11,7 @@ import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.PathUtil;
@@ -67,8 +68,9 @@ public class EasybRunProfileState extends JavaCommandLineState {
         return new Module[]{module};
     }
 
-    @SuppressWarnings("deprecation")
     private VirtualFile[] getProjectClasspath() {
-        return ProjectRootManager.getInstance(module.getProject()).getFullClassPath();
+        return ProjectRootManager.getInstance(module.getProject())
+                .getFilesFromAllModules(OrderRootType.CLASSES_AND_OUTPUT);
+
     }
 }

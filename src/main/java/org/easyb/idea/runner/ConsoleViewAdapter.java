@@ -69,4 +69,8 @@ public class ConsoleViewAdapter implements ConsoleView {
 
     public void dispose() {
     }
+
+    public AnAction [] createConsoleActions()  {
+        return new AnAction[0];
+    }
 }
