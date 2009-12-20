@@ -7,12 +7,13 @@ import java.util.List;
 import java.util.Collections;
 
 import org.easyb.BehaviorRunner;
+import org.easyb.Configuration;
 import org.easyb.ConsoleReporter;
 import org.easyb.report.ReportWriter;
 
 public class RemoteRunner extends BehaviorRunner {
     public RemoteRunner(int port) throws IOException {
-        super(Collections.<ReportWriter>emptyList(), new ConsoleReporter(), new ExecutionListenerProxy(port));
+        super(new Configuration(), new ConsoleReporter(), new ExecutionListenerProxy(port));
     }
 
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class RemoteRunner extends BehaviorRunner {
 
         try {
             BehaviorRunner runner = new RemoteRunner(port);
-            runner.runBehavior(getBehaviors(stripFirst(args)));
+            runner.runBehaviors(getBehaviors(stripFirst(args)));
         } catch (Exception e) {
             e.printStackTrace(System.err);
         }
