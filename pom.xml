@@ -10,7 +10,7 @@
 
   <artifactId>intellij-plugin</artifactId>
   <name>easyb IntelliJ plugin</name>
-  <version>0.9.7-SNAPSHOT</version>
+  <version>0.9.6-1-SNAPSHOT</version>
   <description>A plugin that enables easyb spec execution in IntelliJ</description>
 
   <repositories>
@@ -30,6 +30,23 @@
   </pluginRepositories>
 
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+            <exclude>**/plugin.xml</exclude>
+        </excludes>
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+            <include>**/plugin.xml</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+      
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>

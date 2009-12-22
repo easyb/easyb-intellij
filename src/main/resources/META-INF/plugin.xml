@@ -3,8 +3,13 @@
   <id>org.easyb.easyb</id>
   <name>easyb</name>…
   <description>easyb behavior driven development framework</description>
-  <version>0.9.6</version>
-  <vendor>org.easyb</vendor>
+  <version>${pom.version}</version>
+  <vendor url="http://www.easyb.org" email="easyb-users@googlegroups.com">easyb.org</vendor>
+  <change-notes><![CDATA[
+  -- include easyb version 0.9.6 jar<br/>
+  -- plugin now runs under IntelliJ IDEA 9.0 (IU-93.13)
+  ]]>
+  </change-notes>
   <idea-version since-build="9164"/>
 
   <depends>org.intellij.groovy</depends>
