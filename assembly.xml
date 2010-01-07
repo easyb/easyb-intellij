@@ -11,7 +11,7 @@
       <includes>
         <include>org.easyb:easyb</include>
         <include>org.easyb:intellij-plugin</include>
-        <include>org.codehaus.groovy:groovy-all-minimal</include>
+        <include>org.codehaus.groovy:groovy-all</include>
       </includes>
     </dependencySet>
   </dependencySets>
