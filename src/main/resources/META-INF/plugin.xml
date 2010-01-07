@@ -7,7 +7,7 @@
   <vendor url="http://www.easyb.org" email="easyb-users@googlegroups.com">easyb.org</vendor>
   <change-notes><![CDATA[
   -- include easyb version 0.9.6 jar<br/>
-  -- plugin now runs under IntelliJ IDEA 9.0 (IU-93.13)
+  -- plugin now runs under IntelliJ IDEA 8.1 & 9.0
   ]]>
   </change-notes>
   <idea-version since-build="9164"/>
