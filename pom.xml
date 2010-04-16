@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.easyb</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>0.9.6</version>
+    <version>0.9.7</version>
   </parent>
 
   <artifactId>intellij-plugin</artifactId>
@@ -163,12 +163,12 @@
     <dependency>
       <groupId>org.easyb</groupId>
       <artifactId>easyb</artifactId>
-      <version>0.9.6</version>
+      <version>0.9.7</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
-      <version>1.6.7</version>
+      <version>1.7.2</version>
     </dependency>
 
     <dependency>
