@@ -6,8 +6,8 @@
   <version>${pom.version}</version>
   <vendor url="http://www.easyb.org" email="easyb-users@googlegroups.com">easyb.org</vendor>
   <change-notes><![CDATA[
-  -- include easyb version 0.9.6 jar<br/>
-  -- plugin now runs under IntelliJ IDEA 8.1 & 9.0
+  -- includes easyb version 0.9.7 jar<br/>
+  -- includes Groovy version 1.7.2 jar
   ]]>
   </change-notes>
   <idea-version since-build="9164"/>
