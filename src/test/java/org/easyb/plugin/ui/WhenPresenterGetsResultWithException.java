@@ -2,6 +2,7 @@ package org.easyb.plugin.ui;
 
 import org.easyb.BehaviorStep;
 import org.easyb.exception.VerificationException;
+import org.easyb.plugin.remoting.RemotableBehaviorStep;
 import org.easyb.result.Result;
 import static org.easyb.util.BehaviorStepType.STORY;
 import org.easyb.plugin.StubView;
@@ -17,7 +18,7 @@ public class WhenPresenterGetsResultWithException {
 
         EasybPresenter<StubResultNode> presenter = new EasybPresenter<StubResultNode>(view, builder);
         VerificationException failure = new VerificationException("Result did not match exectation");
-        presenter.startStep(new BehaviorStep(STORY, "test story"));
+        presenter.startStep(new RemotableBehaviorStep(STORY, "test story"));
         presenter.gotResult(new Result(failure));
 
         assertEquals(failure, view.getResultNode().getResult().getCause());

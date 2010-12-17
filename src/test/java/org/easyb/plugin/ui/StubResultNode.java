@@ -56,6 +56,6 @@ public class StubResultNode implements ResultNode<StubResultNode> {
     }
 
     public static StubResultNode nodeFor(BehaviorStepType type, String phrase, Outcome outcome) {
-        return new StubResultNode(new StepResult(phrase, type, outcome));
+        return new StubResultNode(new StepResult(phrase, type, outcome, 1));
     }
 }

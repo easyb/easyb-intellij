@@ -14,7 +14,7 @@ public class EasybNodeRenderer extends DefaultTreeCellRenderer {
         SwingResultNode node = (SwingResultNode) value;
         StepResult stepResult = (StepResult) node.getUserObject();
 
-        String stepName = capitalizeName(stepResult.getStepType().toString());
+        String stepName = capitalizeName(stepResult.getStepType().type().replace("_", " "));
 
         label.setText(stepName + " " + stepResult.getStepName());
         label.setIcon(loadIcon(node));

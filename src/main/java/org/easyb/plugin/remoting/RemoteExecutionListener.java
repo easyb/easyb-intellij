@@ -12,7 +12,7 @@ import static org.easyb.plugin.remoting.RemoteUtils.safeClose;
  * Listens for remote events to sent over a socket and forwards then to an execution listener
  */
 public class RemoteExecutionListener implements Runnable {
-    private ExecutionListener receiver;
+    private RemotingExecutionListener receiver;
     private ServerSocket serverSocket;
 
     public void start() {
@@ -58,7 +58,7 @@ public class RemoteExecutionListener implements Runnable {
         throw new RuntimeException("Unable to verify that listener thread started");
     }
 
-    public void setReceiver(ExecutionListener receiver) {
+    public void setReceiver(RemotingExecutionListener receiver) {
         this.receiver = receiver;
     }
 

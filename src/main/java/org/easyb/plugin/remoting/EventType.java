@@ -7,40 +7,40 @@ import org.easyb.result.Result;
 
 public enum EventType {
     START_BEHAVIOR {
-        public void fire(ExecutionListener receiver, Object data) {
-            receiver.startBehavior((Behavior) data);
+        public void fire(RemotingExecutionListener receiver, Object data) {
+            receiver.startBehavior((RemotableBehavior)data);
         }
     },
     START_STEP {
-        public void fire(ExecutionListener receiver, Object data) {
-            receiver.startStep((BehaviorStep) data);
+        public void fire(RemotingExecutionListener receiver, Object data) {
+            receiver.startStep((RemotableBehaviorStep) data);
         }
     },
     DESCRIBE_STEP {
-        public void fire(ExecutionListener receiver, Object data) {
+        public void fire(RemotingExecutionListener receiver, Object data) {
             receiver.describeStep((String) data);
         }
     },
     GOT_RESULT {
-        public void fire(ExecutionListener receiver, Object data) {
+        public void fire(RemotingExecutionListener receiver, Object data) {
             receiver.gotResult((Result) data);
         }
     },
     STOP_STEP {
-        public void fire(ExecutionListener receiver, Object data) {
+        public void fire(RemotingExecutionListener receiver, Object data) {
             receiver.stopStep();
         }
     },
     STOP_BEHAVIOR {
-        public void fire(ExecutionListener receiver, Object data) {
-            receiver.stopBehavior(null, (Behavior) data);
+        public void fire(RemotingExecutionListener receiver, Object data) {
+            receiver.stopBehavior((RemotableBehaviorStep)null, (RemotableBehavior) data);
         }
     },
     COMPLETE_TESTING {
-        public void fire(ExecutionListener receiver, Object data) {
+        public void fire(RemotingExecutionListener receiver, Object data) {
             receiver.completeTesting();
         }
     };
 
-    public abstract void fire(ExecutionListener receiver, Object data);
+    public abstract void fire(RemotingExecutionListener receiver, Object data);
 }

@@ -1,9 +1,11 @@
 package org.easyb.simulator
 
 import org.easyb.listener.ExecutionListener
+import org.easyb.plugin.remoting.RemotingExecutionListener
+import org.easyb.plugin.remoting.RemotableBehaviorStep
 
 class EasybSimulator {
-    ExecutionListener listener
+    RemotingExecutionListener listener
 
     void replay(SimulationNode node) {
         if (hasResult(node))

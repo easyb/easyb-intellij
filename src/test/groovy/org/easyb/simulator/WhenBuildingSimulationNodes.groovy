@@ -4,6 +4,7 @@ import org.easyb.BehaviorStep
 import static org.easyb.util.BehaviorStepType.*
 import static org.junit.Assert.assertEquals
 import org.junit.Test
+import org.easyb.plugin.remoting.RemotableBehaviorStep
 
 class WhenBuildingSimulationNodes {
     @Test
@@ -18,11 +19,11 @@ class WhenBuildingSimulationNodes {
             }
         }
 
-        SimulationNode expected = new SimulationNode(step: new BehaviorStep(STORY, 'sample story'))
-        SimulationNode scenarioNode = new SimulationNode(step: new BehaviorStep(SCENARIO, 'sample scenario'))
-        SimulationNode givenNode = new SimulationNode(step: new BehaviorStep(GIVEN, 'something'))
-        SimulationNode whenNode = new SimulationNode(step: new BehaviorStep(WHEN, 'something happens'))
-        SimulationNode thenNode = new SimulationNode(step: new BehaviorStep(THEN, 'something happened'))
+        SimulationNode expected = new SimulationNode(step: new RemotableBehaviorStep(STORY, 'sample story'))
+        SimulationNode scenarioNode = new SimulationNode(step: new RemotableBehaviorStep(SCENARIO, 'sample scenario'))
+        SimulationNode givenNode = new SimulationNode(step: new RemotableBehaviorStep(GIVEN, 'something'))
+        SimulationNode whenNode = new SimulationNode(step: new RemotableBehaviorStep(WHEN, 'something happens'))
+        SimulationNode thenNode = new SimulationNode(step: new RemotableBehaviorStep(THEN, 'something happened'))
 
         expected.add(scenarioNode)
         scenarioNode.add(givenNode)

@@ -63,7 +63,7 @@ public class WhenSendingProxiedEvents {
     @Test
     public void shouldSendStopStepEvent() throws IOException {
         remoteListener.stopStep();
-        assertEquals(new Event(STOP_STEP, null), mockReceiver.getEvent());
+        assertEquals(new Event(STOP_STEP), mockReceiver.getEvent());
     }
 
     @Test

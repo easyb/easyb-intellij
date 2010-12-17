@@ -22,7 +22,7 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
     public SwingEasybView() {
         setLayout(new BorderLayout());
 
-        root = new SwingResultNode(new StepResult("Root", GENESIS, RUNNING));
+        root = new SwingResultNode(new StepResult("Root", GENESIS, RUNNING, 0));
         tree = createTree(root);
         tree.setCellRenderer(new EasybNodeRenderer());
         tree.setRootVisible(false);

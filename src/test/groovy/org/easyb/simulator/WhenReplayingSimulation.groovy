@@ -7,14 +7,16 @@ import static org.easyb.util.BehaviorStepType.GIVEN
 import static org.easyb.util.BehaviorStepType.STORY
 import org.junit.Test
 import static org.mockito.Mockito.*
+import org.easyb.plugin.remoting.RemotingExecutionListener
+import org.easyb.plugin.remoting.RemotableBehaviorStep
 
 class WhenReplayingSimulation {
     @Test
     void shouldRecursivelyInvokeExecutionListenerMethods() {
-        ExecutionListener mockListener = mock(ExecutionListener.class)
+        RemotingExecutionListener mockListener = mock(RemotingExecutionListener.class)
 
-        SimulationNode story = new SimulationNode(step: new BehaviorStep(STORY, 'transferring funds'))
-        SimulationNode given = new SimulationNode(step: new BehaviorStep(GIVEN, 'an account'))
+        SimulationNode story = new SimulationNode(step: new RemotableBehaviorStep(STORY, 'transferring funds'))
+        SimulationNode given = new SimulationNode(step: new RemotableBehaviorStep(GIVEN, 'an account'))
         SimulationNode result = new SimulationNode(result: new Result(Result.SUCCEEDED))
 
         story.add(given)

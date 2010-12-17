@@ -2,9 +2,10 @@ package org.easyb.simulator
 
 import org.easyb.BehaviorStep
 import org.easyb.result.Result
+import org.easyb.plugin.remoting.RemotableBehaviorStep
 
 class SimulationNode {
-    BehaviorStep step
+    RemotableBehaviorStep step
     Result result
 
     def children = []

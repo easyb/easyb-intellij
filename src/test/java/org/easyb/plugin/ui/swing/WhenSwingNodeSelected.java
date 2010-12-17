@@ -14,7 +14,7 @@ public class WhenSwingNodeSelected {
     public void shouldNotfyPresenter()
     {
         SwingNodeBuilder builder = new SwingNodeBuilder();
-        StepResult result = new StepResult("name", THEN, SUCCESS);
+        StepResult result = new StepResult("name", THEN, SUCCESS, 1);
         SwingResultNode node = builder.build(result);
 
         ViewEventListener listener = createMock(ViewEventListener.class);

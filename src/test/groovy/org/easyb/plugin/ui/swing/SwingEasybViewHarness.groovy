@@ -67,7 +67,7 @@ class SwingEasybViewHarness {
     }
 
     private static SwingResultNode nodeFor(BehaviorStepType type, String phrase, Outcome result) {
-        return new SwingResultNode(new StepResult(phrase, type, result));
+        return new SwingResultNode(new StepResult(phrase, type, result, 1));
     }
 }
 

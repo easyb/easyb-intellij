@@ -13,7 +13,7 @@ public class WhenBuildingSwingNode {
     public void shouldConstructEasybTreeNode() {
         NodeBuilder<? extends ResultNode> builder = new SwingNodeBuilder();
 
-        StepResult result = new StepResult("name", GIVEN, SUCCESS);
+        StepResult result = new StepResult("name", GIVEN, SUCCESS, 1);
         ResultNode expected = new SwingResultNode(result);
         ResultNode actual = builder.build(result);
 

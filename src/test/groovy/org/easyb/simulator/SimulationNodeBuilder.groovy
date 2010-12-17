@@ -3,6 +3,7 @@ package org.easyb.simulator
 import org.easyb.util.BehaviorStepType
 import org.easyb.BehaviorStep
 import org.easyb.result.Result
+import org.easyb.plugin.remoting.RemotableBehaviorStep
 
 class SimulationNodeBuilder extends BuilderSupport {
     protected void setParent(Object parent, Object child) {
@@ -25,6 +26,6 @@ class SimulationNodeBuilder extends BuilderSupport {
         if ('fail'.equals(name.toString()))
             return new SimulationNode(result: new Result(Result.FAILED))
 
-        return new SimulationNode(step: new BehaviorStep(BehaviorStepType.valueOf(name.toString().toUpperCase()), value.toString()))
+        return new SimulationNode(step: new RemotableBehaviorStep(BehaviorStepType.valueOf(name.toString().toUpperCase()), value.toString()))
     }
 }

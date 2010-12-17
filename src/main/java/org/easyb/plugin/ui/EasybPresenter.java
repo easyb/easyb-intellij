@@ -7,6 +7,10 @@ import java.util.Stack;
 import org.easyb.BehaviorStep;
 import org.easyb.domain.Behavior;
 import org.easyb.listener.ExecutionListener;
+import org.easyb.plugin.remoting.RemotableBehavior;
+import org.easyb.plugin.remoting.RemotableBehaviorStep;
+import org.easyb.plugin.remoting.RemotingExecutionListener;
+import org.easyb.result.ReportingTag;
 import org.easyb.result.Result;
 import static org.easyb.util.BehaviorStepType.SPECIFICATION;
 import static org.easyb.util.BehaviorStepType.STORY;
@@ -15,13 +19,13 @@ import static org.easyb.plugin.Outcome.*;
 import org.easyb.plugin.StepResult;
 
 public class EasybPresenter<T extends ResultNode>
-    implements ExecutionListener, ConsoleOutputListener, ViewEventListener {
+    implements RemotingExecutionListener, ConsoleOutputListener, ViewEventListener {
     private EasybView<T> view;
     private NodeBuilder<T> nodeBuilder;
     private Stack<T> nodeStack;
-    private Map<String, T> nodeMap;
+    //private Map<String, T> nodeMap;
     private boolean descendantFailed = false;
-    private String lastSpecRunName;
+    //private String lastSpecRunName;
 
     private SpecificationRunningParser specRunningParser = new SpecificationRunningParser();
 
@@ -29,14 +33,14 @@ public class EasybPresenter<T extends ResultNode>
         this.view = view;
         this.nodeBuilder = nodeBuilder;
         nodeStack = new Stack<T>();
-        nodeMap = new HashMap<String, T>();
+//        nodeMap = new HashMap<String, T>();
     }
 
-    public void startBehavior(Behavior behavior) {
+    public void startBehavior(RemotableBehavior behavior) {
         descendantFailed = false;
     }
 
-    public void startStep(BehaviorStep behaviorStep) {
+    public void startStep(RemotableBehaviorStep behaviorStep) {
         T node = buildNode(behaviorStep);
         if (behaviorStep.getStepType() == STORY || behaviorStep.getStepType() == SPECIFICATION) {
             view.addBehaviorResult(node);
@@ -46,9 +50,9 @@ public class EasybPresenter<T extends ResultNode>
         nodeStack.push(node);
     }
 
-    private T buildNode(BehaviorStep behaviorStep) {
-        T node = nodeBuilder.build(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING));
-        nodeMap.put(behaviorStep.getName(), node);
+    private T buildNode(RemotableBehaviorStep behaviorStep) {
+        T node = nodeBuilder.build(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING, behaviorStep.getId()));
+//        nodeMap.put(behaviorStep.getName(), node);
         return node;
     }
 
@@ -82,10 +86,14 @@ public class EasybPresenter<T extends ResultNode>
         view.refresh();
     }
 
-    public void stopBehavior(BehaviorStep behaviorStep, Behavior behavior) {
+    public void stopBehavior(RemotableBehaviorStep behaviorStep, RemotableBehavior behavior) {
     }
 
-    public void completeTesting() {
+  public void tag(ReportingTag tag) {
+
+  }
+
+  public void completeTesting() {
     }
 
     public void textAvailable(String text) {
@@ -94,10 +102,10 @@ public class EasybPresenter<T extends ResultNode>
         if (specRunningParser.isSpecificationRunningMessage(text)) {
             captureSpecificationRunningMessage(text);
         } else {
-            if (lastSpecRunName != null) {
-                ResultNode lastSpecRunNode = nodeMap.get(lastSpecRunName);
-                appendOutput(text, lastSpecRunNode);
-            }
+//            if (lastSpecRunName != null) {
+//                ResultNode lastSpecRunNode = nodeMap.get(lastSpecRunName);
+//                appendOutput(text, lastSpecRunNode);
+//            }
         }
     }
 
@@ -106,12 +114,17 @@ public class EasybPresenter<T extends ResultNode>
     }
 
     private void captureSpecificationRunningMessage(String text) {
-        if (specRunningParser.isSpecificationRunningMessage(text)) {
-            lastSpecRunName = specRunningParser.parseSpecNameFrom(text);
-        }
+//        if (specRunningParser.isSpecificationRunningMessage(text)) {
+//            lastSpecRunName = specRunningParser.parseSpecNameFrom(text);
+//        }
     }
 
     public void resultSelected(ResultNode result) {
+      if ( result == null || result.getOutput() == null )
+        view.writeConsole("No info available for node\n");
+      else if ( result.getOutput() == null )
+        view.writeConsole("No extra info available for " + result.getResult().getStepName());
+      else
         view.writeOutput(result.getOutput());
     }
 
