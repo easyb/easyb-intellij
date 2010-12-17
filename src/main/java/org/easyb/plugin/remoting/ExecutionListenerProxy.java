@@ -32,7 +32,6 @@ public class ExecutionListenerProxy implements ExecutionListener {
   }
 
   public void startStep(BehaviorStep behaviorStep) {
-    System.out.println("step " + behaviorStep);
     safeWriteObject(new Event(START_STEP, behaviorStep), outputStream);
   }
 
@@ -41,7 +40,6 @@ public class ExecutionListenerProxy implements ExecutionListener {
   }
 
   public void gotResult(Result result) {
-    System.out.println("result :" + result);
     safeWriteObject(new Event(GOT_RESULT, result), outputStream);
   }
 
