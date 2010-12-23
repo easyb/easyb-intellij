@@ -1,5 +1,6 @@
 package org.easyb.plugin;
 
+import org.easyb.plugin.remoting.RemotableBehaviorStep;
 import org.easyb.util.BehaviorStepType;
 
 public class StepResult {
@@ -9,6 +10,8 @@ public class StepResult {
   private Throwable cause;
   private final int originalId;
   private final int id;
+  private final String source;
+  private final int lineNo;
 
   private static int idGenerator = 1;
 
@@ -19,7 +22,21 @@ public class StepResult {
     this.originalId = id;
 
     this.id = idGenerator ++;
+    this.source = null;
+    this.lineNo = 0;
   }
+
+  public StepResult(RemotableBehaviorStep step) {
+    this.stepName = step.getName();
+    this.stepType = step.getStepType();
+    this.outcome = Outcome.RUNNING;
+    this.originalId = step.getId();
+
+    this.id = idGenerator ++;
+    this.source = step.getSource();
+    this.lineNo = step.getLineNo();
+  }
+
 
   public String getStepName() {
     return stepName;
@@ -86,5 +103,13 @@ public class StepResult {
 
   public int getId() {
     return id;
+  }
+
+  public int getLineNo() {
+    return lineNo;
+  }
+
+  public String getSource() {
+    return source;
   }
 }

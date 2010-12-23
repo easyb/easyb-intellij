@@ -2,6 +2,8 @@ package org.easyb.plugin.ui.swing;
 
 import static org.easyb.util.BehaviorStepType.GENESIS;
 import static org.easyb.plugin.Outcome.RUNNING;
+
+import com.intellij.ui.components.JBScrollPane;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.ui.EasybView;
 import org.easyb.plugin.ui.ViewEventListener;
@@ -12,6 +14,8 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class SwingEasybView extends JPanel implements EasybView<SwingResultNode> {
     private JTextArea consoleTextArea;
@@ -31,10 +35,10 @@ public class SwingEasybView extends JPanel implements EasybView<SwingResultNode>
         consoleTextArea = new JTextArea();
 
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Console", new JScrollPane(consoleTextArea));
-        tabbedPane.addTab("Output", new JScrollPane(outputTextArea));
+        tabbedPane.addTab("Console", new JBScrollPane(consoleTextArea));
+        tabbedPane.addTab("Output", new JBScrollPane(outputTextArea));
 
-        JSplitPane pane = new JSplitPane(HORIZONTAL_SPLIT, new JScrollPane(tree), tabbedPane);
+        JSplitPane pane = new JSplitPane(HORIZONTAL_SPLIT, new JBScrollPane(tree), tabbedPane);
         pane.setDividerLocation(300);
         add(pane);
     }

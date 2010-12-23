@@ -1,6 +1,7 @@
 package org.easyb.idea.runner;
 
 import com.intellij.execution.Location;
+import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.configurations.ModuleBasedConfiguration;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
@@ -21,7 +22,7 @@ public class EasybRunConfigurationProducer extends RuntimeConfigurationProducer 
         return sourceElement;
     }
 
-    protected RunnerAndConfigurationSettingsImpl createConfigurationByElement(Location location, ConfigurationContext configurationContext) {
+    protected RunnerAndConfigurationSettings createConfigurationByElement(Location location, ConfigurationContext configurationContext) {
         if (!isSpec(location)) {
             sourceElement = null;
             return INCOMPATIBLE_TYPE;
@@ -29,7 +30,7 @@ public class EasybRunConfigurationProducer extends RuntimeConfigurationProducer 
 
         sourceElement = location.getPsiElement();
 
-        RunnerAndConfigurationSettingsImpl settings = cloneTemplateConfiguration(location.getProject(), configurationContext);
+        RunnerAndConfigurationSettings settings = cloneTemplateConfiguration(location.getProject(), configurationContext);
         EasybRunConfiguration configuration = (EasybRunConfiguration) settings.getConfiguration();
 
         // copied the logic for setting the module from com.intellij.execution.junit.JavaRuntimeConfigurationProducerBase

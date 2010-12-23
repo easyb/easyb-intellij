@@ -4,27 +4,25 @@ import org.easyb.plugin.ui.swing.SwingNodeBuilder;
 import org.easyb.plugin.ui.swing.SwingResultNode;
 import org.easyb.plugin.StepResult;
 import org.easyb.plugin.Outcome;
-import static org.easymock.EasyMock.*;
 import org.junit.Test;
 import org.easyb.util.BehaviorStepType;
+import org.mockito.Mockito;
+
+import static org.mockito.Mockito.mock;
 
 public class WhenResultNodeSelected {
-    private static final String TEST_OUTPUT = "test output";
+  private static final String TEST_OUTPUT = "test output";
 
-    @SuppressWarnings("unchecked")
-    @Test
-    public void shouldDisplayNodeOutput() {
-        EasybView<SwingResultNode> view = createMock(EasybView.class);
+  @SuppressWarnings("unchecked")
+  @Test
+  public void shouldDisplayNodeOutput() {
+    EasybView<SwingResultNode> view = mock(EasybView.class);
 
-        view.writeOutput(TEST_OUTPUT);
+    EasybPresenter presenter = new EasybPresenter<SwingResultNode>(view, new SwingNodeBuilder());
+    ResultNode node = new StubResultNode(new StepResult("name", BehaviorStepType.THEN, Outcome.SUCCESS, 1));
+    node.setOutput(TEST_OUTPUT);
+    presenter.resultSelected(node);
 
-        replay(view);
-
-        EasybPresenter presenter = new EasybPresenter<SwingResultNode>(view, new SwingNodeBuilder());
-        ResultNode node = new StubResultNode(new StepResult("name", BehaviorStepType.THEN, Outcome.SUCCESS, 1));
-        node.setOutput(TEST_OUTPUT);
-        presenter.resultSelected(node);
-
-        verify(view);
-    }
+    Mockito.verify(view).writeConsole(TEST_OUTPUT);
+  }
 }

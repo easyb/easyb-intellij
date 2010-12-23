@@ -47,7 +47,7 @@ public class EasybPresenter<T extends ResultNode>
   }
 
   private T buildNode(RemotableBehaviorStep behaviorStep) {
-    T node = nodeBuilder.build(new StepResult(behaviorStep.getName(), behaviorStep.getStepType(), RUNNING, behaviorStep.getId()));
+    T node = nodeBuilder.build(new StepResult(behaviorStep));
 //        nodeMap.put(behaviorStep.getName(), node);
     return node;
   }
@@ -115,12 +115,23 @@ public class EasybPresenter<T extends ResultNode>
   }
 
   public void resultSelected(ResultNode result) {
-    if (result == null || result.getOutput() == null) {
-      view.writeConsole("No info available for node\n");
-    } else if (result.getOutput() == null) {
-      view.writeConsole("No extra info available for " + result.getResult().getStepName());
-    } else {
-      view.writeOutput(result.getOutput());
+    boolean source;
+    boolean output;
+
+    if (source = ( result.getResult() != null && result.getResult().getSource() != null )) {
+      view.writeOutput(result.getResult().getSource()+"\n");
+    }
+
+    if (output = ( result != null && result.getOutput() != null )) {
+      view.writeOutput(result.getOutput()+"\n");
+    }
+
+    if (!source) {
+      view.writeOutput("No source available for this node\n");
+    }
+
+    if (!output) {
+      view.writeOutput("No output available for this node\n");
     }
   }
 
