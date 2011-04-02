@@ -1,17 +1,16 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
   <id>org.easyb.easyb</id>
-  <name>easyb</name>…
-  <description>easyb behavior driven development framework</description>
+  <name>easyb-X</name>…
+  <description>easyb behavior driven development framework. This is the version for IDEA X</description>
   <version>${pom.version}</version>
   <vendor url="http://www.easyb.org" email="easyb-users@googlegroups.com">easyb.org</vendor>
   <change-notes><![CDATA[
   -- includes easyb-core 1.1 jar<br/>
-  -- includes Groovy version 1.7.6 jar
+  -- includes Groovy version 1.7.10 jar
   ]]>
   </change-notes>
   <idea-version since-build="9918"/>
-
 
   <depends>org.intellij.groovy</depends>
 
