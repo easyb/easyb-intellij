@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.easyb.util.BehaviorStepType;
 import org.mockito.Mockito;
 
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 
 public class WhenResultNodeSelected {
@@ -23,6 +25,6 @@ public class WhenResultNodeSelected {
     node.setOutput(TEST_OUTPUT);
     presenter.resultSelected(node);
 
-    Mockito.verify(view).writeConsole(TEST_OUTPUT);
+    Mockito.verify(view).writeOutput(eq(TEST_OUTPUT+"\n"));
   }
 }

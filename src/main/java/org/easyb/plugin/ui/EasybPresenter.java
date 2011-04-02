@@ -126,7 +126,7 @@ public class EasybPresenter<T extends ResultNode>
       view.writeOutput(result.getOutput()+"\n");
     }
 
-    if (!source) {
+    if (!source && !output) {
       view.writeOutput("No source available for this node\n");
     }
 
