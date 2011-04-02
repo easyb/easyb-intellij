@@ -5,13 +5,16 @@
   <parent>
     <groupId>org.easyb</groupId>
     <artifactId>easyb-maven-parent</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
   </parent>
 
   <artifactId>intellij-plugin</artifactId>
   <name>easyb IntelliJ plugin</name>
   <version>1.1-SNAPSHOT</version>
-  <description>A plugin that enables easyb spec execution in IntelliJ</description>
+  <description>
+	A plugin that enables easyb spec execution in IntelliJ. We cannot release this into central as all dependencies for artefacts in 
+	central must now be *in* central (which makes sense). 
+  </description>
 
   <scm>
       <connection>scm:svn:http://easyb.googlecode.com/svn/trunk/intellij-plugins/easyb-plugin</connection>
