@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 public class EasybRunConfiguration extends ModuleBasedConfiguration {
     private EasybConfigurationFactory factory;
     private String specificationPath;
+    private String jvmParameters;
 
     public EasybRunConfiguration(EasybConfigurationFactory factory, Project project, String name) {
         super(name, new RunConfigurationModule(project), factory);
@@ -37,12 +38,14 @@ public class EasybRunConfiguration extends ModuleBasedConfiguration {
         super.readExternal(element);
         readModule(element);
         specificationPath = JDOMExternalizer.readString(element, "specificationPath");
+        jvmParameters = JDOMExternalizer.readString(element, "jvmParameters");
     }
 
     public void writeExternal(Element element) throws WriteExternalException {
         super.writeExternal(element);
         writeModule(element);
         JDOMExternalizer.write(element, "specificationPath", specificationPath);
+        JDOMExternalizer.write(element, "jvmParameters", jvmParameters);
     }
 
     protected ModuleBasedConfiguration createInstance() {
@@ -54,7 +57,15 @@ public class EasybRunConfiguration extends ModuleBasedConfiguration {
     }
 
     public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment env) throws ExecutionException {
-        return new EasybRunProfileState(env, getModule(), specificationPath);
+        return new EasybRunProfileState(env, getModule(), specificationPath, jvmParameters);
+    }
+
+    public String getJvmParameters() {
+        return jvmParameters;
+    }
+
+    public void setJvmParameters(String jvmParameters) {
+        this.jvmParameters = jvmParameters;
     }
 
     public String getSpecificationPath() {
