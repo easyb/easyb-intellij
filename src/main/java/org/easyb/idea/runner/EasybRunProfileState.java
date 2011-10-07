@@ -24,12 +24,14 @@ import org.jetbrains.annotations.NotNull;
 public class EasybRunProfileState extends JavaCommandLineState {
     private Module module;
     private String specificationPath;
+    private String jvmParameters;
     private SwingEasybBuilder builder;
 
-    protected EasybRunProfileState(ExecutionEnvironment environment, Module module, String specificationPath) {
+    protected EasybRunProfileState(ExecutionEnvironment environment, Module module, String specificationPath, String jvmParameters) {
         super(environment);
         this.module = module;
         this.specificationPath = specificationPath;
+        this.jvmParameters = jvmParameters;
         this.builder = new SwingEasybBuilder();
     }
 
@@ -55,6 +57,7 @@ public class EasybRunProfileState extends JavaCommandLineState {
         javaParameters.setMainClass("org.easyb.plugin.remoting.RemoteRunner");
         javaParameters.getProgramParametersList().add(Integer.toString(listener.getPort()));
         javaParameters.getProgramParametersList().add(specificationPath);
+        javaParameters.getVMParametersList().addParametersString(jvmParameters);
         return javaParameters;
     }
 

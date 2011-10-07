@@ -13,6 +13,7 @@ public class EasybRunConfigurationEditor extends SettingsEditor<EasybRunConfigur
 
     protected void resetEditorFrom(EasybRunConfiguration configuration) {
         dialog.specificationPathField.setText(configuration.getSpecificationPath());
+        dialog.jvmParametersField.setText(configuration.getJvmParameters());
 
         dialog.moduleComboModel.removeAllElements();
         for (Module module : configuration.getValidModules()) {
@@ -23,6 +24,7 @@ public class EasybRunConfigurationEditor extends SettingsEditor<EasybRunConfigur
 
     protected void applyEditorTo(EasybRunConfiguration configuration) throws ConfigurationException {
         configuration.setSpecificationPath(dialog.specificationPathField.getText());
+        configuration.setJvmParameters(dialog.jvmParametersField.getText());
         configuration.setModule((Module) dialog.moduleCombo.getSelectedItem());
     }
 
