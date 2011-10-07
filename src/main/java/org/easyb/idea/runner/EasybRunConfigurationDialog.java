@@ -1,10 +1,11 @@
 package org.easyb.idea.runner;
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class EasybRunConfigurationDialog extends JPanel {
     JTextField specificationPathField;
+    JTextField jvmParametersField;
     JComboBox moduleCombo;
     DefaultComboBoxModel moduleComboModel;
 
@@ -15,6 +16,10 @@ public class EasybRunConfigurationDialog extends JPanel {
 
         specificationPathField = new JTextField();
         add(specificationPathField);
+
+        add(new JLabel("VM Parameters:"));
+        jvmParametersField = new JTextField();
+        add(jvmParametersField);
 
         add(new JLabel("Choose classpath and jdk from module:"));
 
