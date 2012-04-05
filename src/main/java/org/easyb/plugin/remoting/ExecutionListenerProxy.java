@@ -20,11 +20,13 @@ import static org.easyb.plugin.remoting.RemoteUtils.safeWriteObject;
  * Serialize execution events and send them over a socket to a listener on the other end
  */
 public class ExecutionListenerProxy implements ExecutionListener {
-  private ObjectOutputStream outputStream;
+  private static ObjectOutputStream outputStream;
 
   public ExecutionListenerProxy(int port) throws IOException {
-    Socket socket = new Socket(InetAddress.getLocalHost(), port);
-    outputStream = new ObjectOutputStream(socket.getOutputStream());
+    if (outputStream == null) {
+      Socket socket = new Socket(InetAddress.getLocalHost(), port);
+      outputStream = new ObjectOutputStream(socket.getOutputStream());
+    }
   }
 
   public void startBehavior(Behavior behavior) {

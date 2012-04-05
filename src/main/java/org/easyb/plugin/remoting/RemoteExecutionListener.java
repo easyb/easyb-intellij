@@ -6,67 +6,68 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 import org.easyb.listener.ExecutionListener;
+
 import static org.easyb.plugin.remoting.RemoteUtils.safeClose;
 
 /**
  * Listens for remote events to sent over a socket and forwards then to an execution listener
  */
 public class RemoteExecutionListener implements Runnable {
-    private RemotingExecutionListener receiver;
-    private ServerSocket serverSocket;
+  private RemotingExecutionListener receiver;
+  private ServerSocket serverSocket;
 
-    public void start() {
-        new Thread(this).start();
-        verifyListenerThreadStarted();
-    }
+  public void start() {
+    new Thread(this).start();
+    verifyListenerThreadStarted();
+  }
 
-    public void run() {
-        Socket socket = null;
-        try {
-            serverSocket = new ServerSocket(0);
-            socket = serverSocket.accept();
+  public void run() {
+    Socket socket = null;
+    try {
+      serverSocket = new ServerSocket(0);
+      socket = serverSocket.accept();
 
-            Event event;
-            ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
-            do {
-                event = (Event) inputStream.readObject();
-                if (receiver != null) {
-                    event.fire(receiver);
-                }
-            } while (event.getType() != EventType.COMPLETE_TESTING);
-            inputStream.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } finally {
-            safeClose(socket);
+      Event event;
+      ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
+      do {
+        event = (Event) inputStream.readObject();
+        if (receiver != null) {
+          event.fire(receiver);
         }
+      } while (event.getType() != EventType.COMPLETE_TESTING);
+      inputStream.close();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    } catch (ClassNotFoundException e) {
+      throw new RuntimeException(e);
+    } finally {
+      safeClose(socket);
     }
+  }
 
-    private void verifyListenerThreadStarted() {
-        for (int i = 0; i < 10; i++) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            if (serverSocket != null) {
-                return;
-            }
-        }
-        throw new RuntimeException("Unable to verify that listener thread started");
+  private void verifyListenerThreadStarted() {
+    for (int i = 0; i < 10; i++) {
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+      if (serverSocket != null) {
+        return;
+      }
     }
+    throw new RuntimeException("Unable to verify that listener thread started");
+  }
 
-    public void setReceiver(RemotingExecutionListener receiver) {
-        this.receiver = receiver;
-    }
+  public void setReceiver(RemotingExecutionListener receiver) {
+    this.receiver = receiver;
+  }
 
-    public void stop() {
-        safeClose(serverSocket);
-    }
+  public void stop() {
+    safeClose(serverSocket);
+  }
 
-    public int getPort() {
-        return serverSocket.getLocalPort();
-    }
+  public int getPort() {
+    return serverSocket.getLocalPort();
+  }
 }
