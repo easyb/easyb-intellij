@@ -18,17 +18,13 @@
     <component>
       <implementation-class>org.easyb.idea.runner.EasybRunConfigurationType</implementation-class>
     </component>
-    <component>
-      <implementation-class>org.easyb.idea.filetypes.EasybFileTypeLoader</implementation-class>
-    </component>
-    <component>
-      <implementation-class>org.easyb.idea.templates.EasybLiveTemplateLoader</implementation-class>
-    </component>
   </application-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <configurationType implementation="org.easyb.idea.runner.EasybRunConfigurationType"/>
     <configurationProducer implementation="org.easyb.idea.runner.EasybRunConfigurationProducer"/>
+    <defaultLiveTemplatesProvider implementation="org.easyb.idea.templates.EasybLiveTemplateProvider"/>
+    <fileTypeFactory implementation="org.easyb.idea.filetypes.EasybFileTypeFactory"/>
   </extensions>
 
 </idea-plugin>

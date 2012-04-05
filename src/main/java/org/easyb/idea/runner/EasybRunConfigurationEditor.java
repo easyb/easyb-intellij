@@ -3,6 +3,7 @@ package org.easyb.idea.runner;
 import java.awt.*;
 import javax.swing.*;
 
+import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.module.Module;
@@ -38,7 +39,7 @@ public class EasybRunConfigurationEditor extends SettingsEditor<EasybRunConfigur
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                 final Module module = (Module) value;
                 if (module != null) {
-                    setIcon(module.getModuleType().getNodeIcon(false));
+                    setIcon(ModuleType.get(module).getNodeIcon(false));
                     setText(module.getName());
                 }
                 return this;

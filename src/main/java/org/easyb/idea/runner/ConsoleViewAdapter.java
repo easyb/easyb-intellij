@@ -73,4 +73,8 @@ public class ConsoleViewAdapter implements ConsoleView {
     public AnAction [] createConsoleActions()  {
         return new AnAction[0];
     }
+
+  public void allowHeavyFilters() {
+    // who knows what this does?
+  }
 }

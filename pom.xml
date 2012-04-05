@@ -163,6 +163,6 @@
   </dependencies>
 
   <properties>
-    <idea.version>10.0</idea.version>
+    <idea.version>11.0</idea.version>
   </properties>
 </project>
